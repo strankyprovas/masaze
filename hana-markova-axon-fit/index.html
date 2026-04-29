@@ -111,42 +111,63 @@ nav.scrolled {
   align-items: stretch; background: var(--teal-deep);
   overflow: hidden;
 }
+#hero::before {
+  content: ''; position: absolute; top: -30%; left: -10%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(201,165,114,.07) 0%, transparent 60%);
+  z-index: 0; pointer-events: none;
+}
+#hero::after {
+  content: ''; position: absolute; bottom: -20%; left: 25%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(77,139,145,.12) 0%, transparent 60%);
+  z-index: 0; pointer-events: none;
+}
 .hero-left {
-  padding: 11rem 5% 6rem 7%; position: relative; z-index: 2;
+  padding: 10rem 5% 5rem 7%; position: relative; z-index: 2;
   display: flex; flex-direction: column; justify-content: center;
 }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: .8rem;
   font-size: .72rem; font-weight: 600; letter-spacing: .35em;
   text-transform: uppercase; color: var(--gold);
-  margin-bottom: 1.6rem;
+  margin-bottom: 1.4rem;
+  opacity: 0; animation: fadeUp .9s .15s var(--ease) forwards;
 }
 .hero-eyebrow::before {
   content: ''; width: 36px; height: 1px; background: var(--gold);
 }
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 5.5vw, 5.4rem);
-  font-weight: 300; line-height: 1.05; color: var(--white);
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.2rem, 4.2vw, 4rem);
+  font-weight: 300; line-height: 1.1; color: var(--white);
+  margin-bottom: 1.4rem; max-width: 620px;
+  opacity: 0; animation: fadeUp .9s .3s var(--ease) forwards;
 }
 .hero-title em {
-  font-style: italic; color: var(--gold); display: block;
+  font-style: italic; color: var(--gold);
   font-weight: 400;
 }
 .hero-quote {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem; font-style: italic; color: rgba(255,255,255,.75);
-  margin: 1rem 0 2rem; padding-left: 1.5rem;
+  font-size: 1.2rem; font-style: italic; color: rgba(255,255,255,.7);
+  margin: .8rem 0 1.8rem; padding-left: 1.3rem;
   border-left: 2px solid var(--gold);
-  max-width: 520px; line-height: 1.5;
+  max-width: 480px; line-height: 1.5;
+  opacity: 0; animation: fadeUp .9s .5s var(--ease) forwards;
 }
 .hero-sub {
-  font-size: 1rem; color: rgba(255,255,255,.6);
-  max-width: 480px; margin-bottom: 2.6rem; line-height: 1.7;
+  font-size: .96rem; color: rgba(255,255,255,.6);
+  max-width: 480px; margin-bottom: 2.2rem; line-height: 1.7;
+  opacity: 0; animation: fadeUp .9s .65s var(--ease) forwards;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 .hero-btns {
   display: flex; gap: 1rem; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp .9s .8s var(--ease) forwards;
 }
 .btn-gold {
   background: var(--gold); color: var(--teal-deep);
@@ -172,7 +193,8 @@ nav.scrolled {
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
 .hero-features {
-  margin-top: 3.5rem; display: flex; gap: 2.4rem; flex-wrap: wrap;
+  margin-top: 2.8rem; display: flex; gap: 2.4rem; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp .9s .95s var(--ease) forwards;
 }
 .hero-feature {
   display: flex; align-items: center; gap: .7rem;
@@ -664,13 +686,10 @@ footer {
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">EMS Studio · Brno-Přízřenice</div>
-    <h1 class="hero-title">
-      Celé tělo za 20 minut<br>
-      <em>bez pocení v posilovně.</em>
-    </h1>
+    <div class="hero-eyebrow">EMS Studio &amp; Lymfatické masáže · Brno</div>
+    <h1 class="hero-title">Celé tělo za 20 minut <em>bez potu v posilovně.</em></h1>
     <p class="hero-quote">"Síla, rychlost, výsledky — vše v jednom tréninku."</p>
-    <p class="hero-sub">Soukromé studio elektromyostimulace s individuálním přístupem. Trénink, který zaktivuje i nejhlubší svalová vlákna — a navíc nově lymfatické masáže pro skutečné odpočinutí těla.</p>
+    <p class="hero-sub">Soukromé EMS studio v Brně-Přízřenicích s individuálním vedením. Nově i lymfatické masáže pro hlubokou regeneraci.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-gold">Zkušební trénink ZDARMA</a>
       <a href="#why" class="btn-ghost">Proč EMS?</a>
@@ -678,7 +697,7 @@ footer {
     <div class="hero-features">
       <div class="hero-feature">20 min = 90 min v posilovně</div>
       <div class="hero-feature">Individuální vedení</div>
-      <div class="hero-feature">Soukromé studio</div>
+      <div class="hero-feature">Parkování zdarma</div>
     </div>
   </div>
   <div class="hero-right">
