@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXON-fit — EMS studio &amp; lymfatické masáže | Hana Marková Brno</title>
+<meta name="description" content="EMS Fitness Studio v Brně-Přízřenicích. 20 minut tréninku = celé tělo. Nově i lymfatické masáže. Hana Marková, soukromé studio s individuálním přístupem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+img { max-width: 100%; display: block; }
+
+:root {
+  --teal-deep: #0e3a3f;
+  --teal: #1c5760;
+  --teal-light: #4d8b91;
+  --gold: #c9a572;
+  --gold-light: #e2c391;
+  --cream: #f7f3ec;
+  --cream2: #efe9dd;
+  --ink: #1a1a1a;
+  --ink2: #3d3d3d;
+  --muted: #7a7269;
+  --white: #ffffff;
+  --ease: cubic-bezier(.4,0,.2,1);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* SCROLL PROGRESS */
+#progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transform-origin: left; transform: scaleX(0);
+  z-index: 9999; transition: transform .1s linear;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.5rem 6%; display: flex; align-items: center; justify-content: space-between;
+  transition: all .3s var(--ease);
+}
+nav.scrolled {
+  background: rgba(14,58,63,.96); backdrop-filter: blur(14px);
+  padding: 1rem 6%;
+  box-shadow: 0 1px 0 rgba(201,165,114,.15);
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 600;
+  color: var(--white); letter-spacing: .05em; text-decoration: none;
+}
+.logo span { color: var(--gold); font-weight: 700; }
+.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.nav-links a {
+  color: rgba(255,255,255,.8); text-decoration: none;
+  font-size: .78rem; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  transition: color .25s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -5px; left: 50%; right: 50%;
+  height: 1px; background: var(--gold);
+  transition: all .3s var(--ease);
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { left: 0; right: 0; }
+.nav-cta {
+  background: var(--gold); color: var(--teal-deep);
+  padding: .7rem 1.6rem;
+  font-size: .75rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; text-decoration: none;
+  transition: all .3s; border-radius: 2px;
+}
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 1.5px; background: var(--white); transition: .3s; }
+
+/* MOBILE NAV */
+#mobile-nav {
+  display: none; position: fixed; inset: 0; z-index: 99;
+  background: var(--teal-deep); flex-direction: column;
+  align-items: center; justify-content: center; gap: 2rem;
+}
+#mobile-nav.open { display: flex; }
+#mobile-nav a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; color: var(--white); text-decoration: none;
+  font-weight: 300;
+}
+#mobile-nav a:hover { color: var(--gold); }
+.close-nav {
+  position: absolute; top: 2rem; right: 6%;
+  background: none; border: none; color: var(--white);
+  font-size: 1.8rem; cursor: pointer;
+}
+
+/* HERO */
+#hero {
+  min-height: 100vh; position: relative;
+  display: grid; grid-template-columns: 1.05fr .95fr;
+  align-items: stretch; background: var(--teal-deep);
+  overflow: hidden;
+}
+.hero-left {
+  padding: 11rem 5% 6rem 7%; position: relative; z-index: 2;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: .8rem;
+  font-size: .72rem; font-weight: 600; letter-spacing: .35em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1.6rem;
+}
+.hero-eyebrow::before {
+  content: ''; width: 36px; height: 1px; background: var(--gold);
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5.5vw, 5.4rem);
+  font-weight: 300; line-height: 1.05; color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.hero-title em {
+  font-style: italic; color: var(--gold); display: block;
+  font-weight: 400;
+}
+.hero-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-style: italic; color: rgba(255,255,255,.75);
+  margin: 1rem 0 2rem; padding-left: 1.5rem;
+  border-left: 2px solid var(--gold);
+  max-width: 520px; line-height: 1.5;
+}
+.hero-sub {
+  font-size: 1rem; color: rgba(255,255,255,.6);
+  max-width: 480px; margin-bottom: 2.6rem; line-height: 1.7;
+}
+.hero-btns {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+}
+.btn-gold {
+  background: var(--gold); color: var(--teal-deep);
+  padding: 1.05rem 2.4rem; border: none; cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: .8rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; text-decoration: none; display: inline-block;
+  transition: all .3s; border-radius: 2px;
+}
+.btn-gold:hover {
+  background: var(--gold-light); transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(201,165,114,.4);
+}
+.btn-ghost {
+  background: transparent; color: var(--white);
+  padding: 1.05rem 2.4rem;
+  border: 1px solid rgba(255,255,255,.3);
+  font-family: 'Outfit', sans-serif;
+  font-size: .8rem; font-weight: 500; letter-spacing: .12em;
+  text-transform: uppercase; text-decoration: none; display: inline-block;
+  transition: all .3s; border-radius: 2px;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.hero-features {
+  margin-top: 3.5rem; display: flex; gap: 2.4rem; flex-wrap: wrap;
+}
+.hero-feature {
+  display: flex; align-items: center; gap: .7rem;
+  font-size: .82rem; color: rgba(255,255,255,.55);
+}
+.hero-feature::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold);
+}
+
+.hero-right {
+  position: relative; overflow: hidden;
+}
+.hero-right img {
+  width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.06);
+  animation: zoomIn 12s ease forwards;
+}
+@keyframes zoomIn { to { transform: scale(1); } }
+.hero-right::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--teal-deep) 0%, transparent 30%);
+  z-index: 1;
+}
+.hero-badge {
+  position: absolute; bottom: 3rem; right: 3rem; z-index: 2;
+  background: var(--gold); color: var(--teal-deep);
+  padding: 1.4rem 1.6rem;
+  text-align: center; min-width: 130px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.3);
+}
+.hero-badge strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.3rem; font-weight: 600; line-height: 1; display: block;
+}
+.hero-badge span {
+  font-size: .68rem; font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; display: block; margin-top: .3rem;
+}
+
+/* SECTIONS COMMON */
+section { padding: 7rem 7%; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .8rem;
+  font-size: .72rem; font-weight: 600; letter-spacing: .35em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1rem;
+}
+.eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 300; line-height: 1.15; margin-bottom: 1.4rem;
+  color: var(--ink);
+}
+.section-title em { font-style: italic; color: var(--teal); }
+.section-desc {
+  font-size: 1rem; line-height: 1.85; color: var(--muted);
+  max-width: 560px;
+}
+
+/* ABOUT */
+#about { background: var(--white); }
+.about-grid {
+  display: grid; grid-template-columns: .95fr 1fr;
+  gap: 6rem; align-items: center;
+}
+.about-img-wrap {
+  position: relative;
+}
+.about-img-wrap img {
+  width: 100%; height: 600px; object-fit: cover;
+  border-radius: 2px;
+}
+.about-img-deco {
+  position: absolute; bottom: -2rem; left: -2rem;
+  width: 180px; height: 180px;
+  border: 1px solid var(--gold);
+  z-index: -1;
+}
+.about-img-frame {
+  position: absolute; top: -1.5rem; right: -1.5rem;
+  width: 100%; height: 100%;
+  border: 1px solid rgba(28,87,96,.2);
+  z-index: -1;
+}
+.about-content { padding-right: 2rem; }
+.about-text {
+  font-size: 1.02rem; line-height: 1.85; color: var(--ink2);
+  margin-bottom: 1.5rem;
+}
+.about-text strong { color: var(--teal); font-weight: 600; }
+.about-signature {
+  margin-top: 2.5rem; display: flex; align-items: center; gap: 1.4rem;
+}
+.about-signature-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; color: var(--ink); font-weight: 500;
+}
+.about-signature-name span {
+  display: block; font-family: 'Outfit', sans-serif;
+  font-size: .72rem; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--muted);
+  font-weight: 500; margin-top: .2rem;
+}
+.about-signature-line { width: 50px; height: 1px; background: var(--gold); }
+
+/* WHY EMS - 4 PILLARS */
+#why { background: var(--cream2); }
+.why-header { text-align: center; margin: 0 auto 4rem; max-width: 680px; }
+.why-header .eyebrow { justify-content: center; }
+.why-header .eyebrow::before { display: none; }
+.why-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: rgba(28,87,96,.1);
+  border: 1px solid rgba(28,87,96,.1);
+}
+.why-card {
+  background: var(--white);
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all .35s var(--ease);
+  position: relative; overflow: hidden;
+}
+.why-card::before {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 0; background: linear-gradient(to top, rgba(201,165,114,.05), transparent);
+  transition: height .35s var(--ease);
+}
+.why-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(14,58,63,.1); }
+.why-card:hover::before { height: 100%; }
+.why-icon {
+  width: 64px; height: 64px; margin: 0 auto 1.4rem;
+  border: 1px solid var(--gold); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; color: var(--teal);
+  position: relative; z-index: 1;
+}
+.why-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem; font-weight: 500;
+  margin-bottom: .8rem; color: var(--ink);
+  position: relative; z-index: 1;
+}
+.why-card p {
+  font-size: .88rem; color: var(--muted); line-height: 1.7;
+  position: relative; z-index: 1;
+}
+
+/* HOW IT WORKS */
+#how { background: var(--white); }
+.how-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+}
+.how-content h2 { margin-bottom: 1.8rem; }
+.how-text { font-size: 1rem; line-height: 1.85; color: var(--ink2); margin-bottom: 1.2rem; }
+.how-text strong { color: var(--teal); font-weight: 600; }
+.how-steps {
+  margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.3rem;
+}
+.how-step {
+  display: flex; gap: 1.4rem; align-items: flex-start;
+}
+.how-step-num {
+  flex-shrink: 0; width: 42px; height: 42px;
+  background: var(--teal); color: var(--white);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.1rem;
+}
+.how-step h4 { font-size: .98rem; font-weight: 600; margin-bottom: .25rem; color: var(--ink); }
+.how-step p { font-size: .88rem; color: var(--muted); line-height: 1.65; }
+.how-img {
+  position: relative;
+}
+.how-img img {
+  width: 100%; height: 540px; object-fit: cover; border-radius: 2px;
+}
+.how-img-deco {
+  position: absolute; top: -1.5rem; right: -1.5rem;
+  width: 100px; height: 100px;
+  background: var(--gold); z-index: -1;
+}
+
+/* LYMFATICKÉ MASÁŽE - NEW */
+#lymfo {
+  background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal) 100%);
+  color: var(--white); position: relative; overflow: hidden;
+}
+#lymfo::before {
+  content: ''; position: absolute; top: -50%; right: -20%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(201,165,114,.08) 0%, transparent 70%);
+}
+.lymfo-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+  position: relative;
+}
+.lymfo-tag {
+  display: inline-block; padding: .45rem 1.1rem;
+  background: var(--gold); color: var(--teal-deep);
+  font-size: .68rem; font-weight: 700; letter-spacing: .25em;
+  text-transform: uppercase; margin-bottom: 1.6rem;
+}
+#lymfo .section-title { color: var(--white); }
+#lymfo .section-title em { color: var(--gold); }
+.lymfo-text { font-size: 1.02rem; line-height: 1.85; color: rgba(255,255,255,.78); margin-bottom: 1.4rem; }
+.lymfo-benefits {
+  margin-top: 2.4rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+}
+.lymfo-benefit {
+  display: flex; gap: .8rem; align-items: flex-start;
+  font-size: .9rem; color: rgba(255,255,255,.85); line-height: 1.55;
+}
+.lymfo-benefit::before {
+  content: '✦'; color: var(--gold); font-size: 1.1rem; flex-shrink: 0;
+  line-height: 1.4;
+}
+.lymfo-img {
+  position: relative;
+}
+.lymfo-img img {
+  width: 100%; height: 540px; object-fit: cover;
+  border-radius: 2px;
+  filter: brightness(.92);
+}
+.lymfo-img-frame {
+  position: absolute; bottom: -1.5rem; left: -1.5rem;
+  width: 100%; height: 100%;
+  border: 1px solid var(--gold); z-index: -1;
+}
+
+/* PRICING */
+#pricing { background: var(--cream); }
+.pricing-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
+.pricing-header .eyebrow { justify-content: center; }
+.pricing-header .eyebrow::before { display: none; }
+.pricing-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.pricing-col {
+  background: var(--white);
+  padding: 3rem 2.5rem;
+  border: 1px solid rgba(28,87,96,.08);
+  position: relative;
+}
+.pricing-col-head { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--cream2); }
+.pricing-col-eyebrow {
+  font-size: .7rem; font-weight: 600; letter-spacing: .25em;
+  text-transform: uppercase; color: var(--gold);
+}
+.pricing-col-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem; font-weight: 500; margin-top: .4rem; color: var(--ink);
+}
+.pricing-list { list-style: none; }
+.pricing-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px dashed rgba(122,114,105,.2);
+}
+.pricing-item:last-child { border-bottom: none; }
+.pricing-item-label {
+  display: flex; flex-direction: column; gap: .25rem;
+}
+.pricing-item-name { font-size: .95rem; font-weight: 500; color: var(--ink); }
+.pricing-item-detail {
+  font-size: .76rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .1em;
+}
+.pricing-item-bonus {
+  display: inline-block; margin-top: .35rem;
+  font-size: .68rem; font-weight: 600; letter-spacing: .15em;
+  text-transform: uppercase; color: var(--gold);
+}
+.pricing-item-prices { text-align: right; flex-shrink: 0; padding-left: 1rem; }
+.pricing-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem; font-weight: 600; color: var(--teal);
+  line-height: 1;
+}
+.pricing-price-per { font-size: .76rem; color: var(--muted); display: block; margin-top: .3rem; }
+
+.pricing-extras {
+  margin-top: 2rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+}
+.pricing-extra {
+  background: linear-gradient(135deg, var(--teal-deep), var(--teal));
+  color: var(--white); padding: 2.4rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+}
+.pricing-extra h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem; font-weight: 500; margin-bottom: .4rem;
+}
+.pricing-extra p { font-size: .85rem; color: rgba(255,255,255,.7); }
+.pricing-extra-tag {
+  background: var(--gold); color: var(--teal-deep);
+  padding: .55rem 1.1rem;
+  font-size: .72rem; font-weight: 700; letter-spacing: .15em;
+  text-transform: uppercase; flex-shrink: 0;
+}
+
+/* GALLERY */
+#gallery { background: var(--ink); padding: 5rem 0; overflow: hidden; }
+.gallery-header { text-align: center; padding: 0 7%; margin-bottom: 3rem; }
+.gallery-header .eyebrow { justify-content: center; color: var(--gold); }
+.gallery-header .eyebrow::before { display: none; }
+.gallery-header .section-title { color: var(--white); }
+.gallery-header .section-title em { color: var(--gold); }
+.gallery-marquee {
+  display: flex; flex-direction: column; gap: .7rem;
+}
+.marquee-row {
+  display: flex; gap: .7rem; width: max-content;
+  animation: marquee 38s linear infinite;
+}
+.marquee-row.reverse { animation-direction: reverse; animation-duration: 46s; }
+.marquee-row img {
+  width: 300px; height: 380px; object-fit: cover; flex-shrink: 0;
+  filter: brightness(.85) saturate(.95);
+  transition: filter .4s;
+}
+.marquee-row img:hover { filter: brightness(1.05) saturate(1.1); }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* CONTACT */
+#contact { background: var(--white); }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.05fr;
+  gap: 5rem; align-items: start;
+}
+.contact-info { padding-top: .5rem; }
+.contact-info h2 { margin-bottom: 1.5rem; }
+.contact-list { margin: 2.5rem 0; display: flex; flex-direction: column; gap: 1.6rem; }
+.contact-item {
+  display: flex; gap: 1.2rem; align-items: flex-start;
+}
+.contact-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: var(--cream); color: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.contact-label {
+  font-size: .7rem; font-weight: 600; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: .25rem;
+}
+.contact-val { font-size: .98rem; color: var(--ink); line-height: 1.5; }
+.contact-val a { color: inherit; text-decoration: none; transition: color .25s; }
+.contact-val a:hover { color: var(--teal); }
+.map-wrap {
+  height: 580px; overflow: hidden; border-radius: 2px;
+  border: 1px solid rgba(28,87,96,.08);
+}
+.map-wrap iframe { width: 100%; height: 100%; border: 0; }
+
+.contact-socials { display: flex; gap: 1rem; margin-top: 1rem; }
+.social-link {
+  width: 42px; height: 42px;
+  background: var(--cream); color: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; transition: all .3s;
+  font-size: .9rem; font-weight: 600;
+}
+.social-link:hover { background: var(--teal); color: var(--white); transform: translateY(-3px); }
+
+/* FOOTER */
+footer {
+  background: var(--teal-deep); color: var(--white);
+  padding: 4rem 7% 2rem;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem; padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.footer-brand .logo { font-size: 1.7rem; }
+.footer-desc {
+  margin-top: 1rem; font-size: .9rem;
+  color: rgba(255,255,255,.6); line-height: 1.7; max-width: 360px;
+}
+.footer-col h4 {
+  font-size: .75rem; font-weight: 600; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+.footer-col a {
+  font-size: .9rem; color: rgba(255,255,255,.6);
+  text-decoration: none; transition: color .25s;
+}
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom {
+  padding-top: 2rem; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.4); }
+.footer-bottom a { color: var(--gold); text-decoration: none; }
+
+/* BACK TO TOP */
+#back-top {
+  position: fixed; bottom: 2rem; right: 2rem;
+  width: 44px; height: 44px;
+  background: var(--gold); color: var(--teal-deep);
+  border: none; cursor: pointer; font-size: 1.1rem;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: all .3s;
+  z-index: 50;
+}
+#back-top.show { opacity: 1; visibility: visible; }
+#back-top:hover { background: var(--gold-light); transform: translateY(-3px); }
+
+/* REVEAL */
+[data-r] {
+  opacity: 0; transform: translateY(35px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+[data-r="left"] { transform: translateX(-35px); }
+[data-r="right"] { transform: translateX(35px); }
+[data-r].visible { opacity: 1; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  section { padding: 5rem 6%; }
+  #hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 9rem 6% 4rem; }
+  .hero-right { height: 60vw; min-height: 360px; }
+  .hero-right::before { background: linear-gradient(to bottom, var(--teal-deep) 0%, transparent 30%); }
+  .about-grid, .how-grid, .lymfo-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-img-wrap img, .how-img img, .lymfo-img img { height: 420px; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid, .pricing-extras, .lymfo-benefits { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  nav { padding: 1.2rem 6%; }
+  .why-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .pricing-extra { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  section { padding: 4rem 5%; }
+  .hero-left { padding: 8rem 5% 3rem; }
+  .hero-btns { flex-direction: column; }
+  .btn-gold, .btn-ghost { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav id="navbar">
+  <a href="#" class="logo">AXON<span>·</span>fit</a>
+  <ul class="nav-links">
+    <li><a href="#about">O nás</a></li>
+    <li><a href="#why">Proč EMS</a></li>
+    <li><a href="#lymfo">Masáže</a></li>
+    <li><a href="#pricing">Ceník</a></li>
+    <li><a href="#gallery">Galerie</a></li>
+    <li><a href="#contact" class="nav-cta">Rezervovat</a></li>
+  </ul>
+  <div class="hamburger" id="ham"><span></span><span></span><span></span></div>
+</nav>
+
+<div id="mobile-nav">
+  <button class="close-nav" id="close-nav">✕</button>
+  <a href="#about">O nás</a>
+  <a href="#why">Proč EMS</a>
+  <a href="#lymfo">Masáže</a>
+  <a href="#pricing">Ceník</a>
+  <a href="#gallery">Galerie</a>
+  <a href="#contact">Kontakt</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">EMS Studio · Brno-Přízřenice</div>
+    <h1 class="hero-title">
+      Celé tělo za 20 minut<br>
+      <em>bez pocení v posilovně.</em>
+    </h1>
+    <p class="hero-quote">"Síla, rychlost, výsledky — vše v jednom tréninku."</p>
+    <p class="hero-sub">Soukromé studio elektromyostimulace s individuálním přístupem. Trénink, který zaktivuje i nejhlubší svalová vlákna — a navíc nově lymfatické masáže pro skutečné odpočinutí těla.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold">Zkušební trénink ZDARMA</a>
+      <a href="#why" class="btn-ghost">Proč EMS?</a>
+    </div>
+    <div class="hero-features">
+      <div class="hero-feature">20 min = 90 min v posilovně</div>
+      <div class="hero-feature">Individuální vedení</div>
+      <div class="hero-feature">Soukromé studio</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="photos/_M1A39912.jpg" alt="AXON-fit Studio Brno">
+    <div class="hero-badge">
+      <strong>20</strong>
+      <span>minut týdně</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" data-r>
+  <div class="about-grid">
+    <div class="about-img-wrap" data-r="left">
+      <img src="photos/_M1A40272-1.jpg" alt="Hana Marková — AXON-fit">
+      <div class="about-img-deco"></div>
+      <div class="about-img-frame"></div>
+    </div>
+    <div class="about-content" data-r="right">
+      <div class="eyebrow">Naše filozofie</div>
+      <h2 class="section-title">Soukromé studio<br>s <em>individuálním přístupem</em></h2>
+      <p class="about-text">AXON-fit je <strong>soukromé a elegantní EMS studio</strong> v Brně-Přízřenicích. Žádné davy, žádný stres — jen Vy, trenérka a 20 minut, které opravdu změní Vaše tělo.</p>
+      <p class="about-text">Nabízíme příjemnou atmosféru s relaxační hudbou, pitným režimem před i po tréninku a parkováním přímo před studiem. Každý trénink je vedený individuálně, takže intenzitu a cíle ladíme přesně Vám na míru — ať už chcete zhubnout, zpevnit postavu, ulevit zádům nebo si jen udělat něco pro sebe.</p>
+      <p class="about-text">A nově nabízíme i <strong>lymfatické masáže</strong> — krásné doplnění tréninku, které tělu pomůže se rychleji zregenerovat.</p>
+      <div class="about-signature">
+        <div class="about-signature-line"></div>
+        <div class="about-signature-name">
+          Hana Marková
+          <span>Majitelka &amp; trenérka</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY EMS -->
+<section id="why">
+  <div class="why-header" data-r>
+    <div class="eyebrow">Proč EMS?</div>
+    <h2 class="section-title">Trénink budoucnosti, <em>výsledky dnes</em></h2>
+    <p class="section-desc" style="margin: 0 auto;">EMS (Elektro Myo Stimulace) je vědecky podložená metoda využívaná ve fitness, fyzioterapii i medicíně. V čem je jiná než klasický trénink?</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card" data-r>
+      <div class="why-icon">⚡</div>
+      <h3>Efektivní</h3>
+      <p>Aktivace téměř všech svalů najednou — i těch nejhlubších, které běžným tréninkem prostě neoslovíte.</p>
+    </div>
+    <div class="why-card" data-r>
+      <div class="why-icon">❤️</div>
+      <h3>Zdravé</h3>
+      <p>Využívá se v rehabilitaci, pomáhá uvolnit bolesti zad a má prokázaný antistresový účinek.</p>
+    </div>
+    <div class="why-card" data-r>
+      <div class="why-icon">🔥</div>
+      <h3>Spalující</h3>
+      <p>Vyšší energetický výdej než při klasickém tréninku — efektivní pomoc při hubnutí a tvarování postavy.</p>
+    </div>
+    <div class="why-card" data-r>
+      <div class="why-icon">⏱️</div>
+      <h3>Rychlé</h3>
+      <p>Jen 20 minut týdně. Procvičíte celé tělo bez ohledu na úroveň kondice nebo věk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="how-grid">
+    <div class="how-content" data-r="left">
+      <div class="eyebrow">Jak to funguje</div>
+      <h2 class="section-title">Co se děje <em>během 20 minut</em></h2>
+      <p class="how-text">Při EMS tréninku oblečete speciální oblek s integrovanými elektrodami, které posílají do svalů jemné elektrické impulzy. Ty <strong>stimulují svalová vlákna</strong> k mnohem intenzivnějším kontrakcím, než by zvládl běžný pohyb sám.</p>
+      <p class="how-text">Výsledkem je, že během krátkého tréninku zapojíte i <strong>hluboké svalové vrstvy</strong>, které jinak posílit téměř nelze. To je zároveň důvod, proč EMS pomáhá nejen budovat sílu a kondici, ale i ulevovat od bolestí zad nebo zlepšovat držení těla.</p>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-num">1</div>
+          <div>
+            <h4>Konzultace a oblek</h4>
+            <p>Probereme, co od tréninku očekáváte, a navlékneme Vám speciální EMS oblek.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">2</div>
+          <div>
+            <h4>20 minut intenzivního tréninku</h4>
+            <p>Vedu Vás při jednoduchých cvičeních. Impulzy zapojí všechny hlavní svalové skupiny.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-num">3</div>
+          <div>
+            <h4>Pitný režim a relaxace</h4>
+            <p>Po tréninku Vám nabídnu pitný režim a v klidu vše zhodnotíme.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="how-img" data-r="right">
+      <img src="photos/_M1A40112.jpg" alt="EMS trénink AXON-fit">
+      <div class="how-img-deco"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LYMFO - NEW -->
+<section id="lymfo">
+  <div class="lymfo-grid">
+    <div data-r="left">
+      <div class="lymfo-tag">✦ Nově v nabídce</div>
+      <h2 class="section-title">Lymfatické <em>masáže</em></h2>
+      <p class="lymfo-text">Manuální lymfodrenáž je jemná, účinná a relaxační procedura, která <strong style="color: var(--gold-light);">aktivuje proudění lymfy</strong>, pomáhá tělu odplavit zadrženou vodu, toxiny a urychluje regeneraci po fyzické zátěži.</p>
+      <p class="lymfo-text">Skvělé doplnění EMS tréninku — nebo samostatná wellness procedura, kterou si dopřejete kdykoliv potřebujete tělu ulevit a uvést se do rovnováhy.</p>
+      <div class="lymfo-benefits">
+        <div class="lymfo-benefit">Detoxikace a vyplavení toxinů</div>
+        <div class="lymfo-benefit">Redukce otoků a zadržené vody</div>
+        <div class="lymfo-benefit">Urychlení regenerace svalů</div>
+        <div class="lymfo-benefit">Posílení imunity</div>
+        <div class="lymfo-benefit">Zlepšení vzhledu pleti</div>
+        <div class="lymfo-benefit">Hluboká relaxace a úleva</div>
+      </div>
+      <div style="margin-top: 2.6rem;">
+        <a href="#contact" class="btn-gold">Objednat lymfatickou masáž</a>
+      </div>
+    </div>
+    <div class="lymfo-img" data-r="right">
+      <img src="photos/IMG-20240503-WA0014.jpg" alt="Lymfatická masáž">
+      <div class="lymfo-img-frame"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="pricing-header" data-r>
+    <div class="eyebrow">Ceník EMS tréninků</div>
+    <h2 class="section-title">Permanentky &amp; <em>jednotlivé tréninky</em></h2>
+    <p class="section-desc" style="margin: 0 auto;">Vyberte si podle frekvence a počtu — čím víc tréninků, tím nižší cena za jeden. Chodíte ve dvou? Ušetříte ještě víc.</p>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="pricing-col" data-r="left">
+      <div class="pricing-col-head">
+        <div class="pricing-col-eyebrow">Pro jednoho</div>
+        <div class="pricing-col-title">Individuální tréninky</div>
+      </div>
+      <ul class="pricing-list">
+        <li class="pricing-item">
+          <div class="pricing-item-label">
+            <span class="pricing-item-name">1 trénink</span>
+            <span class="pricing-item-detail">Jednorázový vstup</span>
+          </div>
+          <div class="pricing-item-prices">
+            <div class="pricing-price">620&nbsp;Kč</div>
+            <span class="pricing-price-per">620 Kč / trénink</span>
+          </div>
+        </li>
+        <li class="pricing-item">
+          <div class="pricing-item-label">
+            <span class="pricing-item-name">5 tréninků</span>
+            <span class="pricing-item-detail">Permanentka</span>
+          </div>
+          <div class="pricing-item-prices">
+            <div class="pricing-price">3 000&nbsp;Kč</div>
+            <span class="pricing-price-per">600 Kč / trénink</span>
+          </div>
+        </li>
+        <li class="pricing-item">
+          <div class="pricing-item-label">
+            <span class="pricing-item-name">10 tréninků</span>
+            <span class="pricing-item-detail">Permanentka</span>
+            <span class="pricing-item-bonus">+ 1 trénink ZDARMA</span>
+          </div>
+          <div class="pricing-item-prices">
+            <div class="pricing-price">5 900&nbsp;Kč</div>
+            <span class="pricing-price-per">590 Kč / trénink</span>
+          </div>
+        </li>
+        <li class="pricing-item">
+          <div class="pricing-item-label">
+            <span class="pricing-item-name">15 tréninků</span>
+            <span class="pricing-item-detail">Permanentka</span>
+            <span class="pricing-item-bonus">+ 2 tréninky ZDARMA</span>
+          </div>
+          <div class="pricing-item-prices">
+            <div class="pricing-price">8 250&nbsp;Kč</div>
+            <span class="pricing-price-per">550 Kč / trénink</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pricing-col" data-r="right">
+      <div class="pricing-col-head">
+        <div class="pricing-col-eyebrow">Pro dvojice</div>
+        <div class="pricing-col-title">Tréninky ve dvou</div>
+      </div>
+      <ul class="pricing-list">
+        <li class="pricing-item">
+          <div class="pricing-item-label">
+            <span class="pricing-item-name">5 tréninků</span>
+            <span class="pricing-item-detail">Permanentka pro 2</span>
+          </div>
+          <div class="pricing-item-prices">
+            <div class="pricing-price">5 400&nbsp;Kč</div>
+            <span class="pricing-price-per">450 Kč / trénink</span>
+          </div>
+        </li>
+        <li class="pricing-item">
+          <div class="pricing-item-label">
+            <span class="pricing-item-name">10 tréninků</span>
+            <span class="pricing-item-detail">Permanentka pro 2</span>
+            <span class="pricing-item-bonus">+ 1 trénink ZDARMA</span>
+          </div>
+          <div class="pricing-item-prices">
+            <div class="pricing-price">8 460&nbsp;Kč</div>
+            <span class="pricing-price-per">420 Kč / trénink</span>
+          </div>
+        </li>
+        <li class="pricing-item">
+          <div class="pricing-item-label">
+            <span class="pricing-item-name">15 tréninků</span>
+            <span class="pricing-item-detail">Permanentka pro 2</span>
+            <span class="pricing-item-bonus">+ 2 tréninky ZDARMA</span>
+          </div>
+          <div class="pricing-item-prices">
+            <div class="pricing-price">13 500&nbsp;Kč</div>
+            <span class="pricing-price-per">450 Kč / trénink</span>
+          </div>
+        </li>
+        <li class="pricing-item">
+          <div class="pricing-item-label">
+            <span class="pricing-item-name">20 tréninků</span>
+            <span class="pricing-item-detail">Permanentka pro 2</span>
+            <span class="pricing-item-bonus">+ 3 tréninky ZDARMA</span>
+          </div>
+          <div class="pricing-item-prices">
+            <div class="pricing-price">14 400&nbsp;Kč</div>
+            <span class="pricing-price-per">400 Kč / trénink</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pricing-extras">
+    <div class="pricing-extra">
+      <div>
+        <h3>Zkušební trénink</h3>
+        <p>Vyzkoušejte EMS bez závazku. Stačí se objednat.</p>
+      </div>
+      <div class="pricing-extra-tag">Zdarma</div>
+    </div>
+    <div class="pricing-extra">
+      <div>
+        <h3>Dárkový poukaz</h3>
+        <p>Překvapte známé tréninkem nebo lymfatickou masáží.</p>
+      </div>
+      <div class="pricing-extra-tag">Na míru</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header" data-r>
+    <div class="eyebrow">Atmosféra</div>
+    <h2 class="section-title">Naše <em>studio</em></h2>
+  </div>
+  <div class="gallery-marquee">
+    <div class="marquee-row" id="row1"></div>
+    <div class="marquee-row reverse" id="row2"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info" data-r="left">
+      <div class="eyebrow">Najdete nás</div>
+      <h2 class="section-title">Pojďte si <em>vyzkoušet</em></h2>
+      <p class="section-desc">Stačí krátká SMS nebo telefonát a domluvíme termín. První zkušební trénink zdarma — beze závazku.</p>
+
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Adresa</div>
+            <div class="contact-val">Břeclavská 50/23<br>Brno-jih, Přízřenice</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Telefon</div>
+            <div class="contact-val"><a href="tel:+420607736012">+420 607 736 012</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-val"><a href="mailto:axonlife1@gmail.com">axonlife1@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Otevírací doba</div>
+            <div class="contact-val">Dle objednávky<br><span style="color: var(--muted); font-size: .85rem;">Domluvíme termín, který Vám sedne</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-label">Sledujte nás</div>
+        <div class="contact-socials">
+          <a href="https://www.facebook.com/profile.php?id=100064156657253" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/axon_fit_/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">ig</a>
+        </div>
+      </div>
+    </div>
+    <div class="map-wrap" data-r="right">
+      <iframe src="https://maps.google.com/maps?q=B%C5%99eclavsk%C3%A1+50%2F23%2C+Brno-Pr%C3%AD%C5%99enice&output=embed" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">AXON<span>·</span>fit</a>
+      <p class="footer-desc">EMS Fitness Studio &amp; lymfatické masáže v Brně-Přízřenicích. 20 minut tréninku, který opravdu změní Vaše tělo.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigace</h4>
+      <ul>
+        <li><a href="#about">O nás</a></li>
+        <li><a href="#why">Proč EMS</a></li>
+        <li><a href="#lymfo">Lymfatické masáže</a></li>
+        <li><a href="#pricing">Ceník</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:+420607736012">+420 607 736 012</a></li>
+        <li><a href="mailto:axonlife1@gmail.com">axonlife1@gmail.com</a></li>
+        <li>Břeclavská 50/23, Brno</li>
+        <li>Hana Marková · IČO 06977243</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 AXON-fit · Všechna práva vyhrazena</p>
+    <p>Vytvořeno s ❤️ od <a href="https://strankyprovas.cz" target="_blank" rel="noopener">StránkyProVás</a></p>
+  </div>
+</footer>
+
+<button id="back-top" aria-label="Nahoru" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Scroll progress + nav
+window.addEventListener('scroll', () => {
+  const s = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+  document.getElementById('progress').style.transform = `scaleX(${s/h})`;
+  document.getElementById('navbar').classList.toggle('scrolled', s > 60);
+  document.getElementById('back-top').classList.toggle('show', s > 400);
+}, {passive: true});
+
+// Mobile nav
+const ham = document.getElementById('ham');
+const mNav = document.getElementById('mobile-nav');
+ham.addEventListener('click', () => mNav.classList.add('open'));
+document.getElementById('close-nav').addEventListener('click', () => mNav.classList.remove('open'));
+mNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mNav.classList.remove('open')));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const el = document.querySelector(a.getAttribute('href'));
+    if (el) { e.preventDefault(); el.scrollIntoView({behavior: 'smooth'}); }
+  });
+});
+
+// Reveal on scroll
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revObs.unobserve(e.target);
+    }
+  });
+}, {threshold: .12});
+document.querySelectorAll('[data-r]').forEach(el => revObs.observe(el));
+
+// Gallery marquee
+const photos = [
+  'photos/_M1A39912.jpg', 'photos/_M1A40112.jpg', 'photos/_M1A40272-1.jpg',
+  'photos/_M1A40352-1.jpg', 'photos/_M1A417413.jpg',
+  'photos/IMG-20240425-WA0001.jpg', 'photos/IMG-20240425-WA0004.jpg',
+  'photos/IMG-20240425-WA0008.jpg', 'photos/IMG-20240425-WA0009.jpg',
+  'photos/IMG-20240425-WA0010.jpg', 'photos/IMG-20240425-WA0013.jpg',
+  'photos/IMG-20240425-WA0014.jpg',
+  'photos/IMG-20240503-WA0012.jpg', 'photos/IMG-20240503-WA0013.jpg',
+  'photos/IMG-20240503-WA0015.jpg', 'photos/IMG-20240503-WA0017.jpg',
+  'photos/IMG-20240503-WA0018.jpg', 'photos/foto1.jpg', 'photos/foto2.jpg'
+];
+[document.getElementById('row1'), document.getElementById('row2')].forEach(row => {
+  const set = [...photos, ...photos];
+  set.forEach(src => {
+    const img = document.createElement('img');
+    img.src = src; img.alt = 'AXON-fit galerie'; img.loading = 'lazy';
+    row.appendChild(img);
+  });
+});
+</script>
+
+</body>
+</html>
