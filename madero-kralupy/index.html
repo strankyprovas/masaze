@@ -287,11 +287,24 @@
       border-radius: var(--radius); overflow: hidden;
       transition: transform .22s, box-shadow .22s, border-color .22s;
     }
-    .sluzba-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(127,184,154,.25); }
-    .sluzba-img { height: 165px; overflow: hidden; }
-    .sluzba-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
-    .sluzba-card:hover .sluzba-img img { transform: scale(1.06); }
-    .sluzba-body { padding: 16px 18px; }
+    .sluzba-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: rgba(127,184,154,.35); }
+    .sluzba-icon {
+      height: 110px; display: flex; align-items: center; justify-content: center;
+      font-size: 2.6rem; line-height: 1;
+      background: linear-gradient(135deg, rgba(127,184,154,.06) 0%, rgba(201,150,62,.04) 100%);
+      border-bottom: 1px solid var(--border);
+      transition: background .35s;
+    }
+    .sluzba-card:hover .sluzba-icon { background: linear-gradient(135deg, rgba(127,184,154,.12) 0%, rgba(201,150,62,.08) 100%); }
+    .sluzba-icon-sub {
+      position: absolute; right: 14px; top: 14px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--sage); opacity: .65;
+    }
+    .sluzba-card { position: relative; }
+    .sluzba-body { padding: 18px 20px; }
     .sluzba-tag {
       display: inline-block; font-size: 0.69rem; font-weight: 600;
       text-transform: uppercase; letter-spacing: .1em;
@@ -371,15 +384,16 @@
       background: linear-gradient(135deg, var(--dark-3) 0%, var(--dark-4) 100%);
       border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     }
-    .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-    .cta-text h2 { margin-bottom: 1rem; }
-    .cta-text p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.8; }
-    .cta-img {
-      border-radius: var(--radius); overflow: hidden;
-      height: 360px; box-shadow: var(--shadow);
-      border: 1px solid var(--border);
+    .cta-grid {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      max-width: 700px; margin: 0 auto;
     }
-    .cta-img img { width: 100%; height: 100%; object-fit: cover; }
+    .cta-text h2 { margin-bottom: 1rem; font-size: clamp(2rem, 4vw, 3rem); }
+    .cta-text p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; line-height: 1.8; }
+    .cta-text > div { justify-content: center; }
+    .cta-decor {
+      font-size: 3rem; margin-bottom: 1.4rem; opacity: .55;
+    }
 
     /* ============ KONTAKT ============ */
     #kontakt { background: var(--dark-2); }
@@ -461,7 +475,6 @@
       .sluzby-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .onas-img { height: 280px; }
-      .cta-img { height: 220px; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; justify-content: center; }
       section { padding: 3.5rem 0; }
@@ -623,7 +636,7 @@
     <div class="sluzby-grid" id="sluzbyGrid">
 
       <div class="sluzba-card" data-cat="madero" data-r>
-        <div class="sluzba-img"><img src="photos/photo_1.jpg" alt="Maderoterapie body" loading="lazy" /></div>
+        <div class="sluzba-icon">🪵</div>
         <div class="sluzba-body">
           <span class="sluzba-tag">Maderoterapie</span>
           <h3>Maderoterapie těla</h3>
@@ -636,7 +649,7 @@
       </div>
 
       <div class="sluzba-card" data-cat="madero" data-r>
-        <div class="sluzba-img"><img src="photos/photo_2.jpg" alt="Maderoterapie obličej" loading="lazy" /></div>
+        <div class="sluzba-icon">✨</div>
         <div class="sluzba-body">
           <span class="sluzba-tag">Maderoterapie</span>
           <h3>Maderoterapie obličeje</h3>
@@ -649,7 +662,8 @@
       </div>
 
       <div class="sluzba-card" data-cat="headspa" data-r>
-        <div class="sluzba-img"><img src="photos/photo_3.jpg" alt="Head Spa" loading="lazy" /></div>
+        <div class="sluzba-icon">💆</div>
+        <span class="sluzba-icon-sub">novinka</span>
         <div class="sluzba-body">
           <span class="sluzba-tag">Head Spa · NOVINKA</span>
           <h3>Head Spa</h3>
@@ -662,7 +676,7 @@
       </div>
 
       <div class="sluzba-card" data-cat="madero" data-r>
-        <div class="sluzba-img"><img src="photos/photo_4.jpg" alt="Anticelulitidní program" loading="lazy" /></div>
+        <div class="sluzba-icon">🌊</div>
         <div class="sluzba-body">
           <span class="sluzba-tag">Maderoterapie</span>
           <h3>Anticelulitidní program</h3>
@@ -675,7 +689,7 @@
       </div>
 
       <div class="sluzba-card" data-cat="ostatni" data-r>
-        <div class="sluzba-img"><img src="photos/photo_5.jpg" alt="Lymfatická drenáž" loading="lazy" /></div>
+        <div class="sluzba-icon">💧</div>
         <div class="sluzba-body">
           <span class="sluzba-tag">Doplňkové</span>
           <h3>Lymfatická drenáž</h3>
@@ -688,7 +702,7 @@
       </div>
 
       <div class="sluzba-card" data-cat="ostatni" data-r>
-        <div class="sluzba-img"><img src="photos/photo_1.jpg" alt="Dárkový poukaz Madero Kralupy" loading="lazy" /></div>
+        <div class="sluzba-icon">🎁</div>
         <div class="sluzba-body">
           <span class="sluzba-tag">Dárek</span>
           <h3>Dárkový poukaz</h3>
@@ -777,16 +791,14 @@
   <div class="container">
     <div class="cta-grid">
       <div class="cta-text" data-r>
-        <div class="section-label">Rezervace</div>
+        <div class="cta-decor">✦</div>
+        <div class="section-label" style="justify-content:center;">Rezervace</div>
         <h2>Dopřejte si chvíli jen pro sebe</h2>
         <p>Rezervujte si termín na maderoterapii, Head Spa nebo doplňkové procedury – telefonicky nebo e‑mailem. Těšíme se na Vás v Kralupech.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;">
           <a href="tel:+420 722 269 150" class="btn btn--fill">📞 Zavolat nyní</a>
           <a href="#kontakt" class="btn btn--outline">Kde nás najdete</a>
         </div>
-      </div>
-      <div class="cta-img" data-r>
-        <img src="photos/photo_1.jpg" alt="Rezervace – Madero Kralupy" loading="lazy" />
       </div>
     </div>
   </div>
