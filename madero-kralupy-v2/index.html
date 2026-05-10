@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Madero Kralupy — Maderoterapie & Head Spa | Studio Karolíny Žohové</title>
+<meta name="description" content="Madero Kralupy nabízí maderoterapii těla i obličeje, lymfatickou drenáž a nově japonský rituál Head Spa. Studio Karolíny Žohové od roku 2019, Palackého 119/15, Kralupy nad Vltavou." />
+<meta name="keywords" content="madero kralupy, maderoterapie kralupy, head spa kralupy, lymfatická drenáž kralupy, masáže kralupy nad vltavou, karolína žohová" />
+<meta name="theme-color" content="#F4EFE7" />
+<meta property="og:title" content="Madero Kralupy — Maderoterapie & Head Spa" />
+<meta property="og:description" content="Tělo, tvář a klid v jednom rituálu. Studio Karolíny Žohové, Kralupy nad Vltavou." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=DM+Sans:opsz,wght@9..40,300..700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   MADERO KRALUPY — V2 / EDITORIAL WELLNESS
+   Aesthetic: warm cream editorial magazine, oversized Fraunces,
+   asymmetric grids, hairline dividers, subtle grain texture.
+   ============================================================ */
+
+/* ─── tokens ──────────────────────────────────────────────── */
+:root {
+  --cream:        #F4EFE7;
+  --cream-2:      #ECE3D2;
+  --cream-3:      #E1D4BD;
+  --ink:          #1F1810;
+  --ink-soft:     #3F362C;
+  --ink-muted:    #6B5D4F;
+  --muted:        #8B7B6A;
+  --terracotta:   #A84A2A;
+  --terracotta-2: #C4634A;
+  --rose:         #C99B85;
+  --gold:         #B8893E;
+  --line:         #C9BBA6;
+  --line-soft:    #DDD0BD;
+  --paper-shadow: 0 1px 0 rgba(31,24,16,.06);
+  --hover-line:   #1F1810;
+
+  --display:      'Fraunces', 'Times New Roman', serif;
+  --body:         'DM Sans', system-ui, sans-serif;
+  --mono:         'DM Mono', ui-monospace, 'Courier New', monospace;
+
+  --space-xs: .5rem;
+  --space-s:  1rem;
+  --space-m:  2rem;
+  --space-l:  4rem;
+  --space-xl: 6rem;
+  --space-2xl: 9rem;
+
+  --max:        1280px;
+  --max-narrow: 880px;
+  --max-text:   620px;
+}
+
+/* ─── reset ───────────────────────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--body);
+  font-feature-settings: "ss01" on, "ss02" on, "tnum" off;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 400;
+  font-size: 16px;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, svg, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+ul { list-style: none; }
+::selection { background: var(--terracotta); color: var(--cream); }
+
+/* ─── grain overlay ───────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: .9;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+/* ─── typography ──────────────────────────────────────────── */
+.display {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  font-weight: 350;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+  color: var(--ink);
+}
+.display em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  color: var(--terracotta);
+}
+.serif {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-weight: 400;
+}
+
+.label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.label-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.label-line::before {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: var(--ink-muted);
+}
+.no {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--terracotta);
+  letter-spacing: 0.1em;
+}
+
+p { font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+.lead {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 70;
+  font-weight: 350;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.4;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+/* ─── containers ──────────────────────────────────────────── */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+.wrap-narrow { max-width: var(--max-narrow); margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+.wrap-text { max-width: var(--max-text); }
+
+/* ─── hairline divider ────────────────────────────────────── */
+.hairline {
+  height: 1px;
+  background: var(--line);
+  margin: 0;
+  border: 0;
+}
+.hairline-ink { background: var(--ink); height: 1px; }
+
+/* ─── nav ─────────────────────────────────────────────────── */
+nav.bar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(244,239,231,.85);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid transparent;
+  transition: border-color .35s ease, background-color .35s ease;
+}
+nav.bar.scrolled { border-bottom-color: var(--line); }
+.bar-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 76px;
+  gap: 40px;
+}
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.brand-mark {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.brand-mark em { font-style: italic; color: var(--terracotta); font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; }
+.brand-est {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding-left: 8px;
+  border-left: 1px solid var(--line);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+.menu a {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 10px 0;
+  position: relative;
+  transition: color .25s ease;
+}
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 0; right: 0;
+  height: 1px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform .35s cubic-bezier(.7,0,.3,1);
+}
+.menu a:hover::after { transform: scaleX(1); transform-origin: left center; }
+.menu a:hover { color: var(--ink); }
+
+.bar-cta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+.cta-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--ink);
+  padding: 12px 22px;
+  border-radius: 999px;
+  transition: background-color .25s ease, transform .25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.cta-link::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--terracotta);
+  border-radius: 50%;
+  display: inline-block;
+}
+.cta-link:hover { background: var(--terracotta); transform: translateY(-1px); }
+
+.menu-toggle {
+  display: none;
+  width: 32px; height: 32px;
+  position: relative;
+}
+.menu-toggle span {
+  position: absolute; left: 4px; right: 4px;
+  height: 1px;
+  background: var(--ink);
+  transition: transform .3s ease, opacity .3s ease;
+}
+.menu-toggle span:nth-child(1) { top: 11px; }
+.menu-toggle span:nth-child(2) { top: 17px; }
+.menu-toggle span:nth-child(3) { top: 23px; }
+.menu-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  inset: 76px 0 0 0;
+  background: var(--cream);
+  z-index: 49;
+  padding: 60px 32px;
+  transform: translateY(-100%);
+  transition: transform .5s cubic-bezier(.7,0,.3,1);
+  display: none;
+}
+.mobile-menu.open { transform: translateY(0); }
+.mobile-menu a {
+  display: block;
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-size: 36px;
+  font-weight: 350;
+  letter-spacing: -0.02em;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.mobile-menu a em { color: var(--terracotta); font-style: italic; }
+
+/* ─── sections common ────────────────────────────────────── */
+section { padding: var(--space-2xl) 0; position: relative; z-index: 2; }
+section + section { padding-top: 0; }
+
+/* ─── HERO ────────────────────────────────────────────────── */
+.hero {
+  padding: 90px 0 var(--space-2xl);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 48px;
+}
+.hero-meta-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-tag-pulse {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  position: relative;
+}
+.hero-tag-pulse::after {
+  content: '';
+  position: absolute; inset: -6px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  opacity: 0;
+  animation: pulse 2.6s ease-out infinite;
+}
+@keyframes pulse {
+  0%   { transform: scale(1); opacity: .35; }
+  70%  { transform: scale(2.4); opacity: 0; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.hero-meta-right {
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+.hero-meta-right strong {
+  color: var(--ink);
+  font-weight: 500;
+  display: block;
+}
+
+.hero-title {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 1;
+  font-weight: 320;
+  font-size: clamp(54px, 11vw, 168px);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  max-width: 12ch;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--terracotta);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  display: inline-block;
+}
+.hero-title-row {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-bottom {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.hero-quote {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  font-weight: 380;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1.35;
+  color: var(--ink-soft);
+  max-width: 38ch;
+  letter-spacing: -0.005em;
+}
+.hero-quote em { color: var(--terracotta); font-style: italic; }
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+.hero-actions-line {
+  display: flex; gap: 20px; flex-wrap: wrap;
+  align-items: center;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 30px;
+  background: var(--ink);
+  color: var(--cream);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: background-color .25s ease, transform .25s ease;
+}
+.btn-primary svg { width: 14px; height: 14px; transition: transform .35s ease; }
+.btn-primary:hover { background: var(--terracotta); transform: translateY(-2px); }
+.btn-primary:hover svg { transform: translateX(4px); }
+.btn-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
+  transition: color .25s ease, border-color .25s ease;
+}
+.btn-link:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+.hero-rating {
+  display: flex; gap: 14px; align-items: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.hero-rating .stars {
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: 16px;
+  letter-spacing: 0;
+}
+.hero-rating strong { color: var(--ink); font-weight: 500; }
+
+/* hero image strip */
+.hero-strip {
+  margin-top: 90px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: 16px;
+  height: 380px;
+}
+.hero-strip-img {
+  overflow: hidden;
+  position: relative;
+  background: var(--cream-2);
+}
+.hero-strip-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 1.6s cubic-bezier(.2,.8,.3,1);
+}
+.hero-strip-img:hover img { transform: scale(1.12); }
+.hero-strip-img.tall { grid-row: 1 / 2; }
+.hero-strip-caption {
+  position: absolute;
+  bottom: 14px; left: 14px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: rgba(31,24,16,.55);
+  padding: 6px 10px;
+  backdrop-filter: blur(8px);
+}
+
+/* ─── EDITORIAL INTRO ─────────────────────────────────────── */
+.editorial-intro {
+  padding: var(--space-xl) 0 var(--space-2xl);
+}
+.editorial-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 80px;
+  align-items: start;
+}
+.section-meta {
+  position: sticky; top: 100px;
+  display: flex; flex-direction: column; gap: 28px;
+}
+.section-no {
+  font-family: var(--mono);
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--terracotta);
+  letter-spacing: -0.02em;
+  font-feature-settings: "ss01" on;
+}
+.section-title {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 1;
+  font-weight: 320;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 10ch;
+}
+.section-title em { color: var(--terracotta); font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1; }
+.section-meta-label {
+  display: flex; gap: 12px;
+}
+
+.intro-content > p { margin-bottom: 24px; }
+
+.dropcap::first-letter {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 320;
+  font-size: 5.5em;
+  line-height: 0.85;
+  float: left;
+  margin: 0.05em 0.12em -0.05em 0;
+  color: var(--terracotta);
+  font-style: italic;
+}
+.intro-content {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  font-weight: 380;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 56ch;
+}
+.intro-content em { color: var(--terracotta); }
+.intro-bullets {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  font-family: var(--body);
+  font-size: 14px;
+}
+.intro-bullets > div {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.intro-bullets-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--terracotta);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+.intro-bullets h4 {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 8px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.intro-bullets p { font-size: 13.5px; line-height: 1.55; color: var(--ink-muted); }
+
+/* ─── ABOUT ───────────────────────────────────────────────── */
+.about {
+  padding: var(--space-2xl) 0;
+  background: var(--cream-2);
+  position: relative;
+  z-index: 2;
+}
+.about::before, .about::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--line);
+}
+.about::before { top: 0; }
+.about::after { bottom: 0; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: end;
+}
+.about-img-wrap {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: var(--cream-3);
+  overflow: hidden;
+}
+.about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.about-tag {
+  position: absolute;
+  bottom: 24px; left: 24px;
+  background: var(--cream);
+  padding: 10px 14px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: flex; align-items: center; gap: 8px;
+}
+.about-tag::before {
+  content: '';
+  width: 4px; height: 4px;
+  background: var(--terracotta);
+  border-radius: 50%;
+}
+
+.about-content { display: flex; flex-direction: column; gap: 36px; }
+.about-eyebrow { display: flex; gap: 14px; align-items: center; }
+.about-name {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 1;
+  font-weight: 320;
+  font-size: clamp(40px, 5.5vw, 76px);
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+.about-name em { color: var(--terracotta); font-style: italic; }
+.about-text {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  font-weight: 400;
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 50ch;
+}
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+.about-stat-num {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  font-weight: 320;
+  font-size: clamp(40px, 4vw, 54px);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 0.95;
+}
+.about-stat-num small {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--terracotta);
+  letter-spacing: 0;
+  margin-left: 4px;
+  vertical-align: top;
+  position: relative;
+  top: 4px;
+}
+.about-stat-label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 8px;
+}
+
+/* ─── SERVICES ────────────────────────────────────────────── */
+.services { padding: var(--space-2xl) 0; }
+.services-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+.services-header-left {
+  display: flex; flex-direction: column; gap: 28px;
+}
+.services-intro {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  font-weight: 380;
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.55;
+  color: var(--ink-muted);
+  max-width: 36ch;
+  text-align: right;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--ink);
+}
+.service-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 220px 200px;
+  align-items: start;
+  gap: 32px;
+  padding: 38px 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  cursor: pointer;
+  transition: background-color .35s ease, padding-left .35s cubic-bezier(.7,0,.3,1);
+}
+.service-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 0;
+  background: var(--terracotta);
+  transition: width .45s cubic-bezier(.7,0,.3,1);
+}
+.service-row:hover { padding-left: 24px; }
+.service-row:hover::before { width: 4px; }
+.service-row.is-featured {
+  background: linear-gradient(90deg, rgba(168,74,42,.04) 0%, transparent 80%);
+}
+.service-row.is-featured::before {
+  width: 4px;
+  background: var(--terracotta);
+}
+
+.service-no { color: var(--terracotta); }
+.service-title-cell {}
+.service-title {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+  font-weight: 380;
+  font-size: clamp(28px, 3.2vw, 38px);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.service-title em { color: var(--terracotta); font-style: italic; }
+.service-tagline {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 8px;
+}
+.service-tagline.new {
+  color: var(--cream);
+  background: var(--terracotta);
+  padding: 4px 10px;
+  display: inline-block;
+}
+
+.service-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+
+.service-meta {
+  text-align: right;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.service-price {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--ink);
+  font-style: italic;
+}
+.service-duration {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+/* ─── HEAD SPA FEATURE ────────────────────────────────────── */
+.headspa-feature {
+  background: var(--ink);
+  color: var(--cream);
+  padding: var(--space-2xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+.headspa-feature::before {
+  content: 'HEAD SPA';
+  position: absolute;
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-style: italic;
+  font-weight: 250;
+  font-size: clamp(180px, 30vw, 460px);
+  bottom: -8%; left: -3%;
+  letter-spacing: -0.05em;
+  color: rgba(244,239,231,.05);
+  pointer-events: none;
+  line-height: 0.85;
+  z-index: 0;
+}
+.headspa-feature .wrap { position: relative; z-index: 2; }
+.headspa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.headspa-meta {
+  display: flex; flex-direction: column; gap: 28px;
+}
+.headspa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta-2);
+  align-self: flex-start;
+  padding: 6px 14px;
+  background: rgba(196,99,74,.12);
+  border: 1px solid rgba(196,99,74,.3);
+  border-radius: 99px;
+}
+.headspa-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--terracotta-2);
+  animation: pulse 2.6s ease-out infinite;
+}
+
+.headspa-title {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 1;
+  font-weight: 280;
+  font-size: clamp(48px, 7vw, 110px);
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+  color: var(--cream);
+}
+.headspa-title em { color: var(--rose); font-style: italic; }
+
+.headspa-text {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  font-weight: 380;
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.55;
+  color: rgba(244,239,231,.78);
+  max-width: 44ch;
+}
+
+.headspa-list {
+  list-style: none;
+  display: flex; flex-direction: column;
+  margin-top: 12px;
+  border-top: 1px solid rgba(244,239,231,.15);
+}
+.headspa-list li {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(244,239,231,.15);
+  align-items: baseline;
+}
+.headspa-list-no {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--terracotta-2);
+}
+.headspa-list-text {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  font-weight: 380;
+  font-size: 18px;
+  color: var(--cream);
+  line-height: 1.4;
+}
+
+.headspa-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 32px;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: all .25s ease;
+  align-self: flex-start;
+  margin-top: 12px;
+}
+.headspa-cta:hover { background: var(--rose); color: var(--cream); transform: translateY(-2px); }
+.headspa-cta svg { width: 14px; height: 14px; transition: transform .35s ease; }
+.headspa-cta:hover svg { transform: translateX(4px); }
+
+.headspa-visual {
+  aspect-ratio: 4/5;
+  position: relative;
+  overflow: hidden;
+}
+.headspa-visual img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(.85) contrast(1.05);
+}
+.headspa-visual::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, transparent 40%, rgba(31,24,16,.55) 100%);
+}
+.headspa-visual-meta {
+  position: absolute;
+  left: 24px; right: 24px; bottom: 24px;
+  z-index: 2;
+}
+.headspa-visual-meta .label {
+  color: var(--rose);
+}
+.headspa-visual-meta h4 {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 70;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--cream);
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ─── REVIEWS ─────────────────────────────────────────────── */
+.reviews { padding: var(--space-2xl) 0; }
+.reviews-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 40px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+.reviews-rating-large {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  font-weight: 320;
+  font-size: clamp(56px, 7vw, 96px);
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+.reviews-rating-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 8px;
+}
+.reviews-rating-meta strong { color: var(--gold); }
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+.review-card {
+  border-top: 1px solid var(--line);
+  padding: 56px 48px;
+  display: flex; flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+.review-card:nth-child(odd) { border-right: 1px solid var(--line); }
+.review-card:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+.review-card .quote-mark {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-style: italic;
+  font-weight: 280;
+  font-size: 96px;
+  color: var(--terracotta);
+  line-height: 0.6;
+  height: 32px;
+  letter-spacing: -0.05em;
+}
+.review-text {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  font-weight: 380;
+  font-size: clamp(20px, 1.7vw, 24px);
+  line-height: 1.45;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.review-meta {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-soft);
+}
+.review-author {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink);
+}
+.review-author small {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+.review-stars {
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+/* ─── CONTACT ─────────────────────────────────────────────── */
+.contact {
+  padding: var(--space-2xl) 0;
+  background: var(--cream-2);
+  position: relative;
+}
+.contact::before, .contact::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--line);
+}
+.contact::before { top: 0; }
+.contact::after { bottom: 0; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-content { display: flex; flex-direction: column; gap: 48px; }
+.contact-title {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 1;
+  font-weight: 320;
+  font-size: clamp(40px, 5.5vw, 76px);
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+}
+.contact-title em { color: var(--terracotta); font-style: italic; }
+
+.contact-info {
+  display: flex; flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.contact-info-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+.contact-info-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+.contact-info-value {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24, "SOFT" 50;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.contact-info-value a:hover { color: var(--terracotta); }
+.contact-info-value small {
+  display: block;
+  font-family: var(--body);
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+
+.contact-actions { display: flex; gap: 20px; flex-wrap: wrap; }
+
+.contact-map {
+  aspect-ratio: 1/1.1;
+  background: var(--cream-3);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  position: relative;
+}
+.contact-map iframe { width: 100%; height: 100%; border: 0; filter: saturate(.7) contrast(1.05); }
+.contact-map-tag {
+  position: absolute;
+  top: 20px; left: 20px;
+  background: var(--cream);
+  padding: 8px 14px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+footer {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 80px 0 32px;
+  position: relative;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(244,239,231,.12);
+}
+.footer-brand-mark {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 320;
+  font-size: 48px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--cream);
+  margin-bottom: 18px;
+}
+.footer-brand-mark em { color: var(--rose); font-style: italic; }
+.footer-tagline {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24;
+  font-weight: 400;
+  font-size: 17px;
+  color: rgba(244,239,231,.7);
+  line-height: 1.5;
+  max-width: 36ch;
+}
+.footer-col h5 {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 18px;
+}
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+.footer-col ul a {
+  font-family: var(--display);
+  font-variation-settings: "opsz" 24;
+  font-weight: 400;
+  font-size: 15px;
+  color: rgba(244,239,231,.85);
+  transition: color .25s ease;
+}
+.footer-col ul a:hover { color: var(--rose); }
+
+.footer-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244,239,231,.5);
+}
+.footer-foot a:hover { color: var(--rose); }
+
+/* ─── reveal animations ───────────────────────────────────── */
+[data-r] { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.8,.3,1), transform .9s cubic-bezier(.2,.8,.3,1); }
+[data-r].in { opacity: 1; transform: none; }
+[data-r-delay="1"] { transition-delay: .1s; }
+[data-r-delay="2"] { transition-delay: .2s; }
+[data-r-delay="3"] { transition-delay: .3s; }
+[data-r-delay="4"] { transition-delay: .4s; }
+
+/* hero load orchestration */
+.hero [data-load] { opacity: 0; transform: translateY(20px); animation: heroIn 1s cubic-bezier(.2,.8,.3,1) forwards; }
+.hero [data-load="1"] { animation-delay: .15s; }
+.hero [data-load="2"] { animation-delay: .35s; }
+.hero [data-load="3"] { animation-delay: .55s; }
+.hero [data-load="4"] { animation-delay: .75s; }
+.hero [data-load="5"] { animation-delay: .95s; }
+@keyframes heroIn {
+  to { opacity: 1; transform: none; }
+}
+
+/* ─── responsive ──────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .editorial-grid { grid-template-columns: 1fr; gap: 56px; }
+  .section-meta { position: relative; top: 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .headspa-grid { grid-template-columns: 1fr; gap: 56px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .service-row { grid-template-columns: 60px 1.4fr 1fr; gap: 24px; }
+  .service-row > .service-meta { grid-column: 2 / 4; text-align: left; flex-direction: row; gap: 24px; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .review-card:nth-child(odd) { border-right: none; }
+  .review-card:nth-last-child(-n+2) { border-bottom: none; }
+  .review-card:last-child { border-bottom: 1px solid var(--line); }
+  .review-card { padding: 40px 0; }
+}
+@media (max-width: 760px) {
+  :root { --space-2xl: 5rem; --space-xl: 3.5rem; }
+  .wrap { padding: 0 22px; }
+  .menu, .bar-cta > .cta-link { display: none; }
+  .menu-toggle { display: block; }
+  .mobile-menu { display: block; }
+  .bar-cta { justify-content: flex-end; }
+  .hero-meta-top { grid-template-columns: 1fr; gap: 24px; }
+  .hero-meta-right { text-align: left; }
+  .hero-bottom { grid-template-columns: 1fr; gap: 40px; }
+  .hero-strip { grid-template-columns: 1fr 1fr; height: auto; }
+  .hero-strip-img { aspect-ratio: 4/5; }
+  .hero-strip-img.tall { grid-column: 1 / 3; aspect-ratio: 16/10; }
+  .intro-bullets { grid-template-columns: 1fr; gap: 24px; }
+  .services-header { grid-template-columns: 1fr; gap: 32px; }
+  .services-intro { text-align: left; }
+  .service-row { grid-template-columns: 50px 1fr; gap: 16px; padding: 28px 0; }
+  .service-row .service-meta { grid-column: 1 / 3; flex-direction: row; gap: 16px; padding-top: 8px; }
+  .service-title { font-size: 28px; }
+  .reviews-header { grid-template-columns: 1fr; gap: 24px; }
+  .review-card { padding: 36px 0; }
+  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-stats { grid-template-columns: repeat(2, 1fr); }
+  .contact-info-row { grid-template-columns: 90px 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV ═══════════════════════════════════════════════ -->
+<nav class="bar" id="nav">
+  <div class="wrap bar-row">
+    <a href="#hero" class="brand">
+      <span class="brand-mark">Madero <em>Kralupy</em></span>
+      <span class="brand-est">Est. 2019</span>
+    </a>
+    <div class="menu">
+      <a href="#about">O&nbsp;studiu</a>
+      <a href="#services">Služby</a>
+      <a href="#headspa">Head Spa</a>
+      <a href="#reviews">Recenze</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+    <div class="bar-cta">
+      <a href="tel:+420722269150" class="cta-link">Objednat se</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">O&nbsp;<em>studiu</em></a>
+  <a href="#services">Naše&nbsp;<em>služby</em></a>
+  <a href="#headspa"><em>Head Spa</em></a>
+  <a href="#reviews">Co&nbsp;říkají</a>
+  <a href="#contact"><em>Kontakt</em></a>
+</div>
+
+<!-- ════ HERO ══════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-meta-top">
+      <div data-load="1">
+        <span class="hero-tag">
+          <span class="hero-tag-pulse"></span>
+          <span class="label">Nově v Kralupech &middot; Head Spa</span>
+        </span>
+      </div>
+      <div class="hero-meta-right" data-load="2">
+        Vol. 06 / 2026<br>
+        <strong>Editorial &middot; Maderoterapie</strong>
+      </div>
+    </div>
+
+    <h1 class="hero-title" data-load="3">
+      <span class="hero-title-row">Tělo, tvář</span>
+      <span class="hero-title-row">a klid</span>
+      <span class="hero-title-row"><em>v jediném</em> rituálu.</span>
+    </h1>
+
+    <div class="hero-bottom">
+      <p class="hero-quote" data-load="4">
+        Studio Karolíny Žohové od&nbsp;roku 2019. Maderoterapie, lymfatická drenáž a nově japonský rituál <em>Head&nbsp;Spa</em> — péče, která nepospíchá.
+      </p>
+      <div class="hero-actions" data-load="5">
+        <div class="hero-actions-line">
+          <a href="tel:+420722269150" class="btn-primary">
+            <span>Rezervovat termín</span>
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+          </a>
+          <a href="#services" class="btn-link">Procedury &amp;&nbsp;ceník</a>
+        </div>
+        <div class="hero-rating">
+          <span class="stars">★★★★★</span>
+          <strong>4,6&nbsp;/&nbsp;5</strong>
+          <span>171&nbsp;recenzí · Google</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-strip" data-r data-r-delay="1">
+      <div class="hero-strip-img tall">
+        <img src="photos/photo_1.jpg" alt="Maderoterapie — Madero Kralupy" loading="lazy">
+        <span class="hero-strip-caption">No.01 &middot; Maderoterapie</span>
+      </div>
+      <div class="hero-strip-img">
+        <img src="photos/photo_2.jpg" alt="Studio interiér" loading="lazy">
+        <span class="hero-strip-caption">No.02 &middot; Studio</span>
+      </div>
+      <div class="hero-strip-img">
+        <img src="photos/photo_3.jpg" alt="Head Spa rituál" loading="lazy">
+        <span class="hero-strip-caption">No.03 &middot; Head&nbsp;Spa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ EDITORIAL INTRO ═══════════════════════════════════ -->
+<section class="editorial-intro">
+  <div class="wrap">
+    <div class="editorial-grid">
+      <aside class="section-meta" data-r>
+        <span class="section-no">No.&nbsp;01</span>
+        <h2 class="section-title">Filosofie<br><em>studia</em></h2>
+        <span class="label label-line">Following the body's wisdom</span>
+      </aside>
+      <div class="intro-content">
+        <p class="dropcap" data-r data-r-delay="1">
+          Studio Madero Kralupy vzniklo v roce 2019 s jednoduchou myšlenkou — že péče o tělo a&nbsp;mysl si zaslouží <em>čas</em>, klid a&nbsp;poctivé řemeslo. Karolína věří, že nejlepší výsledky přicházejí tam, kde se nepospíchá: kde se procedura odvíjí jako rituál, ne jako odbavení.
+        </p>
+        <p data-r data-r-delay="2">
+          Klientky se sem vracejí pro <em>maderoterapii</em> — tradiční jihoamerickou techniku tvarování postavy a&nbsp;obličeje pomocí ručně opracovaných dřevěných nástrojů, která zpevňuje pokožku, podporuje lymfu a&nbsp;přináší viditelné výsledky bez bolesti a&nbsp;injekcí.
+        </p>
+        <p data-r data-r-delay="3">
+          K&nbsp;tomu nově přidáváme <em>Head Spa</em>, japonský rituál péče o&nbsp;pokožku hlavy a&nbsp;vlasy, a&nbsp;jemnou <em>lymfatickou drenáž</em> pro detoxikaci a&nbsp;úlevu od&nbsp;otoků.
+        </p>
+
+        <div class="intro-bullets">
+          <div data-r data-r-delay="1">
+            <span class="intro-bullets-num">No. 01 / Tradice</span>
+            <h4>Maderoterapie</h4>
+            <p>Jihoamerická technika, dřevěné nástroje, viditelné výsledky.</p>
+          </div>
+          <div data-r data-r-delay="2">
+            <span class="intro-bullets-num">No. 02 / Detox</span>
+            <h4>Lymfatická drenáž</h4>
+            <p>Jemné techniky pro odplavení otoků a&nbsp;regeneraci.</p>
+          </div>
+          <div data-r data-r-delay="3">
+            <span class="intro-bullets-num">No. 03 / Klid</span>
+            <h4>Head Spa</h4>
+            <p>Japonský rituál pro hlavu, vlasy a&nbsp;hluboké uvolnění.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ABOUT KAROLÍNA ════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img-wrap" data-r>
+        <img src="photos/photo_2.jpg" alt="Karolína Žohová — Madero Kralupy" loading="lazy">
+        <span class="about-tag">Karolína Žohová · 6&nbsp;let zkušeností</span>
+      </div>
+
+      <div class="about-content" data-r data-r-delay="1">
+        <span class="about-eyebrow label label-line">No.&nbsp;02 &middot; Karolína</span>
+        <h2 class="about-name">Ruka, která&nbsp;<em>poslouchá</em>&nbsp;tělo.</h2>
+        <p class="about-text">
+          Madero Kralupy vede Karolína Žohová od&nbsp;roku 2019 — jako sólová terapeutka, která ke&nbsp;každé klientce přistupuje individuálně. Žádná ordinace na&nbsp;běžícím pásu: pouze osobní konzultace, klid a&nbsp;procedura sestavená přesně pro vás.
+        </p>
+        <p class="about-text">
+          Po šesti letech v&nbsp;oboru se k&nbsp;maderoterapii přidává <em style="color:var(--terracotta);font-style:italic;">Head Spa</em> — důkaz, že studio se nezastavuje a&nbsp;hledá nové cesty, jak svým klientkám dopřát víc.
+        </p>
+
+        <div class="about-stats">
+          <div>
+            <div class="about-stat-num">2019<small>&nbsp;</small></div>
+            <div class="about-stat-label">Od&nbsp;založení</div>
+          </div>
+          <div>
+            <div class="about-stat-num">4,6<small>★</small></div>
+            <div class="about-stat-label">Google · 171&nbsp;recenzí</div>
+          </div>
+          <div>
+            <div class="about-stat-num">2<small>&nbsp;</small></div>
+            <div class="about-stat-label">Specializace<br>Madero · Head&nbsp;Spa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SERVICES ══════════════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-header">
+      <div class="services-header-left" data-r>
+        <span class="label label-line">No.&nbsp;03 &middot; Procedury</span>
+        <h2 class="section-title" style="max-width:18ch;">Šest&nbsp;<em>rituálů</em>,<br>jedno&nbsp;studio.</h2>
+      </div>
+      <p class="services-intro" data-r data-r-delay="1">
+        Procedury vedeme na&nbsp;základě individuální konzultace —<br>cena se odvíjí od&nbsp;rozsahu a&nbsp;délky terapie.
+      </p>
+    </div>
+
+    <div class="services-list">
+
+      <div class="service-row" data-r>
+        <span class="no service-no">No.&nbsp;01</span>
+        <div class="service-title-cell">
+          <h3 class="service-title">Maderoterapie&nbsp;<em>těla</em></h3>
+          <span class="service-tagline">Signature procedure</span>
+        </div>
+        <p class="service-desc">Tvarování postavy, redukce celulitidy a&nbsp;podpora lymfatického oběhu pomocí ručně opracovaných dřevěných nástrojů. Vhodné pro problémové partie i&nbsp;celkovou regeneraci.</p>
+        <div class="service-meta">
+          <span class="service-price">cena dle&nbsp;konzultace</span>
+          <span class="service-duration">60–90&nbsp;min</span>
+        </div>
+      </div>
+
+      <div class="service-row" data-r>
+        <span class="no service-no">No.&nbsp;02</span>
+        <div class="service-title-cell">
+          <h3 class="service-title">Maderoterapie&nbsp;<em>obličeje</em></h3>
+          <span class="service-tagline">Lifting bez injekcí</span>
+        </div>
+        <p class="service-desc">Dřevěné nástroje stimulují tvorbu kolagenu, zpevňují kontury a&nbsp;rozjasňují pleť. Po&nbsp;proceduře je pokožka viditelně svěží a&nbsp;pružnější.</p>
+        <div class="service-meta">
+          <span class="service-price">cena dle&nbsp;konzultace</span>
+          <span class="service-duration">45–60&nbsp;min</span>
+        </div>
+      </div>
+
+      <div class="service-row is-featured" data-r>
+        <span class="no service-no">No.&nbsp;03</span>
+        <div class="service-title-cell">
+          <h3 class="service-title"><em>Head Spa</em></h3>
+          <span class="service-tagline new">Novinka</span>
+        </div>
+        <p class="service-desc">Japonský rituál péče o&nbsp;pokožku hlavy a&nbsp;vlasy. Hloubkové čištění, masáž šíje a&nbsp;hlavy, aromaterapie. Pomáhá proti stresu, podporuje růst vlasů a&nbsp;zanechá pocit hluboké úlevy.</p>
+        <div class="service-meta">
+          <span class="service-price">cena dle&nbsp;konzultace</span>
+          <span class="service-duration">60&nbsp;min</span>
+        </div>
+      </div>
+
+      <div class="service-row" data-r>
+        <span class="no service-no">No.&nbsp;04</span>
+        <div class="service-title-cell">
+          <h3 class="service-title">Lymfatická&nbsp;<em>drenáž</em></h3>
+          <span class="service-tagline">Detox &amp; úleva od&nbsp;otoků</span>
+        </div>
+        <p class="service-desc">Jemná procedura podporující odtok lymfy, detoxikaci a&nbsp;redukci otoků. Skvělé doplnění k&nbsp;maderoterapii nebo samostatně po&nbsp;dlouhém dni na&nbsp;nohou.</p>
+        <div class="service-meta">
+          <span class="service-price">cena dle&nbsp;konzultace</span>
+          <span class="service-duration">45–60&nbsp;min</span>
+        </div>
+      </div>
+
+      <div class="service-row" data-r>
+        <span class="no service-no">No.&nbsp;05</span>
+        <div class="service-title-cell">
+          <h3 class="service-title">Anticelulitidní&nbsp;<em>program</em></h3>
+          <span class="service-tagline">Série · dlouhodobý efekt</span>
+        </div>
+        <p class="service-desc">Kombinace maderoterapie s&nbsp;dalšími technikami zaměřená na&nbsp;redukci celulitidy. Doporučujeme jako sérii pro nejlepší dlouhodobý efekt.</p>
+        <div class="service-meta">
+          <span class="service-price">cena dle&nbsp;konzultace</span>
+          <span class="service-duration">série · 60&nbsp;min</span>
+        </div>
+      </div>
+
+      <div class="service-row" data-r>
+        <span class="no service-no">No.&nbsp;06</span>
+        <div class="service-title-cell">
+          <h3 class="service-title">Dárkový&nbsp;<em>poukaz</em></h3>
+          <span class="service-tagline">Originální dárek</span>
+        </div>
+        <p class="service-desc">Originální dárek pro blízké — poukaz na&nbsp;libovolnou proceduru nebo finanční hodnotu. Předáme osobně nebo zašleme elektronicky.</p>
+        <div class="service-meta">
+          <span class="service-price">dle&nbsp;Vaší volby</span>
+          <span class="service-duration">—</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════ HEAD SPA FEATURE ══════════════════════════════════ -->
+<section class="headspa-feature" id="headspa">
+  <div class="wrap">
+    <div class="headspa-grid">
+      <div class="headspa-meta" data-r>
+        <span class="headspa-badge">Novinka pro Kralupy</span>
+        <h2 class="headspa-title">Hlava jako<br><em>chrám</em>&nbsp;klidu.</h2>
+        <p class="headspa-text">
+          Head Spa je japonský rituál hluboké péče o&nbsp;pokožku hlavy a&nbsp;vlasy. V&nbsp;Madero Kralupy ho nabízíme jako 60minutovou cestu, která propojuje techniku, vůni a&nbsp;ticho.
+        </p>
+        <ul class="headspa-list">
+          <li>
+            <span class="headspa-list-no">01</span>
+            <span class="headspa-list-text">Hloubkové čištění pokožky hlavy a&nbsp;vlasů</span>
+          </li>
+          <li>
+            <span class="headspa-list-no">02</span>
+            <span class="headspa-list-text">Masáž šíje, ramen a&nbsp;celé hlavy</span>
+          </li>
+          <li>
+            <span class="headspa-list-no">03</span>
+            <span class="headspa-list-text">Aromaterapie a&nbsp;tepelný zábal</span>
+          </li>
+          <li>
+            <span class="headspa-list-no">04</span>
+            <span class="headspa-list-text">Hluboká úleva, klid a&nbsp;zlepšení kvality vlasů</span>
+          </li>
+        </ul>
+        <a href="tel:+420722269150" class="headspa-cta">
+          <span>Rezervovat Head&nbsp;Spa</span>
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+        </a>
+      </div>
+
+      <div class="headspa-visual" data-r data-r-delay="1">
+        <img src="photos/photo_3.jpg" alt="Head Spa — japonský rituál" loading="lazy">
+        <div class="headspa-visual-meta">
+          <span class="label">No.&nbsp;03 &middot; Featured</span>
+          <h4>„Klid, který se cítí jako&nbsp;reset."</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ REVIEWS ═══════════════════════════════════════════ -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="reviews-header">
+      <div data-r>
+        <div class="reviews-rating-large">4,6<span style="color:var(--gold);">&nbsp;★</span></div>
+        <div class="reviews-rating-meta">Průměr&nbsp;ze 171&nbsp;recenzí · <strong>Google</strong></div>
+      </div>
+      <div data-r data-r-delay="1">
+        <span class="label label-line">No.&nbsp;04 &middot; Recenze</span>
+        <h2 class="section-title" style="margin-top:16px;">Co&nbsp;<em>klientky</em><br>říkají.</h2>
+      </div>
+      <a href="#contact" class="btn-link" data-r data-r-delay="2">Napište nám</a>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card" data-r>
+        <span class="quote-mark">"</span>
+        <p class="review-text">Maderoterapie u&nbsp;Karolíny je úžasná zkušenost. Zlaté ruce, klidné prostředí a&nbsp;výsledky na&nbsp;těle byly znát hned po&nbsp;pár návštěvách. Vrátím se určitě.</p>
+        <div class="review-meta">
+          <div class="review-author">Lucie K.<small>Kralupy nad Vltavou · Google</small></div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card" data-r data-r-delay="1">
+        <span class="quote-mark">"</span>
+        <p class="review-text">Maderoterapie obličeje je super — pleť svěží, kontury výraznější. Bez injekcí, jen šikovné ruce a&nbsp;dřevěné pomůcky.</p>
+        <div class="review-meta">
+          <div class="review-author">Jana M.<small>Mělník · Google</small></div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card" data-r>
+        <span class="quote-mark">"</span>
+        <p class="review-text">Anticelulitidní program mi dal výsledky, které jsem hledala roky. Profesionální přístup a&nbsp;milé prostředí — chodím pravidelně.</p>
+        <div class="review-meta">
+          <div class="review-author">Tereza S.<small>Praha-Západ · Google</small></div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card" data-r data-r-delay="1">
+        <span class="quote-mark">"</span>
+        <p class="review-text">Lymfatická drenáž po&nbsp;pár sezeních zázračně pomohla s&nbsp;otoky nohou. Karolína je profík a&nbsp;má skvělý cit pro tělo.</p>
+        <div class="review-meta">
+          <div class="review-author">Karolína B.<small>Kralupy · Google</small></div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card" data-r>
+        <span class="quote-mark">"</span>
+        <p class="review-text">Koupila jsem dárkový poukaz pro maminku a&nbsp;byla nadšená. Krásné prostředí, milý přístup — skvělý tip na&nbsp;dárek.</p>
+        <div class="review-meta">
+          <div class="review-author">Petra V.<small>Kralupy · Google</small></div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+      <div class="review-card" data-r data-r-delay="1">
+        <span class="quote-mark">"</span>
+        <p class="review-text">Chodím sem pravidelně už několik let. Cena odpovídá kvalitě, výsledky jsou viditelné. Nejlepší volba v&nbsp;Kralupech.</p>
+        <div class="review-meta">
+          <div class="review-author">Eva N.<small>Kralupy · Google</small></div>
+          <span class="review-stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ═══════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-content" data-r>
+        <div>
+          <span class="label label-line">No.&nbsp;05 &middot; Kontakt</span>
+          <h2 class="contact-title" style="margin-top:18px;">Najdete nás<br>v&nbsp;<em>centru</em>&nbsp;Kralup.</h2>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-info-row">
+            <span class="contact-info-label">Adresa</span>
+            <span class="contact-info-value">Palackého 119/15<small>278 01 Kralupy nad Vltavou</small></span>
+          </div>
+          <div class="contact-info-row">
+            <span class="contact-info-label">Telefon</span>
+            <span class="contact-info-value"><a href="tel:+420722269150">+420 722 269 150</a></span>
+          </div>
+          <div class="contact-info-row">
+            <span class="contact-info-label">E-mail</span>
+            <span class="contact-info-value"><a href="mailto:karolina.zohova@gmail.com">karolina.zohova@gmail.com</a></span>
+          </div>
+          <div class="contact-info-row">
+            <span class="contact-info-label">Otevřeno</span>
+            <span class="contact-info-value">Po–Pá&nbsp;9:00–20:00<small>So–Ne 10:00–18:00</small></span>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <a href="tel:+420722269150" class="btn-primary">
+            <span>Zavolat nyní</span>
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 7h12M8 2l5 5-5 5"/></svg>
+          </a>
+          <a href="mailto:karolina.zohova@gmail.com" class="btn-link">Napsat e-mail</a>
+        </div>
+      </div>
+
+      <div class="contact-map" data-r data-r-delay="1">
+        <span class="contact-map-tag">Kralupy n.&nbsp;Vlt.</span>
+        <iframe
+          src="https://maps.google.com/maps?q=Palack%C3%A9ho+119%2F15%2C+278+01+Kralupy+nad+Vltavou&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Madero Kralupy — Mapa"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-mark">Madero <em>Kralupy</em></div>
+        <p class="footer-tagline">Maderoterapie, Head&nbsp;Spa a&nbsp;lymfatická drenáž — studio, kde se péče bere vážně. Karolína Žohová · Est.&nbsp;2019.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="#about">O&nbsp;Karolíně</a></li>
+          <li><a href="#services">Procedury</a></li>
+          <li><a href="#headspa">Head Spa</a></li>
+          <li><a href="#reviews">Recenze</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <ul>
+          <li>Palackého 119/15</li>
+          <li>278 01 Kralupy n.&nbsp;Vlt.</li>
+          <li><a href="tel:+420722269150">+420 722 269 150</a></li>
+          <li><a href="mailto:karolina.zohova@gmail.com">karolina.zohova@gmail.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Otevřeno</h5>
+        <ul>
+          <li>Po–Pá &nbsp;9:00–20:00</li>
+          <li>So–Ne &nbsp;10:00–18:00</li>
+          <li>Po předchozí domluvě</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-foot">
+      <span>© 2026 Madero Kralupy · Karolína Žohová</span>
+      <span>Vol. 06 / 2026 · <a href="#hero">Zpět nahoru&nbsp;↑</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky nav scroll state
+  const nav = document.getElementById('nav');
+  const updateNav = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  updateNav();
+  window.addEventListener('scroll', updateNav, { passive: true });
+
+  // mobile menu toggle
+  const toggle = document.getElementById('menuToggle');
+  const mmenu  = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    mmenu.classList.toggle('open');
+    document.body.style.overflow = mmenu.classList.contains('open') ? 'hidden' : '';
+  });
+  mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    mmenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  // reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('[data-r]').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
