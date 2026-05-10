@@ -365,11 +365,11 @@ section + section { padding-top: 0; }
   font-family: var(--display);
   font-variation-settings: "opsz" 144, "SOFT" 90, "WONK" 1;
   font-weight: 320;
-  font-size: clamp(54px, 11vw, 168px);
-  line-height: 0.9;
+  font-size: clamp(44px, 9.5vw, 168px);
+  line-height: 0.92;
   letter-spacing: -0.035em;
   color: var(--ink);
-  max-width: 12ch;
+  max-width: 16ch;
 }
 .hero-title em {
   font-style: italic;
@@ -379,7 +379,6 @@ section + section { padding-top: 0; }
 }
 .hero-title-row {
   display: block;
-  white-space: nowrap;
 }
 
 .hero-bottom {
@@ -1247,29 +1246,137 @@ footer {
   .review-card { padding: 40px 0; }
 }
 @media (max-width: 760px) {
-  :root { --space-2xl: 5rem; --space-xl: 3.5rem; }
-  .wrap { padding: 0 22px; }
+  :root { --space-2xl: 4.5rem; --space-xl: 3rem; --space-l: 2.5rem; }
+  .wrap, .wrap-narrow { padding: 0 20px; }
+  section { padding: var(--space-2xl) 0; }
+
+  /* nav */
+  nav.bar { backdrop-filter: blur(18px); }
+  .bar-row { height: 64px; gap: 0; }
   .menu, .bar-cta > .cta-link { display: none; }
   .menu-toggle { display: block; }
-  .mobile-menu { display: block; }
+  .mobile-menu { display: block; inset: 64px 0 0 0; padding: 40px 22px; }
+  .mobile-menu a { font-size: 28px; padding: 12px 0; }
   .bar-cta { justify-content: flex-end; }
-  .hero-meta-top { grid-template-columns: 1fr; gap: 24px; }
-  .hero-meta-right { text-align: left; }
-  .hero-bottom { grid-template-columns: 1fr; gap: 40px; }
-  .hero-strip { grid-template-columns: 1fr 1fr; height: auto; }
+  .brand-mark { font-size: 18px; }
+  .brand-est { font-size: 9px; padding-left: 6px; letter-spacing: 0.14em; }
+
+  /* hero */
+  .hero { padding: 56px 0 var(--space-2xl); }
+  .hero-meta-top { grid-template-columns: 1fr; gap: 18px; margin-bottom: 36px; }
+  .hero-meta-right { text-align: left; font-size: 10px; }
+  .hero-title { letter-spacing: -0.03em; max-width: 100%; line-height: 0.95; }
+  .hero-bottom { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; }
+  .hero-quote { font-size: 18px; line-height: 1.45; max-width: 100%; }
+  .hero-actions { gap: 16px; }
+  .hero-actions-line { gap: 14px; flex-direction: column; align-items: flex-start; }
+  .hero-actions-line .btn-primary,
+  .hero-actions-line .btn-link { width: 100%; justify-content: center; text-align: center; }
+  .hero-actions-line .btn-link { padding: 14px 0; border-bottom: 1px solid var(--ink); }
+  .hero-rating { font-size: 10px; flex-wrap: wrap; }
+  .btn-primary { padding: 16px 24px; font-size: 11px; }
+  .hero-strip { grid-template-columns: 1fr 1fr; gap: 10px; height: auto; margin-top: 60px; }
   .hero-strip-img { aspect-ratio: 4/5; }
-  .hero-strip-img.tall { grid-column: 1 / 3; aspect-ratio: 16/10; }
-  .intro-bullets { grid-template-columns: 1fr; gap: 24px; }
-  .services-header { grid-template-columns: 1fr; gap: 32px; }
-  .services-intro { text-align: left; }
-  .service-row { grid-template-columns: 50px 1fr; gap: 16px; padding: 28px 0; }
-  .service-row .service-meta { grid-column: 1 / 3; flex-direction: row; gap: 16px; padding-top: 8px; }
-  .service-title { font-size: 28px; }
-  .reviews-header { grid-template-columns: 1fr; gap: 24px; }
-  .review-card { padding: 36px 0; }
-  .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-stats { grid-template-columns: repeat(2, 1fr); }
-  .contact-info-row { grid-template-columns: 90px 1fr; }
+  .hero-strip-img.tall { grid-column: 1 / 3; aspect-ratio: 16/9; }
+  .hero-strip-caption { font-size: 9px; padding: 5px 8px; }
+
+  /* editorial intro */
+  .editorial-intro { padding: var(--space-xl) 0 var(--space-2xl); }
+  .editorial-grid { gap: 40px; }
+  .section-no { font-size: 40px; }
+  .section-title { font-size: clamp(30px, 8vw, 44px); }
+  .intro-content { font-size: 17px; }
+  .dropcap::first-letter { font-size: 4.6em; }
+  .intro-bullets { grid-template-columns: 1fr; gap: 22px; margin-top: 36px; }
+
+  /* about */
+  .about { padding: var(--space-xl) 0; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-img-wrap { aspect-ratio: 4/5; }
+  .about-content { gap: 24px; }
+  .about-name { font-size: clamp(36px, 9.5vw, 56px); line-height: 1; }
+  .about-text { font-size: 17px; }
+  .about-stats { grid-template-columns: repeat(2, 1fr); gap: 20px; padding-top: 24px; }
+  .about-stat-num { font-size: 36px; }
+  .about-stat-label { font-size: 9.5px; letter-spacing: 0.14em; }
+
+  /* services */
+  .services-header { grid-template-columns: 1fr; gap: 28px; margin-bottom: 48px; }
+  .services-intro { text-align: left; max-width: 100%; }
+  .service-row { grid-template-columns: 1fr; gap: 14px; padding: 26px 0; }
+  .service-row:hover { padding-left: 16px; }
+  .service-no { font-size: 11px; }
+  .service-title-cell { display: flex; flex-direction: column; gap: 10px; }
+  .service-title { font-size: 26px; line-height: 1.05; }
+  .service-tagline { font-size: 10px; }
+  .service-tagline.new { padding: 4px 8px; align-self: flex-start; }
+  .service-desc { font-size: 14px; }
+  .service-row .service-meta {
+    grid-column: 1 / 2;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: left;
+    padding-top: 8px;
+    border-top: 1px solid var(--line-soft);
+    gap: 14px;
+  }
+  .service-price { font-size: 14px; }
+  .service-duration { font-size: 10px; }
+
+  /* head spa feature */
+  .headspa-feature { padding: var(--space-xl) 0; }
+  .headspa-feature::before { font-size: 38vw; }
+  .headspa-grid { grid-template-columns: 1fr; gap: 40px; }
+  .headspa-title { font-size: clamp(40px, 11vw, 64px); }
+  .headspa-text { font-size: 16px; }
+  .headspa-list-text { font-size: 16px; }
+  .headspa-cta { width: 100%; justify-content: center; padding: 18px 24px; }
+  .headspa-visual { aspect-ratio: 4/5; }
+  .headspa-visual-meta h4 { font-size: 18px; }
+
+  /* reviews */
+  .reviews-header { grid-template-columns: 1fr; gap: 22px; margin-bottom: 48px; }
+  .reviews-rating-large { font-size: 56px; }
+  .review-card { padding: 32px 0; gap: 18px; }
+  .review-card .quote-mark { font-size: 64px; height: 22px; }
+  .review-text { font-size: 18px; line-height: 1.45; }
+  .review-author { font-size: 14px; }
+  .review-author small { font-size: 9.5px; }
+
+  /* contact */
+  .contact { padding: var(--space-xl) 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-content { gap: 32px; }
+  .contact-title { font-size: clamp(36px, 10vw, 56px); }
+  .contact-info-row { grid-template-columns: 80px 1fr; gap: 16px; padding: 16px 0; }
+  .contact-info-label { font-size: 10px; }
+  .contact-info-value { font-size: 15px; }
+  .contact-info-value small { font-size: 12px; }
+  .contact-actions { flex-direction: column; align-items: stretch; gap: 14px; }
+  .contact-actions .btn-primary { justify-content: center; }
+  .contact-actions .btn-link { text-align: center; padding: 14px 0; border-bottom: 1px solid var(--ink); align-self: stretch; }
+  .contact-map { aspect-ratio: 4/5; }
+
+  /* footer */
+  footer { padding: 56px 0 28px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; padding-bottom: 32px; }
+  .footer-brand-mark { font-size: 36px; }
+  .footer-tagline { font-size: 15px; }
+  .footer-foot { font-size: 9.5px; flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+@media (max-width: 420px) {
+  .hero-title { font-size: 40px; line-height: 1; }
+  .about-name { font-size: 34px; }
+  .section-title { font-size: 28px; }
+  .headspa-title { font-size: 38px; }
+  .contact-title { font-size: 34px; }
+  .reviews-rating-large { font-size: 46px; }
+  .brand-est { display: none; }
+  .brand-mark { font-size: 17px; }
+  .hero-strip { grid-template-columns: 1fr; }
+  .hero-strip-img.tall { grid-column: 1; aspect-ratio: 4/3; }
 }
 </style>
 </head>
@@ -1323,8 +1430,7 @@ footer {
     </div>
 
     <h1 class="hero-title" data-load="3">
-      <span class="hero-title-row">Tělo, tvář</span>
-      <span class="hero-title-row">a klid</span>
+      <span class="hero-title-row">Tělo, tvář a&nbsp;klid</span>
       <span class="hero-title-row"><em>v jediném</em> rituálu.</span>
     </h1>
 
