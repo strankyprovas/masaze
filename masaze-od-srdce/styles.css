@@ -483,6 +483,50 @@ ul.checks li::before {
   box-shadow: var(--shadow-sm);
 }
 
+/* Single featured photo (figure with caption) */
+.feature-photo {
+  margin: 30px 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background: var(--paper);
+}
+.feature-photo img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+.feature-photo--portrait img { aspect-ratio: 4/3; }
+.feature-photo figcaption {
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  font-style: italic;
+  border-top: 1px solid var(--line);
+}
+
+/* Side-by-side text + photo */
+.text-photo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  margin: 32px 0;
+}
+.text-photo--reverse { direction: rtl; }
+.text-photo--reverse > * { direction: ltr; }
+.text-photo img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+@media (max-width: 880px) {
+  .text-photo { grid-template-columns: 1fr; }
+}
+
 /* ================ REVIEWS ================ */
 .review-box {
   background: var(--cream-2);
