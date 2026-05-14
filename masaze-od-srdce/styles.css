@@ -507,6 +507,64 @@ ul.checks li::before {
   margin-bottom: 8px;
 }
 
+.rating-badges {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 16px; margin: 18px 0 28px;
+}
+.rating-badge {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 22px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  min-width: 180px;
+}
+.rating-badge .source {
+  font-size: 0.85rem; color: var(--ink-2);
+  letter-spacing: 0.05em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.rating-badge .score {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem; font-weight: 600;
+  color: var(--warm);
+}
+.rating-badge .score-stars { color: var(--warm); margin-left: 4px; }
+.rating-badge .count { font-size: 0.85rem; color: var(--ink-2); margin-top: 2px; }
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px; margin: 22px 0;
+  text-align: left;
+}
+.review-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.review-card .stars {
+  color: var(--warm); font-size: 1.05rem;
+  letter-spacing: 0.08em; margin-bottom: 8px;
+}
+.review-card .text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-style: italic;
+  color: var(--ink); line-height: 1.55;
+  margin-bottom: 12px;
+}
+.review-card .author {
+  font-size: 0.9rem; color: var(--ink-2);
+  font-weight: 500;
+}
+.review-card .source-tag {
+  font-size: 0.75rem; color: var(--ink-2);
+  margin-left: 6px; opacity: 0.7;
+}
+
 /* ================ FORM (Rezervace) ================ */
 .reserve-form {
   background: var(--paper);
