@@ -498,6 +498,7 @@ ul.checks li::before {
   display: block;
 }
 .feature-photo--portrait img { aspect-ratio: 4/3; }
+.feature-photo--natural img { aspect-ratio: auto; height: auto; object-fit: contain; }
 .feature-photo figcaption {
   padding: 14px 20px;
   font-size: 0.9rem;
