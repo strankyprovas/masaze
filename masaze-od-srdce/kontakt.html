@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kontakt a rezervace | Masáže od srdce — Č. Budějovice</title>
+<meta name="description" content="Objednejte se na masáž online. Telefon 731 827 169, e-mail mmoravek00@volny.cz. Žižkova 12, dveře 407, České Budějovice." />
+<meta name="theme-color" content="#3a4a3f" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="photos/logo-s-nadpisem.jpg" alt="Logo Regenerační studio od SRDCE" />
+      <div class="brand-text">Masáže od&nbsp;srdce<small>Regenerační studio · Č.&nbsp;Budějovice</small></div>
+    </a>
+    <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="primary" id="primary-nav"><ul>
+      <li><a href="index.html">Úvod</a></li>
+      <li><a href="sluzby.html">Služby</a></li>
+      <li><a href="cenik.html">Ceník</a></li>
+      <li><a href="vliv-masazi.html">Vliv masáží</a></li>
+      <li><a href="prevence.html">Zásady prevence</a></li>
+      <li><a href="kontraindikace.html">Kontraindikace</a></li>
+      <li><a href="vzdelavani.html">Vzdělávání</a></li>
+      <li><a href="prirodni-produkty.html">Přírodní produkty</a></li>
+      <li><a href="ostatni-produkty.html">Ostatní produkty</a></li>
+      <li><a href="kontakt.html" class="active">Kontakt</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Úvod</a> &nbsp;›&nbsp; Kontakt</div>
+    <h1>Kontakt a&nbsp;rezervace</h1>
+    <p class="lead">Těším se na&nbsp;Vás v&nbsp;Regeneračním studiu od&nbsp;SRDCE. Objednat se můžete telefonicky, e-mailem nebo přes&nbsp;online formulář níže.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="wrap">
+      <div class="content">
+
+        <div class="service-card">
+          <h3>Kde mě najdete</h3>
+          <p><strong>Regenerační studio od&nbsp;SRDCE</strong><br>
+          Stavounion (bývalé Pozemní stavby), dveře&nbsp;407<br>
+          Žižkova&nbsp;12<br>
+          370&nbsp;01 České&nbsp;Budějovice</p>
+
+          <p style="margin-top:14px;"><strong>Sídlo (fakturační):</strong><br>
+          Ing.&nbsp;Milan Morávek, IČO 60616466<br>
+          Aloise Kříže 3, 370&nbsp;06 Č.&nbsp;Budějovice<br>
+          Zapsán v&nbsp;živnostenském rejstříku.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>Telefon a&nbsp;e-mail</h3>
+          <p style="font-size:1.15rem;">
+            📞 <a href="tel:+420731827169" style="font-weight:600;">+420 731 827 169</a><br>
+            ✉️ <a href="mailto:mmoravek00@volny.cz" style="font-weight:600;">mmoravek00@volny.cz</a>
+          </p>
+          <p><em>Pokud masíruji, nemohu brát telefon — pošlete prosím SMS zprávu, ozvu se zpět, jakmile to bude možné.</em></p>
+        </div>
+
+        <div class="service-card">
+          <h3>Otevírací doba</h3>
+          <ul class="opening" style="margin-top:8px;">
+            <li><span>Pondělí</span><span>8:30 – 18:00</span></li>
+            <li><span>Úterý</span><span>8:30 – 18:00</span></li>
+            <li><span>Středa</span><span>14:00 – 19:00</span></li>
+            <li><span>Čtvrtek</span><span>8:30 – 16:30</span></li>
+            <li><span>Pátek</span><span>8:30 – 16:30</span></li>
+            <li><span>Sobota</span><span>na&nbsp;objednávku</span></li>
+            <li class="note">Doporučujeme objednat se předem.</li>
+          </ul>
+          <p style="margin-top:14px; font-size:0.9rem; color:var(--muted);"><em>Platnost od&nbsp;1.&nbsp;1.&nbsp;2026.</em></p>
+        </div>
+
+        <div id="rezervace" style="margin-top:40px; scroll-margin-top: 120px;">
+          <h2>Rychlá rezervace</h2>
+          <p style="margin-bottom:18px;">Vyplňte krátký formulář a&nbsp;ozvu se Vám zpět co&nbsp;nejdříve. Formulář mi přijde jako SMS na&nbsp;mobil, takže ho uvidím i&nbsp;během masáže.</p>
+
+          <form class="reserve-form" id="reserve" action="send-sms.php" method="POST">
+            <input type="text" name="website" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;" />
+
+            <h3>Objednávka masáže</h3>
+            <p class="form-sub">Vše je nezávazné — domluvíme přesný čas po&nbsp;mém zpětném ozvání.</p>
+
+            <div class="form-row">
+              <div>
+                <label for="r-jmeno">Jméno *</label>
+                <input type="text" name="jmeno" id="r-jmeno" required placeholder="Vaše jméno" />
+              </div>
+              <div>
+                <label for="r-prijmeni">Příjmení *</label>
+                <input type="text" name="prijmeni" id="r-prijmeni" required placeholder="Vaše příjmení" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="r-tel">Telefon *</label>
+              <input type="tel" name="telefon" id="r-tel" required placeholder="+420 ..." />
+            </div>
+
+            <div class="form-group">
+              <label for="r-delka">Délka masáže *</label>
+              <select name="delka" id="r-delka" required>
+                <option value="">— vyberte délku —</option>
+                <option value="30 min">30 minut</option>
+                <option value="45 min">45 minut</option>
+                <option value="60 min">60 minut</option>
+                <option value="90 min">90 minut</option>
+                <option value="nevím">Nevím — poradíme se</option>
+              </select>
+            </div>
+
+            <label style="display:block; font-size:0.82rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--sage); font-weight:600; margin-bottom:8px;">Část dne *</label>
+            <div class="form-radio-group">
+              <label>
+                <input type="radio" name="cast_dne" value="Dopoledne" required />
+                Dopoledne
+              </label>
+              <label>
+                <input type="radio" name="cast_dne" value="Odpoledne" required />
+                Odpoledne
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="r-pozn">Poznámka <small style="text-transform:none; letter-spacing:0; color:var(--muted); font-weight:400;">(nepovinné)</small></label>
+              <input type="text" name="poznamka" id="r-pozn" placeholder="Např. přibližný termín, druh masáže..." />
+            </div>
+
+            <button type="submit" class="btn btn-warm" style="width:100%; padding:18px;">Odeslat objednávku →</button>
+            <div id="form-result"></div>
+          </form>
+        </div>
+
+        <h2 style="margin-top:48px;">Najdete mě na&nbsp;mapě</h2>
+        <div style="margin-top:14px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm);">
+          <iframe src="https://www.google.com/maps?q=%C5%BDi%C5%BEkova%2012%2C%20%C4%8Cesk%C3%A9%20Bud%C4%9Bjovice&output=embed" width="100%" height="380" style="border:0;" loading="lazy"></iframe>
+        </div>
+
+        <div style="margin-top:36px;">
+          <h2>Recenze klientů</h2>
+          <p>Hodnocení mé práce najdete na&nbsp;Firmy.cz a&nbsp;Google. Vaše zpětná vazba je pro mě cenná.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+            <a href="https://www.firmy.cz/?q=mas%C3%A9rsk%C3%A9%20slu%C5%BEby" target="_blank" rel="noopener" class="btn btn-primary">Recenze na&nbsp;Firmy.cz →</a>
+            <a href="https://www.google.cz/search?q=Mas%C3%A1%C5%BEe+a+regenerace+od+srdce+%C4%8Cesk%C3%A9+Bud%C4%9Bjovice" target="_blank" rel="noopener" class="btn btn-secondary">Recenze na&nbsp;Google →</a>
+          </div>
+        </div>
+
+        <script>
+          // Form handler — AJAX odeslání na send-sms.php
+          document.getElementById('reserve').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const result = document.getElementById('form-result');
+            const btn = form.querySelector('button[type="submit"]');
+            const origText = btn.textContent;
+            btn.disabled = true;
+            btn.textContent = 'Odesílám…';
+            result.innerHTML = '';
+            try {
+              const data = new FormData(form);
+              const res = await fetch('send-sms.php', { method: 'POST', body: data });
+              const json = await res.json().catch(() => ({}));
+              if (res.ok && json.ok) {
+                result.innerHTML = '<div class="form-msg ok">Děkujeme! Vaše objednávka byla odeslána. Ozveme se Vám co nejdříve zpět.</div>';
+                form.reset();
+              } else {
+                result.innerHTML = '<div class="form-msg err">' + ((json && json.error) || 'Něco se nepovedlo. Zavolejte prosím na +420 731 827 169 nebo nám napište e-mail.') + '</div>';
+              }
+            } catch (err) {
+              result.innerHTML = '<div class="form-msg err">Spojení selhalo. Zavolejte prosím na +420 731 827 169.</div>';
+            } finally {
+              btn.disabled = false;
+              btn.textContent = origText;
+            }
+          });
+        </script>
+
+      </div>
+
+      <aside class="contact-side">
+        <h3>Kontakt</h3>
+        <div class="contact-row">
+          <div class="contact-label">Telefon</div>
+          <div class="contact-val"><a href="tel:+420731827169">+420 731 827 169</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-label">E-mail</div>
+          <div class="contact-val"><a href="mailto:mmoravek00@volny.cz">mmoravek00@volny.cz</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-label">Adresa studia</div>
+          <div class="contact-val">Stavounion, dveře&nbsp;407<br>Žižkova&nbsp;12<br>370&nbsp;01 České&nbsp;Budějovice</div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-label">Otevírací doba</div>
+          <ul class="opening">
+            <li><span>Pondělí</span><span>8:30 – 18:00</span></li>
+            <li><span>Úterý</span><span>8:30 – 18:00</span></li>
+            <li><span>Středa</span><span>14:00 – 19:00</span></li>
+            <li><span>Čtvrtek</span><span>8:30 – 16:30</span></li>
+            <li><span>Pátek</span><span>8:30 – 16:30</span></li>
+            <li class="note">Pokud masíruji, pošlete prosím SMS — ozvu se zpět.</li>
+          </ul>
+        </div>
+        <a href="kontakt.html#rezervace" class="btn btn-warm side-cta">Objednat masáž →</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="photos/logo-s-nadpisem.jpg" alt="" />
+          <div class="footer-brand-text">Masáže od&nbsp;srdce<br><span style="font-size:0.85rem; opacity:0.7;">Regenerační studio · Č.&nbsp;Budějovice</span></div>
+        </div>
+        <p>Ing.&nbsp;Milan Morávek, IČO 60616466<br>Zapsán v&nbsp;živnostenském rejstříku.</p>
+      </div>
+      <div>
+        <h4>Stránky</h4>
+        <ul>
+          <li><a href="index.html">Úvod</a></li>
+          <li><a href="sluzby.html">Služby</a></li>
+          <li><a href="cenik.html">Ceník</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pro Vaše zdraví</h4>
+        <ul>
+          <li><a href="vliv-masazi.html">Vliv masáží</a></li>
+          <li><a href="prevence.html">Zásady prevence</a></li>
+          <li><a href="kontraindikace.html">Kontraindikace</a></li>
+          <li><a href="vzdelavani.html">Vzdělávání</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+420731827169">+420 731 827 169</a></li>
+          <li><a href="mailto:mmoravek00@volny.cz">mmoravek00@volny.cz</a></li>
+          <li>Žižkova 12, dveře 407<br>370 01 Č. Budějovice</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Masáže a regenerace od srdce · Milan Morávek</div>
+      <div>Web vytvořilo <a href="https://strankyprovas.cz" target="_blank" rel="noopener">StránkyProVás</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('burger').addEventListener('click', () => {
+  document.getElementById('primary-nav').classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
