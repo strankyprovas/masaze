@@ -612,6 +612,8 @@ ul.checks li::before {
   font-size: 0.75rem; color: var(--ink-2);
   margin-left: 6px; opacity: 0.7;
 }
+.review-card.hidden-extra { display: none; }
+.review-grid.expanded .review-card.hidden-extra { display: block; }
 
 /* ================ FORM (Rezervace) ================ */
 .reserve-form {
