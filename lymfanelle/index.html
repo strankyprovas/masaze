@@ -1,0 +1,1658 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lymfanelle – lymfodrenáž Brno | Přístrojová lymfatická drenáž</title>
+    <meta
+      name="description"
+      content="Lymfanelle – přístrojová lymfodrenáž BTL-6000 Lymphastim Topline v Brně-Přízřenicích. Uleví od otoků, těžkých nohou a pomáhá regeneraci. Hana Marková, studio AXON-fit – objednání na 607 736 012."
+    />
+    <meta name="theme-color" content="#16302B" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Karla:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============================================================
+         TOKENY
+         Paleta vychází z lymfy samotné: průzračná, chladná, čistá.
+         Hloubku (a "luxus") nese nefritová zeleň, ne zlato.
+      ============================================================ */
+      :root {
+        --porcelain: #f4f6f3;
+        --mist: #e4ede7;
+        --deep: #16302b;
+        --jade: #3f6e60;
+        --jade-light: #6d9a8b;
+        --blush: #e7d3ca;
+        --ink: #2a3b36;
+        --muted: #6f817b;
+        --line: rgba(22, 48, 43, 0.12);
+        --white: #ffffff;
+
+        --display: "Fraunces", Georgia, serif;
+        --body: "Karla", system-ui, sans-serif;
+
+        --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+        --max: 1180px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: var(--body);
+        background: var(--porcelain);
+        color: var(--ink);
+        line-height: 1.7;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      :focus-visible {
+        outline: 2px solid var(--jade);
+        outline-offset: 3px;
+      }
+
+      .wrap {
+        width: min(100% - 40px, var(--max));
+        margin-inline: auto;
+      }
+
+      /* Typografická škála */
+      h1,
+      h2,
+      h3 {
+        font-family: var(--display);
+        font-weight: 400;
+        line-height: 1.12;
+        color: var(--deep);
+        letter-spacing: -0.015em;
+      }
+      h1 {
+        font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+      }
+      h2 {
+        font-size: clamp(2rem, 4.2vw, 3.1rem);
+      }
+      h3 {
+        font-size: clamp(1.15rem, 2vw, 1.4rem);
+      }
+      .eyebrow {
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--jade);
+        margin-bottom: 18px;
+      }
+      .lead {
+        font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+        color: var(--muted);
+        max-width: 62ch;
+      }
+
+      /* ============================================================
+         HLAVIČKA
+      ============================================================ */
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 100;
+        padding: 20px 0;
+        transition: background 0.4s var(--ease), padding 0.4s var(--ease),
+          box-shadow 0.4s var(--ease);
+      }
+      .site-header.scrolled {
+        background: rgba(244, 246, 243, 0.92);
+        backdrop-filter: blur(14px);
+        padding: 12px 0;
+        box-shadow: 0 1px 0 var(--line);
+      }
+      .header-in {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        font-family: var(--display);
+        font-size: 1.28rem;
+        color: var(--deep);
+        letter-spacing: 0.02em;
+        line-height: 1.1;
+      }
+      .brand small {
+        display: block;
+        font-family: var(--body);
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--jade);
+        margin-top: 3px;
+        font-weight: 500;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(18px, 2.4vw, 32px);
+      }
+      .nav a {
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        color: var(--ink);
+        padding-bottom: 3px;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+      }
+      .nav a:hover {
+        border-color: var(--jade);
+        color: var(--jade);
+      }
+      /* Tlačítko v navigaci si drží vlastní barvy – .nav a by ho jinak přebilo */
+      .nav a.btn,
+      .nav a.btn:hover {
+        border-bottom-color: transparent;
+      }
+      .nav a.btn {
+        color: var(--porcelain);
+      }
+      .nav a.btn:hover {
+        background: transparent;
+        color: var(--deep);
+        border-color: var(--deep);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-family: var(--body);
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 13px 26px;
+        border-radius: 999px;
+        border: 1px solid var(--deep);
+        background: var(--deep);
+        color: var(--porcelain);
+        cursor: pointer;
+        transition: background 0.28s var(--ease), color 0.28s var(--ease),
+          transform 0.28s var(--ease);
+      }
+      .btn:hover {
+        background: transparent;
+        color: var(--deep);
+        transform: translateY(-2px);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--deep);
+      }
+      .btn-ghost:hover {
+        background: var(--deep);
+        color: var(--porcelain);
+      }
+      .btn-light {
+        border-color: var(--porcelain);
+        background: var(--porcelain);
+        color: var(--deep);
+      }
+      .btn-light:hover {
+        background: transparent;
+        color: var(--porcelain);
+      }
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        padding: 8px;
+      }
+      .nav-toggle span {
+        width: 24px;
+        height: 1.5px;
+        background: var(--deep);
+      }
+
+      /* ============================================================
+         HERO — teze + schéma toku (signature)
+      ============================================================ */
+      .hero {
+        padding: clamp(130px, 17vw, 190px) 0 clamp(60px, 8vw, 100px);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -18%;
+        right: -12%;
+        width: 62vw;
+        height: 62vw;
+        max-width: 780px;
+        max-height: 780px;
+        background: radial-gradient(
+          circle,
+          rgba(109, 154, 139, 0.18) 0%,
+          rgba(228, 237, 231, 0) 65%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: clamp(32px, 5vw, 72px);
+        align-items: center;
+        position: relative;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--jade);
+      }
+      .hero .lead {
+        margin-top: 26px;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 38px;
+      }
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 28px;
+        margin-top: 44px;
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+      }
+      .hero-meta div {
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+      .hero-meta strong {
+        display: block;
+        font-family: var(--display);
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--deep);
+        line-height: 1.2;
+      }
+
+      /* --- Schéma lymfatického toku --- */
+      .flow {
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .flow svg {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+      }
+      .flow-body {
+        fill: none;
+        stroke: rgba(22, 48, 43, 0.28);
+        stroke-width: 1.1;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .flow-vessel {
+        fill: none;
+        stroke: rgba(63, 110, 96, 0.3);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+      .flow-move {
+        fill: none;
+        stroke: var(--jade);
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-dasharray: 9 91;
+        animation: flowMove 5.5s linear infinite;
+      }
+      .flow-move.d2 {
+        animation-delay: -1.4s;
+      }
+      .flow-move.d3 {
+        animation-delay: -2.8s;
+      }
+      .flow-move.d4 {
+        animation-delay: -4.1s;
+      }
+      @keyframes flowMove {
+        from {
+          stroke-dashoffset: 100;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+      .flow-node {
+        fill: var(--jade);
+      }
+      .flow-node-halo {
+        fill: none;
+        stroke: var(--jade);
+        stroke-width: 1;
+        opacity: 0.5;
+        transform-origin: center;
+        animation: pulse 3.4s ease-in-out infinite;
+      }
+      .flow-node-halo.p2 {
+        animation-delay: -1.1s;
+      }
+      .flow-node-halo.p3 {
+        animation-delay: -2.2s;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.5;
+          r: 5;
+        }
+        50% {
+          opacity: 0;
+          r: 11;
+        }
+      }
+      .flow-label {
+        font-family: var(--body);
+        font-size: 8.2px;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        fill: var(--muted);
+      }
+      .flow-caption {
+        margin-top: 18px;
+        font-size: 0.76rem;
+        color: var(--muted);
+        text-align: center;
+        max-width: 34ch;
+        margin-inline: auto;
+      }
+
+      /* ============================================================
+         SEKCE
+      ============================================================ */
+      .section {
+        padding: clamp(70px, 9vw, 120px) 0;
+      }
+      .section-mist {
+        background: var(--mist);
+      }
+      .section-deep {
+        background: var(--deep);
+        color: rgba(244, 246, 243, 0.82);
+      }
+      .section-deep h2,
+      .section-deep h3 {
+        color: var(--porcelain);
+      }
+      .section-deep .eyebrow {
+        color: var(--jade-light);
+      }
+      .section-deep .lead {
+        color: rgba(244, 246, 243, 0.7);
+      }
+      .sec-head {
+        max-width: 66ch;
+        margin-bottom: clamp(38px, 5vw, 62px);
+      }
+      .sec-head h2 + .lead {
+        margin-top: 20px;
+      }
+
+      /* Co je lymfa — dvousloupec s velkým výrokem */
+      .lymph-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(32px, 5vw, 70px);
+        align-items: start;
+      }
+      .pullquote {
+        font-family: var(--display);
+        font-size: clamp(1.5rem, 3vw, 2.15rem);
+        line-height: 1.25;
+        color: var(--deep);
+        font-weight: 400;
+        padding-left: 26px;
+        border-left: 2px solid var(--jade);
+      }
+      .pullquote span {
+        display: block;
+        font-family: var(--body);
+        font-size: 0.82rem;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--jade);
+        margin-top: 18px;
+      }
+      .body-copy p + p {
+        margin-top: 18px;
+      }
+      .body-copy strong {
+        font-weight: 600;
+        color: var(--deep);
+      }
+
+      /* Fakta */
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--line);
+        margin-top: clamp(40px, 5vw, 64px);
+        border-block: 1px solid var(--line);
+      }
+      .fact {
+        background: var(--porcelain);
+        padding: 30px 26px;
+      }
+      .section-mist .fact {
+        background: var(--mist);
+      }
+      .fact strong {
+        display: block;
+        font-family: var(--display);
+        font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+        font-weight: 400;
+        color: var(--deep);
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+      .fact span {
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+
+      /* Průběh — skutečná posloupnost, proto číslujeme */
+      .steps {
+        display: grid;
+        gap: 1px;
+        background: rgba(244, 246, 243, 0.16);
+        border-block: 1px solid rgba(244, 246, 243, 0.16);
+      }
+      .step {
+        background: var(--deep);
+        display: grid;
+        grid-template-columns: 68px 1fr 1.25fr;
+        gap: clamp(14px, 3vw, 40px);
+        align-items: baseline;
+        padding: 32px 6px;
+      }
+      .step-n {
+        font-family: var(--display);
+        font-size: 0.95rem;
+        color: var(--jade-light);
+        letter-spacing: 0.1em;
+      }
+      .step p {
+        color: rgba(244, 246, 243, 0.68);
+        font-size: 0.97rem;
+      }
+      .step-time {
+        display: block;
+        font-size: 0.72rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--jade-light);
+        margin-top: 10px;
+      }
+
+      /* Komu pomáhá */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2.2vw, 26px);
+      }
+      .card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        padding: clamp(26px, 3vw, 36px);
+        transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(22, 48, 43, 0.07);
+      }
+      .card-ico {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 20px;
+        stroke: var(--jade);
+        fill: none;
+        stroke-width: 1.3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .card h3 {
+        margin-bottom: 10px;
+      }
+      .card p {
+        font-size: 0.94rem;
+        color: var(--muted);
+      }
+
+      /* Trojice fotek */
+      .shots {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(14px, 2vw, 22px);
+        margin-top: clamp(40px, 5vw, 64px);
+      }
+      .shots figure {
+        margin: 0;
+      }
+      .shots img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+      .shots figcaption {
+        margin-top: 10px;
+        font-size: 0.78rem;
+        color: var(--muted);
+        letter-spacing: 0.02em;
+      }
+
+      /* Kontraindikace */
+      .warn {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(28px, 4vw, 56px);
+        align-items: start;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-left: 3px solid var(--blush);
+        border-radius: 3px;
+        padding: clamp(28px, 4vw, 48px);
+      }
+      .warn ul {
+        list-style: none;
+      }
+      .warn li {
+        position: relative;
+        padding-left: 24px;
+        font-size: 0.95rem;
+        color: var(--ink);
+      }
+      .warn li + li {
+        margin-top: 12px;
+      }
+      .warn li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 11px;
+        width: 8px;
+        height: 1.5px;
+        background: var(--jade);
+      }
+
+      /* Ceník */
+      .price-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2.2vw, 26px);
+      }
+      .price {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 3px;
+        padding: clamp(28px, 3.2vw, 40px);
+        display: flex;
+        flex-direction: column;
+      }
+      .price.feature {
+        background: var(--deep);
+        border-color: var(--deep);
+      }
+      .price.feature h3,
+      .price.feature .price-val {
+        color: var(--porcelain);
+      }
+      .price.feature .price-note,
+      .price.feature li {
+        color: rgba(244, 246, 243, 0.66);
+      }
+      .price-tag {
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--jade);
+        margin-bottom: 14px;
+      }
+      .price.feature .price-tag {
+        color: var(--blush);
+      }
+      .price-val {
+        font-family: var(--display);
+        font-size: clamp(2rem, 3.4vw, 2.7rem);
+        font-weight: 400;
+        color: var(--deep);
+        line-height: 1;
+        margin: 14px 0 6px;
+      }
+      .price-note {
+        font-size: 0.82rem;
+        color: var(--muted);
+        margin-bottom: 22px;
+      }
+      .price ul {
+        list-style: none;
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+      }
+      .price.feature ul {
+        border-color: rgba(244, 246, 243, 0.18);
+      }
+      .price li {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+      .price li + li {
+        margin-top: 8px;
+      }
+
+      /* Představení (úvod s fotkou) */
+      .intro {
+        padding-top: clamp(20px, 3vw, 40px);
+      }
+      .intro-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: clamp(32px, 5vw, 70px);
+        align-items: center;
+      }
+      .intro-img {
+        border-radius: 3px;
+        overflow: hidden;
+        background: var(--mist);
+        aspect-ratio: 4 / 5;
+        box-shadow: 0 24px 50px rgba(22, 48, 43, 0.1);
+      }
+      .intro-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* portrét je na výšku a obličej je v horní části – bez posunu by se
+           při ořezu na 4:5 uřízlo čelo */
+        object-position: center top;
+      }
+
+      /* O mně */
+      .about {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: clamp(32px, 5vw, 70px);
+        align-items: center;
+      }
+      .about-img {
+        border-radius: 3px;
+        overflow: hidden;
+        background: var(--mist);
+        aspect-ratio: 4 / 5;
+      }
+      .about-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .sign {
+        font-family: var(--display);
+        font-style: italic;
+        font-size: 1.35rem;
+        color: var(--jade);
+        margin-top: 26px;
+      }
+
+      /* Kontakt */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(28px, 4vw, 60px);
+        align-items: start;
+      }
+      .contact-list {
+        list-style: none;
+        margin-top: 8px;
+      }
+      .contact-list li {
+        padding: 18px 0;
+        border-bottom: 1px solid rgba(244, 246, 243, 0.16);
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .contact-list svg {
+        width: 19px;
+        height: 19px;
+        stroke: var(--jade-light);
+        fill: none;
+        stroke-width: 1.4;
+        flex-shrink: 0;
+        margin-top: 4px;
+      }
+      .contact-list b {
+        display: block;
+        font-family: var(--body);
+        font-weight: 500;
+        color: var(--porcelain);
+        font-size: 1rem;
+      }
+      .contact-list span {
+        font-size: 0.85rem;
+        color: rgba(244, 246, 243, 0.55);
+      }
+      .map {
+        border-radius: 3px;
+        overflow: hidden;
+        border: 1px solid rgba(244, 246, 243, 0.16);
+        min-height: 320px;
+        height: 100%;
+      }
+      .map iframe {
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        border: 0;
+        display: block;
+        filter: grayscale(0.35);
+      }
+
+      /* Patička */
+      .footer {
+        background: var(--deep);
+        color: rgba(244, 246, 243, 0.55);
+        padding: 40px 0;
+        border-top: 1px solid rgba(244, 246, 243, 0.14);
+        font-size: 0.83rem;
+      }
+      .footer-in {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .footer a:hover {
+        color: var(--porcelain);
+      }
+
+      /* Reveal */
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+        transition-delay: var(--d, 0ms);
+      }
+      [data-reveal].in {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ============================================================
+         RESPONZIVITA
+      ============================================================ */
+      @media (max-width: 940px) {
+        .nav-toggle {
+          display: flex;
+        }
+        .nav {
+          position: fixed;
+          inset: 0;
+          background: var(--deep);
+          flex-direction: column;
+          justify-content: center;
+          gap: 26px;
+          transform: translateX(100%);
+          transition: transform 0.42s var(--ease);
+          z-index: 90;
+        }
+        .nav.open {
+          transform: none;
+        }
+        .nav a {
+          font-size: 1.15rem;
+          color: var(--porcelain);
+        }
+        .nav .btn {
+          border-color: var(--porcelain);
+          background: var(--porcelain);
+          color: var(--deep);
+        }
+        .hero-grid,
+        .lymph-grid,
+        .about,
+        .intro-grid,
+        .contact-grid,
+        .warn {
+          grid-template-columns: 1fr;
+        }
+        .intro-img {
+          max-width: 340px;
+        }
+        .flow {
+          order: -1;
+        }
+        .flow svg {
+          max-width: 260px;
+        }
+        .cards,
+        .price-grid,
+        .facts {
+          grid-template-columns: 1fr;
+        }
+        .step {
+          grid-template-columns: 44px 1fr;
+        }
+        .step p {
+          grid-column: 2;
+        }
+      }
+      @media (max-width: 560px) {
+        .hero-meta {
+          gap: 20px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+        [data-reveal] {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HLAVIČKA -->
+    <header class="site-header" id="header">
+      <div class="wrap header-in">
+        <a href="#top" class="brand">
+          Lymfanelle
+          <small>Lymfatické masáže Brno</small>
+        </a>
+        <nav class="nav" id="nav">
+          <a href="#lymfa">Co je lymfa</a>
+          <a href="#jak">Jak to funguje</a>
+          <a href="#prubeh">Průběh</a>
+          <a href="#komu">Komu pomáhá</a>
+          <a href="#cenik">Ceník</a>
+          <a href="#studio">Studio</a>
+          <a href="#kontakt" class="btn">Objednat se</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow" data-reveal>Přístrojová lymfodrenáž · Brno-Přízřenice</p>
+          <h1 data-reveal style="--d: 80ms">
+            Krev má srdce.<br />Lymfa <em>nemá nic</em>.
+          </h1>
+          <p class="lead" data-reveal style="--d: 160ms">
+            Lymfa se nepohybuje sama — nemá vlastní pumpu. Když se zastaví,
+            tělo otéká, nohy jsou těžké a únava nemizí ani po spánku.
+            Lymfodrenáž ji vrátí do pohybu. Vy jen ležíte, o zbytek se
+            postará přístroj.
+          </p>
+          <div class="hero-actions" data-reveal style="--d: 240ms">
+            <a href="tel:+420607736012" class="btn">Objednat se telefonicky</a>
+            <a href="#lymfa" class="btn btn-ghost">Jak to funguje</a>
+          </div>
+          <div class="hero-meta" data-reveal style="--d: 320ms">
+            <div><strong>60</strong>minut v naprostém klidu</div>
+            <div><strong>BTL-6000</strong>Lymphastim Topline</div>
+            <div><strong>Soukromé</strong>studio, jen vy a já</div>
+          </div>
+        </div>
+
+        <!-- SIGNATURE: schéma lymfatického toku -->
+        <div class="flow" data-reveal style="--d: 200ms">
+          <div>
+            <svg viewBox="0 0 250 400" role="img" aria-label="Schéma toku lymfy v těle: od nohou vzhůru a od klíční kosti i ramen dolů, vždy ke sběrným uzlinám v břiše">
+              <!-- silueta -->
+              <g class="flow-body">
+                <circle cx="118" cy="38" r="18" />
+                <path d="M118 56v16" />
+                <path
+                  d="M96 80c-4 2-6 16-4 36 2 24 7 38 8 62h36c1-24 6-38 8-62 2-20 0-34-4-36z"
+                />
+                <path d="M96 82c-11 8-18 32-23 60-2 11-3 19-3 25" />
+                <path d="M140 82c11 8 18 32 23 60 2 11 3 19 3 25" />
+                <path d="M106 178c-2 34-4 62-2 92 1 26 2 48 2 62" />
+                <path d="M130 178c2 34 4 62 2 92-1 26-2 48-2 62" />
+              </g>
+
+              <!-- lymfatické cesty: vše míří k břišní uzlině -->
+              <g class="flow-vessel">
+                <path d="M104 330 C102 288 104 226 108 190 C110 172 113 158 118 148" />
+                <path d="M132 330 C134 288 132 226 128 190 C126 172 123 158 118 148" />
+                <path d="M98 86 C102 106 108 128 118 148" />
+                <path d="M138 86 C134 106 128 128 118 148" />
+              </g>
+
+              <!-- putující lymfa: nohy vzhůru, klíční kost a ramena dolů — vždy k břichu -->
+              <g>
+                <path class="flow-move" pathLength="100" d="M104 330 C102 288 104 226 108 190 C110 172 113 158 118 148" />
+                <path class="flow-move d2" pathLength="100" d="M132 330 C134 288 132 226 128 190 C126 172 123 158 118 148" />
+                <path class="flow-move d3" pathLength="100" d="M98 86 C102 106 108 128 118 148" />
+                <path class="flow-move d4" pathLength="100" d="M138 86 C134 106 128 128 118 148" />
+              </g>
+
+              <!-- uzliny -->
+              <g>
+                <circle class="flow-node-halo" cx="108" cy="76" r="5" />
+                <circle class="flow-node-halo p2" cx="128" cy="76" r="5" />
+                <circle class="flow-node" cx="108" cy="76" r="3" />
+                <circle class="flow-node" cx="128" cy="76" r="3" />
+
+                <circle class="flow-node" cx="94" cy="96" r="2.6" />
+                <circle class="flow-node" cx="142" cy="96" r="2.6" />
+
+                <circle class="flow-node-halo p3" cx="118" cy="148" r="5.5" />
+                <circle class="flow-node" cx="118" cy="148" r="3.4" />
+
+                <circle class="flow-node" cx="111" cy="188" r="2.4" />
+                <circle class="flow-node" cx="125" cy="188" r="2.4" />
+
+                <circle class="flow-node" cx="104" cy="268" r="2.3" />
+                <circle class="flow-node" cx="132" cy="268" r="2.3" />
+              </g>
+
+              <!-- popisky s vodicími linkami -->
+              <g stroke="rgba(63,110,96,.45)" stroke-width=".8">
+                <path d="M131 74h44" />
+                <path d="M145 96h30" />
+                <path d="M133 148h42" />
+                <path d="M127 188h48" />
+                <path d="M135 268h40" />
+              </g>
+              <g class="flow-label">
+                <text x="179" y="76">klíční kost</text>
+                <text x="179" y="98">podpaží</text>
+                <text x="179" y="150">břicho</text>
+                <text x="179" y="190">třísla</text>
+                <text x="179" y="270">podkolenní</text>
+              </g>
+            </svg>
+            <p class="flow-caption">
+              Lymfa proudí ke středu těla — od nohou vzhůru a od klíční kosti
+              i paží dolů, vždy k břichu. Drenáž kopíruje tuto cestu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PŘEDSTAVENÍ (úvod s fotkou majitelky) -->
+    <section class="section intro" id="predstaveni">
+      <div class="wrap intro-grid">
+        <!-- Portrét od Hany (11. 8. 2026). Až bude focení ve studiu, vyměnit. -->
+        <div class="intro-img" data-reveal>
+          <img
+            src="images/hana.jpg"
+            alt="Hana Marková, majitelka studia AXON-fit v Brně-Přízřenicích"
+            loading="lazy"
+          />
+        </div>
+        <div data-reveal style="--d: 120ms">
+          <p class="eyebrow">Vítá vás</p>
+          <h2>Jmenuji se Hana Marková</h2>
+          <div class="body-copy" style="margin-top: 22px">
+            <p>
+              Ve svém studiu <strong>AXON-fit</strong> v Brně-Přízřenicích
+              pomáhám lidem cítit se ve svém těle lehčeji — pomocí
+              <strong>přístrojové lymfodrenáže</strong>. Nepracuji ve
+              spěchu a nikdy nemám v místnosti dvě klientky najednou.
+            </p>
+            <p>
+              Zakládám si na individuálním přístupu, příjemné atmosféře
+              a klidu. Věřím, že lidé si mnohem raději dopřejí péči
+              od konkrétního člověka, kterého znají — proto jsem tu
+              osobně u každého ošetření.
+            </p>
+          </div>
+          <div class="hero-actions" style="margin-top: 30px">
+            <a href="tel:+420607736012" class="btn">Objednat se</a>
+            <a href="#o-mne" class="btn btn-ghost">Více o mně</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CO JE LYMFA -->
+    <section class="section section-mist" id="lymfa">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Co je lymfa</p>
+          <h2>Čistička, o kterou si tělo musí říct</h2>
+        </div>
+
+        <div class="lymph-grid">
+          <div class="body-copy" data-reveal>
+            <p>
+              Vedle krevního oběhu má tělo ještě druhou síť — <strong>lymfatický
+              systém</strong>. Odvádí z tkání přebytečnou tekutinu, odpadní
+              látky z látkové výměny a podílí se na obranyschopnosti. Denně
+              jím proteče kolem dvou litrů lymfy.
+            </p>
+            <p>
+              Zásadní rozdíl je v pohonu. Krev žene srdce — spolehlivě, bez
+              přestání. <strong>Lymfa žádnou pumpu nemá.</strong> Pohybuje se
+              jen díky stahům svalů, dýchání a tlaku okolních tkání. Když
+              celý den sedíte, stojíte nebo jste po operaci upoutáni na lůžko,
+              lymfa se doslova zastaví.
+            </p>
+            <p>
+              Tekutina pak zůstane tam, kde být nemá. Výsledek znáte:
+              <strong>oteklé kotníky k večeru, těžké nohy, napjatá kůže,
+              otoky pod očima</strong> a pocit, že je tělo „plné".
+            </p>
+          </div>
+
+          <div data-reveal style="--d: 120ms">
+            <blockquote class="pullquote">
+              Lymfatická drenáž nedělá nic, co by tělo neumělo samo.
+              Jen mu připomene, jak na to.
+              <span>Hana Marková</span>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="facts">
+          <div class="fact" data-reveal>
+            <strong>~600</strong>
+            <span>lymfatických uzlin má dospělý člověk — filtrují, co lymfa odvádí</span>
+          </div>
+          <div class="fact" data-reveal style="--d: 90ms">
+            <strong>2 litry</strong>
+            <span>lymfy proteče tělem každý den, pokud jí nic nestojí v cestě</span>
+          </div>
+          <div class="fact" data-reveal style="--d: 180ms">
+            <strong>0</strong>
+            <span>vlastních pump — proto potřebuje pohyb, dech nebo ruce</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JAK TO FUNGUJE -->
+    <section class="section" id="jak">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Jak to funguje</p>
+          <h2>Přístroj, který napodobí vlnu lymfy</h2>
+          <p class="lead">
+            Pracuji s <strong>BTL-6000 Lymphastim Topline</strong> — nejvyšším
+            modelem této řady, který se používá i v rehabilitaci a na
+            lymfologických pracovištích.
+          </p>
+        </div>
+
+        <div class="lymph-grid">
+          <div class="body-copy" data-reveal>
+            <p>
+              Obléknete si <strong>návleky rozdělené na několik komor</strong>
+              — podle potřeby na nohy, ruce nebo boky a břicho. Komory se
+              pak postupně nafukují: <strong>vždy od nejvzdálenějšího místa
+              směrem k tělu</strong>, tedy od chodidel vzhůru.
+            </p>
+            <p>
+              Tím vzniká <strong>pomalá tlaková vlna</strong>, která kopíruje
+              přirozený směr lymfatického toku a posouvá zadrženou tekutinu
+              k uzlinám, kde se odvede dál. Je to přesně ten pohyb, který
+              lymfě chybí, když celý den sedíte nebo stojíte.
+            </p>
+            <p>
+              Tlak je <strong>měkký a nastavitelný</strong> — nemá bolet,
+              má být příjemný. Většina klientek popisuje pocit jako
+              opakované jemné objetí, a <strong>během procedury usne</strong>.
+              Oproti ruční drenáži je přístroj naprosto pravidelný: udrží
+              stejný rytmus i tlak po celou dobu.
+            </p>
+          </div>
+
+          <div class="cards" data-reveal style="grid-template-columns: 1fr; --d: 120ms">
+            <div class="card">
+              <svg class="card-ico" viewBox="0 0 24 24">
+                <path d="M12 20V7" />
+                <path d="M7 12l5-5 5 5" />
+                <circle cx="12" cy="4" r="1.6" />
+              </svg>
+              <h3>Vlna vždy směrem k uzlinám</h3>
+              <p>
+                Komory se plní postupně a vždy směrem k uzlinám — u nohou od
+                chodidel vzhůru, u rukou od dlaní k tělu, vše k břichu.
+                Přístroj tento přirozený směr respektuje.
+              </p>
+            </div>
+            <div class="card">
+              <svg class="card-ico" viewBox="0 0 24 24">
+                <rect x="3" y="6" width="18" height="12" rx="2" />
+                <path d="M7 10v4M11 10v4M15 10v4" />
+              </svg>
+              <h3>Několik komor, ne jeden stisk</h3>
+              <p>
+                Návlek je rozdělený na sekce. Právě jejich postupné plnění
+                dělá z tlaku plynulou vlnu.
+              </p>
+            </div>
+            <div class="card">
+              <svg class="card-ico" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8.5" />
+                <path d="M12 7v5l3.2 2" />
+              </svg>
+              <h3>Nastavím na míru</h3>
+              <p>
+                Tlak, délku i program volím podle toho, co řešíte a co je
+                vám příjemné.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="shots" data-reveal style="--d: 160ms">
+          <figure>
+            <img src="images/pristroj.jpg" alt="Přístroj BTL-6000 Lymphastim Topline ve studiu" loading="lazy" />
+            <figcaption>BTL-6000 Lymphastim Topline</figcaption>
+          </figure>
+          <figure>
+            <img src="images/navleky.jpg" alt="Nafukovací návleky na nohou klientky" loading="lazy" />
+            <figcaption>Vícekomorové návleky</figcaption>
+          </figure>
+          <figure>
+            <img src="images/aplikace.jpg" alt="Hana Marková připravuje klientku k lymfodrenáži" loading="lazy" />
+            <figcaption>Nachystám vás a zbytek už jen prospíte</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRŮBĚH -->
+    <section class="section section-deep" id="prubeh">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Průběh návštěvy</p>
+          <h2>Co vás u mě čeká</h2>
+          <p class="lead">
+            Skutečná posloupnost, kterou při každé návštěvě dodržuji — proto
+            je očíslovaná.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step" data-reveal>
+            <div class="step-n">01</div>
+            <div>
+              <h3>Krátká konzultace</h3>
+            </div>
+            <p>
+              Zeptám se na zdravotní stav, léky, operace a na to, co vás
+              trápí. Některé stavy drenáž vylučují — proto se ptám dřív,
+              než začneme.
+            </p>
+          </div>
+          <div class="step" data-reveal style="--d: 80ms">
+            <div class="step-n">02</div>
+            <div>
+              <h3>Nasazení návleků</h3>
+              <span class="step-time">pár minut</span>
+            </div>
+            <p>
+              Pohodlně si lehnete — zůstáváte oblečení. Nasadím vám
+              návleky a nastavím tlak i program podle toho, co řešíte.
+            </p>
+          </div>
+          <div class="step" data-reveal style="--d: 160ms">
+            <div class="step-n">03</div>
+            <div>
+              <h3>Vlastní drenáž</h3>
+              <span class="step-time">60 minut</span>
+            </div>
+            <p>
+              Komory se postupně nafukují od chodidel vzhůru a vytvářejí
+              pomalou tlakovou vlnu. Vy jen ležíte v klidu — většina
+              klientek usne.
+            </p>
+          </div>
+          <div class="step" data-reveal style="--d: 240ms">
+            <div class="step-n">04</div>
+            <div>
+              <h3>Čaj a pitný režim</h3>
+              <span class="step-time">po proceduře</span>
+            </div>
+            <p>
+              Uvařím vám bylinkový čaj a necháme tělo v klidu doznít.
+              Zbytek dne doporučuji hodně pít — drenáž pracuje ještě
+              několik hodin.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KOMU POMÁHÁ -->
+    <section class="section" id="komu">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Komu pomáhá</p>
+          <h2>Kdy má drenáž smysl</h2>
+          <p class="lead">
+            Nejčastější důvody, se kterými ke mně klientky přicházejí.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card" data-reveal>
+            <svg class="card-ico" viewBox="0 0 24 24">
+              <path d="M9.5 3.5v7.5l-1.3 5 .8 4.5" />
+              <path d="M14.5 3.5v7.5l1.3 5-.8 4.5" />
+              <path d="M7 21h3.5M13.5 21H17" />
+            </svg>
+            <h3>Těžké a oteklé nohy</h3>
+            <p>
+              Sedavá práce, celodenní stání, dlouhé cesty nebo horké léto.
+              Klasika, se kterou drenáž pomáhá nejrychleji.
+            </p>
+          </div>
+          <div class="card" data-reveal style="--d: 80ms">
+            <svg class="card-ico" viewBox="0 0 24 24">
+              <path d="M4 12h4l2-5 4 10 2-5h4" />
+            </svg>
+            <h3>Regenerace po sportu</h3>
+            <p>
+              Po náročném tréninku pomáhá odplavit produkty látkové výměny
+              a zkrátit dobu, než se svaly zotaví. Skvěle se doplňuje i s EMS
+              tréninkem, který u mě ve studiu absolvujete.
+            </p>
+          </div>
+          <div class="card" data-reveal style="--d: 160ms">
+            <svg class="card-ico" viewBox="0 0 24 24">
+              <path d="M12 3.5c3.2 4 5.5 6.8 5.5 9.6a5.5 5.5 0 0 1-11 0c0-2.8 2.3-5.6 5.5-9.6z" />
+              <path d="M9.4 13.4c.2 1.7 1.3 2.8 2.9 3" />
+            </svg>
+            <h3>Zadržování vody</h3>
+            <p>
+              Hormonální výkyvy, nadýmání, pocit „plného" těla a napjaté
+              kůže — typicky před menstruací nebo po slaném jídle.
+            </p>
+          </div>
+          <div class="card" data-reveal>
+            <svg class="card-ico" viewBox="0 0 24 24">
+              <path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9-1.9 5.1-1.9-5.1L4 10.5l5.1-1.9z" />
+              <path d="M17.8 15.2l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z" />
+            </svg>
+            <h3>Vzhled pleti a celulitidy</h3>
+            <p>
+              Lepší odvod tekutiny se projeví na hladkosti pokožky i na
+              postavě — otok ustoupí, nohy jsou lehčí a centimetry viditelně
+              ubývají.
+            </p>
+          </div>
+          <div class="card" data-reveal style="--d: 80ms">
+            <svg class="card-ico" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8.5" />
+              <path d="M12 8.2v7.6M8.2 12h7.6" />
+            </svg>
+            <h3>Po operaci a rekonvalescence</h3>
+            <p>
+              Drenáž se běžně používá v rehabilitaci. Vždy ale až se
+              souhlasem vašeho lékaře — termín i rozsah řešíme podle něj.
+            </p>
+          </div>
+          <div class="card" data-reveal style="--d: 160ms">
+            <svg class="card-ico" viewBox="0 0 24 24">
+              <path d="M20.2 14.8A8.6 8.6 0 0 1 9.2 3.8a8.6 8.6 0 1 0 11 11z" />
+            </svg>
+            <h3>Únava a napětí</h3>
+            <p>
+              Pomalý rytmus působí na nervový systém — tělo se přepne do
+              odpočinku a vy odcházíte příjemně uvolnění a svěží.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KDY NE -->
+    <section class="section section-mist">
+      <div class="wrap">
+        <div class="warn" data-reveal>
+          <div>
+            <p class="eyebrow">Kdy drenáž vhodná není</p>
+            <h2 style="font-size: clamp(1.6rem, 3vw, 2.2rem)">
+              Raději si řekneme ne
+            </h2>
+            <p class="lead" style="margin-top: 16px; font-size: 1rem">
+              Lymfodrenáž je velmi šetrná, přesto existují stavy, kdy se
+              nedělá. Proto se na začátku ptám — a pokud si nebudeme jistí,
+              pošlu vás nejdřív za lékařem.
+            </p>
+            <p class="lead" style="margin-top: 14px; font-size: 0.95rem">
+              Lymfodrenáž je wellness a regenerační procedura, ne léčba.
+              Zdravotní potíže vždy patří nejdřív k lékaři.
+            </p>
+          </div>
+          <ul>
+            <li>Horečka, akutní infekce nebo záněty</li>
+            <li>Neléčené nádorové onemocnění</li>
+            <li>Akutní trombóza a záněty žil</li>
+            <li>Závažné srdeční selhávání</li>
+            <li>Kožní onemocnění v místě ošetření</li>
+            <li>První trimestr těhotenství (dále jen po konzultaci s lékařem)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CENÍK -->
+    <section class="section" id="cenik">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Ceník</p>
+          <h2>Kolik to stojí</h2>
+          <p class="lead">
+            Jedna cena za hodinu procedury, bez ohledu na to, co spolu
+            řešíme. Délku vždy domluvíme podle toho, co potřebujete.
+          </p>
+        </div>
+
+        <!-- Ceny potvrzené Hanou Markovou 10. 8. 2026: 500 Kč / hodina procedury.
+             Dárkové poukazy potvrzené (18. 8. 2026) — ⚠️ čeká se na fotku poukazu z WhatsAppu, pak přidat do sekce. -->
+        <div class="price-grid">
+          <div class="price" data-reveal>
+            <p class="price-tag">Procedura</p>
+            <h3>Celulitida</h3>
+            <div class="price-val">500 Kč</div>
+            <p class="price-note">za hodinu procedury</p>
+          </div>
+
+          <div class="price feature" data-reveal style="--d: 90ms">
+            <p class="price-tag">Procedura</p>
+            <h3>Detox nohou i rukou</h3>
+            <div class="price-val">500 Kč</div>
+            <p class="price-note">za hodinu procedury</p>
+          </div>
+
+          <div class="price" data-reveal style="--d: 180ms">
+            <p class="price-tag">Procedura</p>
+            <h3>Lipedém</h3>
+            <div class="price-val">500 Kč</div>
+            <p class="price-note">za hodinu procedury</p>
+          </div>
+        </div>
+
+        <div
+          class="voucher"
+          data-reveal
+          style="margin-top: 30px; padding: 26px; border: 1px solid #3F6E60; border-radius: 14px; background: rgba(63, 110, 96, 0.06); display: flex; flex-wrap: wrap; gap: 28px; align-items: center"
+        >
+          <img
+            src="images/poukaz.jpg"
+            alt="Dárkový poukaz na lymfatickou přístrojovou masáž – LYMFA CARE"
+            loading="lazy"
+            style="flex: 1 1 300px; max-width: 460px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 14px 34px -18px rgba(28, 35, 33, 0.4)"
+          />
+          <div style="flex: 1 1 280px">
+            <h3 style="margin: 0 0 10px; font-family: 'Fraunces', serif; font-weight: 500">
+              Dárkové poukazy
+            </h3>
+            <p style="margin: 0">
+              Chcete někoho potěšit? Ráda vystavím dárkový poukaz na
+              přístrojovou lymfatickou masáž — na jednu proceduru (60 minut)
+              nebo na libovolný počet. Platnost 6 měsíců od vystavení. Stačí
+              zavolat a domluvíme se.
+            </p>
+          </div>
+        </div>
+
+        <p
+          class="lead"
+          style="margin-top: 28px; font-size: 0.92rem"
+          data-reveal
+        >
+          Nevíte, která procedura je pro vás ta pravá? Zavolejte mi a
+          poradíme se — domluvit termín můžeme rovnou.
+        </p>
+      </div>
+    </section>
+
+    <!-- O MNĚ -->
+    <section class="section section-mist" id="o-mne">
+      <div class="wrap about">
+        <div class="about-img" data-reveal>
+          <img
+            src="images/hana-omne.jpg"
+            alt="Hana Marková ve svém studiu AXON-fit v Brně-Přízřenicích"
+            loading="lazy"
+          />
+        </div>
+        <div data-reveal style="--d: 120ms">
+          <p class="eyebrow">O mně</p>
+          <h2>Hana Marková</h2>
+          <div class="body-copy" style="margin-top: 22px">
+            <p>
+              Ve svém studiu <strong>AXON-fit</strong> v Brně-Přízřenicích se
+              roky věnuji tomu, aby se lidé cítili ve svém těle lehčí. Vedle
+              EMS tréninků, kterými jsem začínala, dnes nabízím i
+              <strong>přístrojovou lymfodrenáž</strong> — přirozené
+              doplnění, které tělu pomůže se rychleji zregenerovat.
+            </p>
+            <p>
+              Pracuji sama a jen s jednou klientkou v daný čas. Žádné
+              spěchání, žádná čekárna plná lidí — jen klid, hudba a
+              hodina, která patří výhradně vám.
+            </p>
+            <p>
+              Pokud si nebudu jistá, jestli je drenáž zrovna pro vás ta
+              správná cesta, řeknu vám to upřímně — a klidně vás nasměruji
+              nejdřív k lékaři. Záleží mi na tom, aby vám procedura opravdu
+              pomohla, ne aby jen proběhla.
+            </p>
+          </div>
+          <p class="sign">Těším se na vás, Hana</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDIO -->
+    <section class="section" id="studio">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Studio</p>
+          <h2>Kam přijdete</h2>
+          <p class="lead">
+            Klidná místnost jen pro vás — závěsy, tlumené světlo a čaj na
+            závěr. Žádná čekárna, žádný spěch.
+          </p>
+        </div>
+        <div class="shots" style="margin-top: 0">
+          <figure data-reveal>
+            <img src="images/studio-hana.jpg" alt="Hana Marková nasazuje návleky klientce ve studiu AXON-fit" loading="lazy" />
+          </figure>
+          <figure data-reveal style="--d: 80ms">
+            <img src="images/atmosfera.jpg" alt="Tlumené světlo a závěsy ve studiu" loading="lazy" />
+          </figure>
+          <figure data-reveal style="--d: 160ms">
+            <img src="images/caj.jpg" alt="Bylinkový čaj podávaný po proceduře" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section class="section section-deep" id="kontakt">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Objednání</p>
+          <h2>Přijďte si odlehčit</h2>
+          <p class="lead">
+            Objednávám se telefonicky nebo přes SMS — ozvu se vám zpět
+            a domluvíme termín, který vám sedne.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div data-reveal>
+            <ul class="contact-list">
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" />
+                </svg>
+                <div>
+                  <b><a href="tel:+420607736012">607 736 012</a></b>
+                  <span>Telefon i SMS — nejrychlejší cesta</span>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="M3 7l9 6 9-6" />
+                </svg>
+                <div>
+                  <b><a href="mailto:axonlife1@gmail.com">axonlife1@gmail.com</a></b>
+                  <span>Pro delší dotazy a poukazy</span>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 21s-7-4.6-7-10a7 7 0 0 1 14 0c0 5.4-7 10-7 10z" />
+                  <circle cx="12" cy="11" r="2.4" />
+                </svg>
+                <div>
+                  <b>Břeclavská 50/23, Brno-Přízřenice</b>
+                  <span>Parkování zdarma přímo před studiem</span>
+                </div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3.2 2" />
+                </svg>
+                <div>
+                  <b>Po dohodě, i mimo běžné hodiny</b>
+                  <span>Pracuji na objednávku — vždy jen jedna klientka</span>
+                </div>
+              </li>
+            </ul>
+            <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap">
+              <a href="tel:+420607736012" class="btn btn-light">Zavolat</a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100064156657253"
+                target="_blank"
+                rel="noopener"
+                class="btn"
+                style="border-color: rgba(244,246,243,.4); background: transparent; color: var(--porcelain)"
+                >Facebook</a
+              >
+            </div>
+          </div>
+
+          <div class="map" data-reveal style="--d: 120ms">
+            <iframe
+              src="https://maps.google.com/maps?q=B%C5%99eclavsk%C3%A1+50%2F23%2C+Brno-P%C5%99%C3%ADz%C5%99enice&output=embed"
+              title="Mapa – Břeclavská 50/23, Brno-Přízřenice"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATIČKA -->
+    <footer class="footer">
+      <div class="wrap footer-in">
+        <span>© <span id="year"></span> Lymfanelle · Hana Marková · Brno-Přízřenice</span>
+        <span>
+          <a href="tel:+420607736012">607 736 012</a> ·
+          <a href="mailto:axonlife1@gmail.com">axonlife1@gmail.com</a>
+        </span>
+      </div>
+    </footer>
+
+    <script>
+      // Rok v patičce
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Hlavička po scrollu
+      const header = document.getElementById("header");
+      const onScroll = () =>
+        header.classList.toggle("scrolled", window.scrollY > 24);
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      // Mobilní menu
+      const nav = document.getElementById("nav");
+      const toggle = document.getElementById("navToggle");
+      toggle.addEventListener("click", () => {
+        const open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open);
+        document.body.style.overflow = open ? "hidden" : "";
+      });
+      nav.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          nav.classList.remove("open");
+          toggle.setAttribute("aria-expanded", false);
+          document.body.style.overflow = "";
+        })
+      );
+
+      // Postupné odkrývání
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+      document.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>
