@@ -275,7 +275,7 @@
     <div class="hero-rating"><span class="stars">★★★★★</span> Individuální přístup a klidné prostředí</div>
   </div>
   <div class="hero-right">
-    <img class="hero-img" src="../stock_photos/photo_1.jpg" alt="Masáže Iva Němcová" onerror="this.style.display='none'">
+    <img class="hero-img" src="photos/osetreni.jpg" alt="Terapeutické ošetření — Masáže Iva Němcová" onerror="this.style.display='none'">
     <div class="hero-leaf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21c-5 0-8-3-8-8 0-6 6-11 18-11 0 10-5 16-10 18z"/><path d="M8 18c2-5 6-8 10-9"/></svg></div>
     <div class="hero-badge"><strong>Klid &amp; regenerace</strong><span>Prostor jen pro vás</span></div>
   </div>
@@ -293,7 +293,7 @@
 <section id="onas">
   <div class="about-grid">
     <div class="about-figure" data-r="left">
-      <img src="../stock_photos/photo_2.jpg" alt="Studio – Masáže Iva Němcová" onerror="this.style.visibility='hidden'">
+      <img src="photos/poukazy.jpg" alt="Dárkové poukazy — Masáže a terapeutická ošetření Iva Němcová" onerror="this.style.visibility='hidden'">
     </div>
     <div data-r="right">
       <div class="eyebrow">O mně</div>
@@ -468,7 +468,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('cli
 const revObs = new IntersectionObserver(es => { es.forEach((e,i) => { if(e.isIntersecting){ setTimeout(() => e.target.classList.add('visible'), i*70); revObs.unobserve(e.target); } }); }, {threshold:.12});
 document.querySelectorAll('[data-r]').forEach(el => revObs.observe(el));
 
-const photos = ['photos/poukazy.jpg','../stock_photos/photo_1.jpg','../stock_photos/photo_2.jpg','../stock_photos/photo_3.jpg','../stock_photos/photo_4.jpg','../stock_photos/photo_5.jpg'].filter(s => s && s.length);
+const photos = ['photos/poukazy.jpg','photos/osetreni.jpg','../stock_photos/photo_2.jpg','../stock_photos/photo_3.jpg','../stock_photos/photo_4.jpg','../stock_photos/photo_5.jpg'].filter(s => s && s.length);
 const rows = [document.getElementById('row1'), document.getElementById('row2')];
 if(photos.length > 0){ rows.forEach(row => { [...photos,...photos,...photos,...photos].forEach(src => { const img=document.createElement('img'); img.src=src; img.alt='Studio'; img.loading='lazy'; img.onerror=function(){ this.remove(); }; row.appendChild(img); }); }); }
 else { document.getElementById('galerie').style.display='none'; }
