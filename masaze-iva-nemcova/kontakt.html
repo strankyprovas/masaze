@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt · Ladenise — Iva Němcová | Hemže u Chocně a Chrudim</title>
+  <meta name="description" content="Kontakt na Ivu Němcovou — Ladenise. Provozovny Hemže 18 (Choceň) a Podfortenská 103 (Chrudim). Tel. 732 122 344, objednání po telefonické domluvě.">
+  <link rel="icon" href="photos/logo-sq.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-in">
+    <a href="index.html" class="brand">
+      <img src="photos/logo-sq.jpg" alt="Ladenise — logo">
+      <span><span class="brand-name">LADENISE</span><span class="brand-sub">Iva Němcová · terapeutická ošetření</span></span>
+    </a>
+    <nav class="main">
+      <a href="index.html" data-p="index">Domů</a>
+      <a href="o-mne.html" data-p="o-mne">O mně</a>
+      <a href="co-nabizim.html" data-p="co-nabizim">Co nabízím</a>
+      <a href="prace-s-konmi.html" data-p="kone">Práce s koňmi</a>
+      <a href="prace-s-energii.html" data-p="energie">Práce s energií</a>
+      <a href="cenik.html" data-p="cenik">Ceník</a>
+      <a href="kontakt.html" data-p="kontakt" class="akt">Kontakt</a>
+    </nav>
+    <a href="tel:+420732122344" class="nav-tel">732 122 344</a>
+    <button class="ham" onclick="document.getElementById('mobnav').classList.toggle('open')" aria-label="Menu">☰</button>
+  </div>
+  <div id="mobnav">
+    <a href="index.html">Domů</a>
+    <a href="o-mne.html">O mně</a>
+    <a href="co-nabizim.html">Co nabízím</a>
+    <a href="prace-s-konmi.html">Práce s koňmi</a>
+    <a href="prace-s-energii.html">Práce s energií</a>
+    <a href="cenik.html">Ceník</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+</header>
+
+<section style="background:var(--bg2)">
+  <div class="wrap-uzsi">
+    <div class="eyebrow">Kontakt</div>
+    <h1 class="title">Ozvěte se — <em>domluvíme termín</em></h1>
+    <p class="lead">Objednávky přijímám telefonicky nebo e-mailem. Najdete mě na dvou místech:
+      v Hemži u Chocně a v Chrudimi.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem">
+    <div>
+      <h2 class="title" style="font-size:1.6rem">Kontaktní údaje</h2>
+      <div class="kont-udaj"><b>Iva Němcová</b> — Ladenise<br>IČO: 74838326</div>
+      <div class="kont-udaj"><b>Telefon:</b> <a href="tel:+420732122344">732 122 344</a><br>
+        <span class="pozn">Objednání po telefonické domluvě. Když nezvedám, ošetřuji — ozvu se zpět.</span></div>
+      <div class="kont-udaj"><b>E-mail:</b> <a href="mailto:nemcova.iva@centrum.cz">nemcova.iva@centrum.cz</a></div>
+      <div class="kont-udaj"><b>Provozovny:</b><br>Hemže 18, 565 01 Choceň<br>Podfortenská 103, 537 01 Chrudim</div>
+    </div>
+    <div>
+      <h2 class="title" style="font-size:1.6rem">Napište mi</h2>
+      <form class="dotaz" action="mailto:nemcova.iva@centrum.cz" method="get" enctype="text/plain">
+        <input type="text" name="jmeno" placeholder="Vaše jméno">
+        <input type="text" name="telefon" placeholder="Telefon">
+        <textarea name="body" placeholder="S čím vám mohu pomoci? Napište i preferované místo — Hemže, nebo Chrudim."></textarea>
+        <button type="submit" class="btn" style="border:0;cursor:pointer">Odeslat dotaz</button>
+      </form>
+      <p class="pozn" style="margin-top:.6rem">Formulář otevře váš e-mail s předvyplněnou zprávou.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="mapy">
+      <div class="mapa-box">
+        <h3>Hemže 18 · Choceň</h3>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=16.1950%2C49.9930%2C16.2350%2C50.0130&layer=mapnik&marker=50.0030%2C16.2150" loading="lazy" title="Mapa — Hemže 18, Choceň"></iframe>
+      </div>
+      <div class="mapa-box">
+        <h3>Podfortenská 103 · Chrudim</h3>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=15.7750%2C49.9400%2C15.8150%2C49.9600&layer=mapnik&marker=49.9500%2C15.7950" loading="lazy" title="Mapa — Podfortenská 103, Chrudim"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h4>Ladenise</h4>
+      <p>Iva Němcová<br>terapeutická ošetření pro lidi i koně<br>IČO: 74838326</p>
+    </div>
+    <div>
+      <h4>Provozovny</h4>
+      <p>Hemže 18, Choceň<br>Podfortenská 103, Chrudim</p>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <p><a href="tel:+420732122344">732 122 344</a><br>
+      <a href="mailto:nemcova.iva@centrum.cz">nemcova.iva@centrum.cz</a><br>
+      Objednání po telefonické domluvě.</p>
+    </div>
+  </div>
+  <div class="copy">© 2026 Iva Němcová · Ladenise. Terapeutická ošetření nenahrazují lékařskou péči.</div>
+</footer>
+</body>
+</html>
