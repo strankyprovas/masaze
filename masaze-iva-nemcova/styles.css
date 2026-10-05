@@ -137,3 +137,18 @@ footer h4 { color: #fff; font-family: "Nunito Sans", sans-serif; font-size: .8re
   .hero-logo { max-width: 260px; }
   .hero-badges { justify-content: center; }
 }
+
+/* karty sluzeb (Co nabizim — vzor lenkajurickova/sluzby) */
+.sluzby-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.6rem; }
+.sluzba-karta { background: var(--bila); border: 1px solid var(--linka); border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(63,58,42,.05); display: flex; flex-direction: column; }
+.sluzba-hlava { height: 150px; display: grid; place-items: center; color: var(--zelena); background: linear-gradient(135deg, #eef2e4, #f7f5ec); }
+.sluzba-hlava.modra { color: var(--modra); background: linear-gradient(135deg, var(--modra-sv), #f4f8fb); }
+.sluzba-hlava svg { width: 64px; height: 64px; opacity: .9; }
+.sluzba-telo { padding: 1.5rem 1.7rem 1.7rem; display: flex; flex-direction: column; flex: 1; }
+.sluzba-telo h3 { font-size: 1.35rem; margin-bottom: .5rem; }
+.sluzba-telo p { font-size: .93rem; flex: 1; }
+.sluzba-akce { display: flex; gap: .6rem; margin-top: 1.1rem; flex-wrap: wrap; }
+.btn-mini { text-decoration: none; font-size: .85rem; font-weight: 700; padding: .55rem 1.2rem; border-radius: 999px; background: var(--zelena); color: #fff; transition: .2s; }
+.btn-mini:hover { background: var(--zelena-tm); }
+.btn-mini.line { background: transparent; border: 1.5px solid var(--linka); color: var(--kmen); }
+.btn-mini.line:hover { border-color: var(--kmen); }

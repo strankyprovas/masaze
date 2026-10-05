@@ -1,56 +1,10 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Co nabízím · Bowenova technika, Access Bars, reflexní terapie — Ladenise</title>
-  <meta name="description" content="Bowenova technika, Access Bars, kombinace Bowen + Access Bars, reflexní terapie a Reiki. Terapeutická ošetření Ivy Němcové, Choceň a Chrudim.">
-  <link rel="icon" href="photos/logo-sq.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+p = '/private/tmp/claude-501/-Users-matyas-Prace/17927987-3caf-477d-b942-1e1d9dec9288/scratchpad/ladenise/masaze-iva-nemcova/co-nabizim.html'
+s = open(p, encoding='utf-8').read()
 
-<header class="site">
-  <div class="nav-in">
-    <a href="index.html" class="brand">
-      <img src="photos/logo-sq.jpg" alt="Ladenise — logo">
-      <span><span class="brand-name">Iva Němcová</span><span class="brand-sub">Masáže a terapeutická ošetření</span></span>
-    </a>
-    <nav class="main">
-      <a href="index.html" data-p="index">Domů</a>
-      <a href="o-mne.html" data-p="o-mne">O mně</a>
-      <a href="co-nabizim.html" data-p="co-nabizim" class="akt">Co nabízím</a>
-      <a href="prace-s-konmi.html" data-p="kone">Práce s koňmi</a>
-      <a href="prace-s-energii.html" data-p="energie">Práce s energií</a>
-      <a href="cenik.html" data-p="cenik">Ceník</a>
-      <a href="kontakt.html" data-p="kontakt">Kontakt</a>
-    </nav>
-    <a href="tel:+420732122344" class="nav-tel">732 122 344</a>
-    <button class="ham" onclick="document.getElementById('mobnav').classList.toggle('open')" aria-label="Menu">☰</button>
-  </div>
-  <div id="mobnav">
-    <a href="index.html">Domů</a>
-    <a href="o-mne.html">O mně</a>
-    <a href="co-nabizim.html">Co nabízím</a>
-    <a href="prace-s-konmi.html">Práce s koňmi</a>
-    <a href="prace-s-energii.html">Práce s energií</a>
-    <a href="cenik.html">Ceník</a>
-    <a href="kontakt.html">Kontakt</a>
-  </div>
-</header>
+start = s.index('<section>\n  <div class="wrap-uzsi">\n    <div class="sl-item">')
+end = s.index('</section>', start) + len('</section>')
 
-<section style="background:var(--bg2)">
-  <div class="wrap-uzsi">
-    <div class="eyebrow">Co nabízím</div>
-    <h1 class="title">Ošetření, které si tělo <em>řekne samo</em></h1>
-    <p class="lead">Všechny metody, se kterými pracuji, jsou šetrné a bez násilí. Při objednání
-      si krátce popovídáme a vybereme, co je pro vás právě teď nejvhodnější.</p>
-  </div>
-</section>
-
-<section>
+novy = '''<section>
   <div class="wrap">
     <div class="sluzby-grid">
 
@@ -85,7 +39,7 @@
         <div class="sluzba-hlava modra"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M32 52s-16-9.3-16-21a9 9 0 0 1 16-5.7A9 9 0 0 1 48 31c0 11.7-16 21-16 21z"/><path d="M12 14l2.2 2.2M52 14l-2.2 2.2M32 6v4"/></svg></div>
         <div class="sluzba-telo">
           <h3>Kombinace Bowen + Access Bars</h3>
-          <p>Dvě terapie v jednom ošetření — tělo i mysl si konečně vydechnou.</p>
+          <p>Dvě terapie v jednom ošetření — tělo i mysl si konečně vydechnou. Nejoblíbenější volba klientek.</p>
           <div class="sluzba-akce"><a href="cenik.html" class="btn-mini">Ceník →</a><a href="tel:+420732122344" class="btn-mini line">Objednat</a></div>
         </div>
       </div>
@@ -117,26 +71,31 @@
       <a href="tel:+420732122344" class="btn">Objednat se — 732 122 344</a>
     </p>
   </div>
-</section>
+</section>'''
 
-<footer>
-  <div class="foot-grid">
-    <div>
-      <h4>Ladenise</h4>
-      <p>Iva Němcová<br>terapeutická ošetření pro lidi i koně<br>IČO: 74838326</p>
-    </div>
-    <div>
-      <h4>Provozovny</h4>
-      <p>Hemže 18, Choceň<br>Podfortenská 103, Chrudim</p>
-    </div>
-    <div>
-      <h4>Kontakt</h4>
-      <p><a href="tel:+420732122344">732 122 344</a><br>
-      <a href="mailto:nemcova.iva@centrum.cz">nemcova.iva@centrum.cz</a><br>
-      Objednání po telefonické domluvě.<br><a href="https://www.facebook.com/masazenemcova" target="_blank" rel="noopener">Facebook</a></p>
-    </div>
-  </div>
-  <div class="copy">© 2026 Iva Němcová · Ladenise. Terapeutická ošetření nenahrazují lékařskou péči.</div>
-</footer>
-</body>
-</html>
+s = s[:start] + novy + s[end:]
+open(p, 'w', encoding='utf-8').write(s)
+print('co-nabizim prestaveno na karty')
+
+# CSS pro karty
+c = '/private/tmp/claude-501/-Users-matyas-Prace/17927987-3caf-477d-b942-1e1d9dec9288/scratchpad/ladenise/masaze-iva-nemcova/styles.css'
+css = open(c, encoding='utf-8').read()
+if 'sluzba-karta' not in css:
+    css += '''
+/* karty sluzeb (Co nabizim — vzor lenkajurickova/sluzby) */
+.sluzby-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.6rem; }
+.sluzba-karta { background: var(--bila); border: 1px solid var(--linka); border-radius: 18px; overflow: hidden; box-shadow: 0 10px 30px rgba(63,58,42,.05); display: flex; flex-direction: column; }
+.sluzba-hlava { height: 150px; display: grid; place-items: center; color: var(--zelena); background: linear-gradient(135deg, #eef2e4, #f7f5ec); }
+.sluzba-hlava.modra { color: var(--modra); background: linear-gradient(135deg, var(--modra-sv), #f4f8fb); }
+.sluzba-hlava svg { width: 64px; height: 64px; opacity: .9; }
+.sluzba-telo { padding: 1.5rem 1.7rem 1.7rem; display: flex; flex-direction: column; flex: 1; }
+.sluzba-telo h3 { font-size: 1.35rem; margin-bottom: .5rem; }
+.sluzba-telo p { font-size: .93rem; flex: 1; }
+.sluzba-akce { display: flex; gap: .6rem; margin-top: 1.1rem; flex-wrap: wrap; }
+.btn-mini { text-decoration: none; font-size: .85rem; font-weight: 700; padding: .55rem 1.2rem; border-radius: 999px; background: var(--zelena); color: #fff; transition: .2s; }
+.btn-mini:hover { background: var(--zelena-tm); }
+.btn-mini.line { background: transparent; border: 1.5px solid var(--linka); color: var(--kmen); }
+.btn-mini.line:hover { border-color: var(--kmen); }
+'''
+    open(c, 'w', encoding='utf-8').write(css)
+print('css ok')
