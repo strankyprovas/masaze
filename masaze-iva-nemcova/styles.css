@@ -174,3 +174,12 @@ a.sl-link h3::after { content: " →"; color: var(--modra); font-family: "Nunito
   mask-size: 100% 100%;
 }
 .stetec-foto::after { content: ""; position: absolute; inset: 0; border-radius: 14px; pointer-events: none; }
+
+/* dlazdice Domu + detailni texty Co nabizim (texty Ivy, 6. 10. 2026) */
+.tile-tag { color: var(--modra); font-weight: 700; font-size: .92rem; margin-bottom: .5rem; }
+.tile-ul { list-style: none; padding: 0; margin: 0; }
+.tile-ul li { font-size: .9rem; padding-left: 1.15rem; position: relative; margin-bottom: .3rem; }
+.tile-ul li::before { content: "✓"; position: absolute; left: 0; color: var(--zelena); font-weight: 700; }
+article.detail { background: var(--bila); border: 1px solid var(--linka); border-radius: 18px; padding: 2.2rem 2.4rem; margin-bottom: 1.8rem; box-shadow: 0 10px 30px rgba(63,58,42,.05); }
+article.detail h3 { font-size: 1.25rem; margin-bottom: .4rem; }
+article.detail p { margin-top: .7rem; }
