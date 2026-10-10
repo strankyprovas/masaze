@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Masážní studio Jiný Svět – masáže Bezděkov</title>
-<meta name="description" content="Masážní studio Jiný Svět – Kde tělo i mysl najdou odpočinek. Masáže v Bezděkov.">
+<title>Masážní studio Jiný Svět – masáže Michalovice u Havlíčkova Brodu</title>
+<link rel="canonical" href="https://strankyprovas.github.io/masaze/masazni-studio-jiny-svet/">
+<meta name="description" content="Masážní studio Jiný Svět – Kde tělo i mysl najdou odpočinek. Masáže v Michalovice.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -209,7 +210,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
 <!-- HERO -->
 <header id="hero">
   <div class="wrap">
-    <span class="hero-badge" data-r>Masáže · Bezděkov</span>
+    <span class="hero-badge" data-r>Masáže · Michalovice</span>
     <h1 data-r>Masážní studio Jiný Svět</h1>
     <p class="hero-est" data-r>— Kde tělo i mysl najdou odpočinek —</p>
     <p class="hero-sub" data-r>Relaxační i sportovní masáže, aromaterapie a speciální procedury na jednom místě.</p>
@@ -231,7 +232,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
   <div class="pasek-in">
     <div class="pasek-i"><strong>Individuální přístup</strong><span>masáž šitá na míru</span></div>
     <div class="pasek-i"><strong>Objednání po telefonu</strong><span>termín, který vám sedne</span></div>
-    <div class="pasek-i"><strong>Bezděkov</strong><span>jsme kousek od vás</span></div>
+    <div class="pasek-i"><strong>Michalovice</strong><span>jsme kousek od vás</span></div>
   </div>
 </section>
 
@@ -322,13 +323,13 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
       <div id="test-track">
         <div class="test-i"><div class="uvoz">„</div><div class="hvezdy">★★★★★</div>
           <p>Odcházela jsem jako vyměněná. Konečně masáž, kde na mě nikdo nespěchal.</p>
-          <cite>Zákaznice · Bezděkov</cite></div>
+          <cite>Zákaznice · Michalovice</cite></div>
         <div class="test-i"><div class="uvoz">„</div><div class="hvezdy">★★★★★</div>
           <p>Záda mě trápila měsíce. Po pár návštěvách je to úplně jiný život.</p>
-          <cite>Zákazník · Bezděkov</cite></div>
+          <cite>Zákazník · Michalovice</cite></div>
         <div class="test-i"><div class="uvoz">„</div><div class="hvezdy">★★★★★</div>
           <p>Krásné prostředí, příjemné jednání a ruce, které vědí, co dělají. Doporučuji všem.</p>
-          <cite>Zákaznice · Bezděkov</cite></div>
+          <cite>Zákaznice · Michalovice</cite></div>
       </div>
       <div id="test-dots"></div>
     </div>
@@ -345,17 +346,19 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
     </div>
     <div class="kont-grid">
       <div data-r>
-        <div class="kont-i"><span class="ik">❦</span><div><strong>Kde nás najdete</strong>Michalovice 55, Bezděkov</div></div>
+        <div class="kont-i"><span class="ik">❦</span><div><strong>Kde nás najdete</strong>Michalovice 55, 580 01 (u Havlíčkova Brodu)</div></div>
         <div class="kont-i"><span class="ik">❦</span><div><strong>Telefon</strong><a href="tel:+420 721 976 110" style="text-decoration:none">+420 721 976 110</a></div></div>
         <div class="kont-i"><span class="ik">❦</span><div><strong>E-mail</strong><a href="mailto:pavlacechovaa@gmail.com" style="text-decoration:none">pavlacechovaa@gmail.com</a></div></div>
-        <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Michalovice+55&output=embed" allowfullscreen loading="lazy" title="Mapa – Masážní studio Jiný Svět"></iframe></div>
+        <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=49.5771806,15.5212475&z=15&output=embed" allowfullscreen loading="lazy" title="Mapa – Masážní studio Jiný Svět"></iframe></div>
       </div>
       <div data-r>
-        <form onsubmit="return false;">
-          <div class="form-g"><label>Jméno</label><input type="text" placeholder="Vaše jméno"></div>
-          <div class="form-g"><label>Telefon</label><input type="tel" placeholder="Číslo, kam se ozveme"></div>
-          <div class="form-g"><label>Zpráva</label><textarea placeholder="Jaká masáž vás zajímá a kdy se vám to hodí…"></textarea></div>
+        <form id="kontakt-form">
+          <div class="form-g"><label>Jméno</label><input type="text" name="name" placeholder="Vaše jméno"></div>
+          <div class="form-g"><label>Telefon</label><input type="tel" name="phone" required placeholder="Číslo, kam se ozveme"></div>
+          <div class="form-g"><label>Zpráva</label><textarea name="message" placeholder="Jaká masáž vás zajímá a kdy se vám to hodí…"></textarea></div>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
           <button type="submit" class="form-submit">Odeslat zprávu</button>
+          <p id="form-stav" style="margin:10px 0 0;font-size:.9rem;display:none"></p>
         </form>
       </div>
     </div>
@@ -369,7 +372,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="footer-logo">Masážní studio Jiný</a>
+      <a href="#" class="footer-logo">Masážní studio Jiný Svět</a>
       <p>Profesionální masáže a wellness v příjemném prostředí.</p>
     </div>
     <div class="footer-col">
@@ -461,5 +464,24 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
 });
 </script>
 <img src="https://strankyprovas.cz/track/d.php?s=masaze/masazni-studio-jiny-svet" alt="" width="1" height="1" style="position:absolute;opacity:0" aria-hidden="true">
+
+<script>
+(function(){
+  var f=document.getElementById('kontakt-form'),st=document.getElementById('form-stav');
+  if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('.form-submit');btn.disabled=true;
+    st.style.display='block';st.style.color='';st.textContent='Odesílám…';
+    fetch('https://strankyprovas.cz/form/jinysvet.php',{method:'POST',body:new FormData(f)})
+      .then(function(r){return r.json().catch(function(){return {ok:false}})})
+      .then(function(d){
+        if(d.ok){st.style.color='#3d7a4f';st.textContent='Děkujeme! Ozveme se vám co nejdřív.';f.reset();}
+        else{st.style.color='#a33';st.textContent=(d&&d.error)||'Zprávu se nepodařilo odeslat — zavolejte prosím na 721 976 110.';btn.disabled=false;}
+      })
+      .catch(function(){st.style.color='#a33';st.textContent='Zprávu se nepodařilo odeslat — zavolejte prosím na 721 976 110.';btn.disabled=false;});
+  });
+})();
+</script>
 </body>
 </html>
