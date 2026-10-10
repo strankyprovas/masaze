@@ -8,30 +8,27 @@
 <meta name="description" content="Masážní studio Jiný Svět – Kde tělo i mysl najdou odpočinek. Masáže v Michalovice.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --papir:#f7f0e6;      /* starý papír */
-  --papir2:#efe6d6;
+  --papir:#faf7f1;      /* svěží krém */
+  --papir2:#f2ede2;
   --inkoust:#3a2f28;    /* tmavá hněď */
   --mahagon:#6e4a38;    /* mahagon */
   --salvej:#5c6b57;     /* šalvějová zeleň */
   --zlato:#9c7c3c;      /* mosaz */
   --seda:#6f6355;
-  --linka:#cfc0a4;
+  --linka:#e0d6c2;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'EB Garamond',Georgia,serif;background:var(--papir);color:var(--inkoust);line-height:1.75;font-size:18px;overflow-x:hidden;padding-top:38px}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;background-image:radial-gradient(rgba(58,47,40,.05) 1px, transparent 1px);background-size:5px 5px}
+body{font-family:'Figtree',system-ui,sans-serif;font-weight:300;background:var(--papir);color:var(--inkoust);line-height:1.75;font-size:18px;overflow-x:hidden}
 h1,h2,h3,h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.15;color:var(--inkoust)}
 img{max-width:100%;display:block}
 a{color:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
 .sec{padding:100px 0}
 .sec-alt{background:var(--papir2);border-top:1px solid var(--linka);border-bottom:1px solid var(--linka)}
-
-#ukazka-banner{position:fixed;top:0;left:0;width:100%;background:var(--salvej);color:var(--papir);text-align:center;padding:9px;font-size:14px;letter-spacing:.06em;z-index:9999;box-sizing:border-box;font-family:'EB Garamond',serif}
 
 .orn{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--zlato);margin:0 auto 18px;font-size:1.1rem}
 .orn::before,.orn::after{content:"";height:1px;width:70px}
@@ -42,15 +39,15 @@ a{color:inherit}
 .sec h2 em{font-style:italic;font-weight:500;color:var(--salvej)}
 .lead{color:var(--seda);font-size:1.08rem;max-width:640px;margin:0 auto 18px;text-align:center}
 
-#navbar{position:fixed;top:38px;left:0;width:100%;z-index:9000;background:var(--papir);border-bottom:3px double var(--linka);transition:.3s}
+#navbar{position:fixed;top:0;left:0;width:100%;z-index:9000;background:rgba(250,247,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--linka);transition:.3s}
 .nav-in{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;text-decoration:none;color:var(--salvej);letter-spacing:.02em}
 .nav-logo span{color:var(--mahagon);font-style:italic}
 .nav-links{display:flex;gap:30px;list-style:none;align-items:center}
 .nav-links a{text-decoration:none;font-size:.98rem;color:var(--inkoust);transition:.2s;letter-spacing:.03em}
 .nav-links a:hover{color:var(--mahagon)}
-.nav-tel{border:1px solid var(--salvej);outline:1px solid var(--salvej);outline-offset:3px;color:var(--salvej)!important;padding:8px 20px;font-weight:500;transition:.25s}
-.nav-tel:hover{background:var(--salvej);color:var(--papir)!important}
+.nav-tel{border:1.5px solid var(--salvej);border-radius:999px;color:var(--salvej)!important;padding:9px 22px;font-weight:500;transition:.25s}
+.nav-tel:hover{background:var(--salvej);color:#fff!important}
 .ham{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:var(--salvej)}
 #mobile-nav{position:fixed;inset:0;background:var(--salvej);z-index:9500;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transform:translateY(-100%);transition:.35s}
 #mobile-nav.open{transform:translateY(0)}
@@ -64,20 +61,20 @@ a{color:inherit}
 .hero-est{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;color:var(--zlato);margin-bottom:26px}
 .hero-sub{font-size:1.15rem;color:var(--seda);max-width:620px;margin:0 auto 38px}
 .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-block;padding:14px 36px;text-decoration:none;font-family:'EB Garamond',serif;font-size:1.02rem;letter-spacing:.06em;transition:.25s}
-.btn-prim{background:var(--salvej);color:var(--papir);border:1px solid var(--salvej);outline:1px solid var(--salvej);outline-offset:3px}
-.btn-prim:hover{background:var(--inkoust);border-color:var(--inkoust);outline-color:var(--inkoust)}
-.btn-ghost{border:1px solid var(--mahagon);outline:1px solid var(--mahagon);outline-offset:3px;color:var(--mahagon)}
-.btn-ghost:hover{background:var(--mahagon);color:var(--papir)}
+.btn{display:inline-block;padding:15px 38px;text-decoration:none;font-family:'Figtree',sans-serif;font-weight:500;font-size:.98rem;letter-spacing:.04em;border-radius:999px;transition:.25s}
+.btn-prim{background:var(--salvej);color:#fff;border:1.5px solid var(--salvej);box-shadow:0 14px 28px -14px rgba(92,107,87,.55)}
+.btn-prim:hover{background:var(--inkoust);border-color:var(--inkoust);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--mahagon);color:var(--mahagon)}
+.btn-ghost:hover{background:var(--mahagon);color:#fff}
 .hero-foto{max-width:880px;margin:64px auto 0;padding:0 24px}
-.hero-foto .ram{transform:rotate(-.5deg)}
+
 .hero-foto img{height:440px}
 .hero-foto figcaption{font-size:1rem}
 
-.ram{background:#fffdf8;padding:12px 12px 40px;border:1px solid var(--linka);box-shadow:0 14px 34px rgba(58,47,40,.13)}
-.ram img{width:100%;height:480px;object-fit:cover;filter:sepia(.15) saturate(.95)}
-.ram figcaption{font-style:italic;text-align:center;margin-top:12px;color:var(--seda)}
-.ram.nakloneny{transform:rotate(1deg)}
+.ram{background:#fff;padding:0;border:0;border-radius:20px;overflow:hidden;box-shadow:0 26px 54px -26px rgba(58,47,40,.38)}
+.ram img{width:100%;height:480px;object-fit:cover}
+.ram figcaption{display:none}
+.ram.nakloneny{transform:none}
 
 .pasek{background:var(--salvej);color:var(--papir);position:relative;z-index:2}
 .pasek-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}
@@ -87,13 +84,13 @@ a{color:inherit}
 .pasek-i span{font-size:.95rem;opacity:.8;font-style:italic}
 
 .onas-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.stat-radek{display:flex;gap:40px;margin-top:30px;padding-top:24px;border-top:3px double var(--linka)}
+.stat-radek{display:flex;gap:40px;margin-top:30px;padding-top:24px;border-top:1px solid var(--linka)}
 .stat b{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--salvej);display:block;line-height:1}
 .stat span{font-size:.92rem;color:var(--seda);font-style:italic}
 
 .sluzby{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:56px}
-.sluzba{background:var(--papir);border:1px solid var(--linka);outline:1px solid var(--linka);outline-offset:4px;padding:36px 32px;text-align:center;transition:.3s}
-.sluzba:hover{outline-color:var(--mahagon);border-color:var(--mahagon)}
+.sluzba{background:#fff;border:1px solid var(--linka);border-radius:18px;padding:36px 32px;text-align:center;transition:.3s;box-shadow:0 12px 30px -24px rgba(58,47,40,.35)}
+.sluzba:hover{transform:translateY(-5px);border-color:var(--salvej);box-shadow:0 20px 40px -24px rgba(92,107,87,.45)}
 .sluzba .zn{color:var(--zlato);display:block;margin-bottom:12px;font-size:1.3rem}
 .sluzba h3{font-size:1.55rem;margin-bottom:10px}
 .sluzba p{color:var(--seda);font-size:1rem}
@@ -109,11 +106,9 @@ a{color:inherit}
 #special .btn-prim:hover{background:#fff;color:var(--inkoust)}
 
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px;margin-top:56px}
-.gal figure{background:#fffdf8;padding:10px 10px 34px;border:1px solid var(--linka);box-shadow:0 10px 26px rgba(58,47,40,.12);transition:.3s}
-.gal figure:nth-child(odd){transform:rotate(-.7deg)}
-.gal figure:nth-child(even){transform:rotate(.7deg)}
-.gal figure:hover{transform:rotate(0) translateY(-4px)}
-.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:sepia(.15) saturate(.95)}
+.gal figure{border-radius:16px;overflow:hidden;box-shadow:0 16px 36px -22px rgba(58,47,40,.4);transition:.3s}
+.gal figure:hover{transform:translateY(-5px)}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover}
 
 .test-wrap{max-width:760px;margin:48px auto 0;overflow:hidden;position:relative}
 #test-track{display:flex;transition:transform .5s ease}
@@ -131,15 +126,15 @@ a{color:inherit}
 .kont-i:last-of-type{border-bottom:0}
 .kont-i .ik{color:var(--zlato);font-size:1.15rem;line-height:1.6}
 .kont-i strong{display:block;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mahagon);margin-bottom:2px}
-.map-wrap{margin-top:26px;border:1px solid var(--linka);outline:1px solid var(--linka);outline-offset:4px;overflow:hidden;height:250px}
-.map-wrap iframe{width:100%;height:100%;border:0;filter:sepia(.22) saturate(.85)}
+.map-wrap{margin-top:26px;border-radius:16px;overflow:hidden;height:260px;box-shadow:0 16px 36px -24px rgba(58,47,40,.4)}
+.map-wrap iframe{width:100%;height:100%;border:0}
 .form-g{margin-bottom:16px}
 .form-g label{display:block;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--seda);margin-bottom:6px}
-.form-g input,.form-g textarea{width:100%;padding:13px 15px;border:1px solid var(--linka);font-family:'EB Garamond',serif;font-size:1rem;background:#fffdf8;color:var(--inkoust)}
-.form-g input:focus,.form-g textarea:focus{outline:1px solid var(--salvej);border-color:var(--salvej)}
+.form-g input,.form-g textarea{width:100%;padding:13px 16px;border:1.5px solid var(--linka);border-radius:12px;font-family:'Figtree',sans-serif;font-size:1rem;background:#fff;color:var(--inkoust)}
+.form-g input:focus,.form-g textarea:focus{outline:0;border-color:var(--salvej);box-shadow:0 0 0 3px rgba(92,107,87,.15)}
 .form-g textarea{min-height:120px;resize:vertical}
-.form-submit{width:100%;padding:15px;background:var(--salvej);color:var(--papir);border:1px solid var(--salvej);outline:1px solid var(--salvej);outline-offset:3px;font-family:'EB Garamond',serif;font-size:1.02rem;letter-spacing:.06em;cursor:pointer;transition:.25s}
-.form-submit:hover{background:var(--inkoust);border-color:var(--inkoust);outline-color:var(--inkoust)}
+.form-submit{width:100%;padding:15px;background:var(--salvej);color:#fff;border:0;border-radius:999px;font-family:'Figtree',sans-serif;font-weight:500;font-size:1rem;letter-spacing:.03em;cursor:pointer;transition:.25s;box-shadow:0 14px 28px -14px rgba(92,107,87,.55)}
+.form-submit:hover{background:var(--inkoust);transform:translateY(-2px)}
 
 footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position:relative;z-index:2}
 .footer-grid{max-width:1120px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px}
@@ -154,7 +149,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
 .footer-copy{font-size:.88rem;opacity:.6}
 .footer-copy a{color:#d9cba6}
 
-#back-top{position:fixed;right:26px;bottom:26px;width:46px;height:46px;border:1px solid var(--salvej);outline:1px solid var(--salvej);outline-offset:2px;background:var(--papir);color:var(--salvej);font-size:1.1rem;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:8000}
+#back-top{position:fixed;right:26px;bottom:26px;width:48px;height:48px;border:1.5px solid var(--salvej);border-radius:50%;background:#fff;color:var(--salvej);font-size:1.1rem;cursor:pointer;opacity:0;pointer-events:none;transition:.3s;z-index:8000}
 #back-top.show{opacity:1;pointer-events:auto}
 
 [data-r]{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
@@ -182,11 +177,9 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
 </head>
 <body>
 
-<div id="ukazka-banner">⚡ UKÁZKA – finální web bude s vašimi fotkami a texty</div>
-
 <nav id="navbar">
   <div class="nav-in">
-    <a href="#" class="nav-logo">Masážní studio Jiný<span>.</span></a>
+    <a href="#" class="nav-logo">Masážní studio <span>Jiný Svět</span></a>
     <ul class="nav-links">
       <li><a href="#onas">O nás</a></li>
       <li><a href="#sluzby">Masáže</a></li>
@@ -260,28 +253,28 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
   <div class="wrap">
     <div data-r>
       <span class="oko">Naše masáže</span>
-      <div class="orn">❦</div>
+      <div class="orn">✦</div>
       <h2>Každé tělo potřebuje <em>něco jiného</em></h2>
       <p class="lead">Nemusíte vědět, kterou masáž zvolit. Řekněte, co vás trápí — zbytek doporučíme podle toho, co vaše tělo právě potřebuje.</p>
     </div>
     <div class="sluzby">
       <div class="sluzba" data-r>
-        <span class="zn">❦</span>
+        <span class="zn">✦</span>
         <h3>Klasická a relaxační masáž</h3>
         <p>Uvolnění celého těla postaru a poctivě — pomalé tahy, žádný spěch. Ideální, když potřebujete vypnout hlavu i svaly.</p>
       </div>
       <div class="sluzba" data-r>
-        <span class="zn">❦</span>
+        <span class="zn">✦</span>
         <h3>Masáž zad a šíje</h3>
         <p>Na ztuhlá záda od počítače i těžké práce. Cílené uvolnění míst, která nesou největší zátěž.</p>
       </div>
       <div class="sluzba" data-r>
-        <span class="zn">❦</span>
+        <span class="zn">✦</span>
         <h3>Regenerace a uvolnění</h3>
         <p>Po sportu i náročném týdnu. Pomůžeme svalům zotavit se a tělu vrátit lehkost.</p>
       </div>
       <div class="sluzba" data-r>
-        <span class="zn">❦</span>
+        <span class="zn">✦</span>
         <h3>Dárkový poukaz</h3>
         <p>Darujte chvíli klidu — poukaz na masáž potěší, když nevíte, co koupit, a nikdy se neomrzí.</p>
       </div>
@@ -292,7 +285,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
 <!-- SPECIAL -->
 <section id="special">
   <div class="wrap" data-r>
-    <div class="orn">❦</div>
+    <div class="orn">✦</div>
     <h2>Rezervujte si svou <em>chvíli klidu</em></h2>
     <p>Stačí jeden telefonát — domluvíme termín, který vám sedne, a probereme, co vaše tělo právě potřebuje.</p>
     <a href="tel:+420 721 976 110" class="btn btn-prim">Zavolat a objednat se</a>
@@ -304,7 +297,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
   <div class="wrap">
     <div data-r>
       <span class="oko">Galerie</span>
-      <div class="orn">❦</div>
+      <div class="orn">✦</div>
       <h2>Nahlédněte <em>k nám</em></h2>
     </div>
     <div class="gal" id="gal-grid"></div>
@@ -316,7 +309,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
   <div class="wrap">
     <div data-r>
       <span class="oko">Ohlasy</span>
-      <div class="orn">❦</div>
+      <div class="orn">✦</div>
       <h2>Co říkají <em>zákazníci</em></h2>
     </div>
     <div class="test-wrap" data-r>
@@ -341,14 +334,14 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
   <div class="wrap">
     <div data-r>
       <span class="oko">Kontakt</span>
-      <div class="orn">❦</div>
+      <div class="orn">✦</div>
       <h2>Zastavte se <em>u nás</em></h2>
     </div>
     <div class="kont-grid">
       <div data-r>
-        <div class="kont-i"><span class="ik">❦</span><div><strong>Kde nás najdete</strong>Michalovice 55, 580 01 (u Havlíčkova Brodu)</div></div>
-        <div class="kont-i"><span class="ik">❦</span><div><strong>Telefon</strong><a href="tel:+420 721 976 110" style="text-decoration:none">+420 721 976 110</a></div></div>
-        <div class="kont-i"><span class="ik">❦</span><div><strong>E-mail</strong><a href="mailto:pavlacechovaa@gmail.com" style="text-decoration:none">pavlacechovaa@gmail.com</a></div></div>
+        <div class="kont-i"><span class="ik">✦</span><div><strong>Kde nás najdete</strong>Michalovice 55, 580 01 (u Havlíčkova Brodu)</div></div>
+        <div class="kont-i"><span class="ik">✦</span><div><strong>Telefon</strong><a href="tel:+420 721 976 110" style="text-decoration:none">+420 721 976 110</a></div></div>
+        <div class="kont-i"><span class="ik">✦</span><div><strong>E-mail</strong><a href="mailto:pavlacechovaa@gmail.com" style="text-decoration:none">pavlacechovaa@gmail.com</a></div></div>
         <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=49.5771806,15.5212475&z=15&output=embed" allowfullscreen loading="lazy" title="Mapa – Masážní studio Jiný Svět"></iframe></div>
       </div>
       <div data-r>
@@ -361,9 +354,6 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
           <p id="form-stav" style="margin:10px 0 0;font-size:.9rem;display:none"></p>
         </form>
       </div>
-    </div>
-    <div style="text-align:center;margin:3rem 0 0;">
-      <a href="mailto:matyas.vrbaa@gmail.com?subject=Mám zájem o web – Masážní studio Jiný Svět" style="display:inline-block;background:var(--salvej);color:var(--papir);padding:15px 40px;font-size:17px;text-decoration:none;border:1px solid var(--salvej);outline:1px solid var(--salvej);outline-offset:3px;">Chci takový web</a>
     </div>
   </div>
 </section>
