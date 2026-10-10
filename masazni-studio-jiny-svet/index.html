@@ -483,5 +483,13 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
   });
 })();
 </script>
+<script>
+setInterval(function(){
+  document.querySelectorAll('[data-r]:not(.vis)').forEach(function(el){
+    var r=el.getBoundingClientRect();
+    if(r.top<innerHeight*1.05&&r.bottom>-40)el.classList.add('vis');
+  });
+},700);
+</script>
 </body>
 </html>
