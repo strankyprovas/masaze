@@ -176,6 +176,13 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   [data-r]{opacity:1;transform:none}
 }
+.cenik-box{margin-top:2.2rem}
+.cen-skupina{background:#fffdf8;border:1px solid var(--linka);border-radius:14px;padding:1.3rem 1.6rem;margin-bottom:1rem}
+.cen-skupina h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--inkoust);margin-bottom:.7rem}
+.cen-r{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.4rem 0;border-top:1px solid var(--linka)}
+.cen-r:first-of-type{border-top:0}
+.cen-r span{color:var(--seda)}.cen-r small{color:#9a9080;font-size:.8rem}
+.cen-r b{font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--salvej);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -187,6 +194,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
       <li><a href="#onas">O nás</a></li>
       <li><a href="#omne">O mně</a></li>
       <li><a href="#sluzby">Masáže</a></li>
+      <li><a href="#cenik">Ceník</a></li>
       <li><a href="#galerie">Galerie</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
       <li><a href="tel:+420 721 976 110" class="nav-tel">+420 721 976 110</a></li>
@@ -200,6 +208,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
   <a href="#onas">O nás</a>
   <a href="#omne">O mně</a>
   <a href="#sluzby">Masáže</a>
+  <a href="#cenik">Ceník</a>
   <a href="#galerie">Galerie</a>
   <a href="#kontakt">Kontakt</a>
   <a href="tel:+420 721 976 110">+420 721 976 110</a>
@@ -238,23 +247,38 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
 <section class="sec" id="onas">
   <div class="wrap onas-grid">
     <div data-r>
-      <span class="oko" style="text-align:left">O nás</span>
-      <h2 style="text-align:left">Dopřejte tělu,<br>co si zaslouží</h2>
-      <p class="lead" style="text-align:left;margin:0 0 18px">Naše studio vzniklo z touhy nabídnout lidem prostor, kde mohou skutečně vypnout. Pracujeme s prověřenými technikami, kvalitnými oleji a srdcem na správném místě. Přijďte si to sami vyzkoušet.</p>
-      <div class="stat-radek">
-        <div class="stat" id="stat-hodnoceni"><b>4.9</b><span>hodnocení na Googlu</span></div>
-        <div class="stat" id="stat-recenze"><b>114</b><span>hodnocení zákazníků</span></div>
-      </div>
+      <span class="oko" style="text-align:left">Vítejte</span>
+      <h2 style="text-align:left">Masážní studio<br><em>Jiný Svět</em></h2>
+      <p class="lead" style="text-align:left;margin:0 0 14px">Vítejte v mém masážním studiu Jiný Svět na Vysočině, kde propojuji péči o tělo s uvolněním mysli a nabízím svým zákazníkům jedinečný zážitek plný relaxace a regenerace.</p>
+      <p class="lead" style="text-align:left;margin:0 0 14px">Jsem tu, abych vám pomohla zbavit se napětí, ulevit od bolesti a vrátit vašemu tělu ztracenou energii. Každému klientovi se věnuji s individuální péčí a důrazem na jeho aktuální potřeby — pracuji s osvědčenými masérskými technikami pro vaši regeneraci a úlevu.</p>
     </div>
     <figure class="ram nakloneny" data-r>
-      <img src="../stock_photos/photo_2.jpg" alt="Studio – Masážní studio Jiný Svět" onerror="this.closest('figure').style.visibility='hidden'">
-      <figcaption>Z našeho studia</figcaption>
+      <img src="../stock_photos/photo_2.jpg" alt="Masážní studio Jiný Svět" onerror="this.closest('figure').style.visibility='hidden'">
+      <figcaption>Chvíle klidu jen pro vás</figcaption>
     </figure>
   </div>
 </section>
 
+<!-- CO U MĚ NAJDETE -->
+<section class="sec sec-alt" id="co-najdete">
+  <div class="wrap">
+    <div data-r>
+      <span class="oko">Co u mě najdete</span>
+      <div class="orn">❦</div>
+      <h2>Péče šitá <em>na míru vám</em></h2>
+    </div>
+    <div class="sluzby">
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Cílené masáže</h3><p>Hloubkové uvolnění svalů, řešení blokád a chronických bolestí.</p></div>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Odborné techniky</h3><p>Baňkování, Spinal Touch, reflexní masáže, Dornova metoda, aromaterapie.</p></div>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Relaxace a regenerace</h3><p>Masáže lávovými kameny a přístrojová lymfodrenáž.</p></div>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Bonus pro každého</h3><p>Možnost využití autotrakčního lehátka k uvolnění páteře — zdarma.</p></div>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Masáž v sedě</h3><p>Na speciální masážní židli — ideální pro ty, kteří nevydrží dlouho ležet na břiše.</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- O MNĚ — osobní profil -->
-<section class="sec" id="omne" style="padding-top:0">
+<section class="sec" id="omne">
   <div class="wrap onas-grid">
     <figure class="ram" style="transform:rotate(-1deg)" data-r>
       <img src="../stock_photos/photo_3.jpg" alt="Pavla Čechová – Masážní studio Jiný Svět" onerror="this.closest('figure').style.visibility='hidden'">
@@ -262,43 +286,67 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
     </figure>
     <div data-r>
       <span class="oko" style="text-align:left">O mně</span>
-      <h2 style="text-align:left">Pavla Čechová</h2>
-      <p class="lead" style="text-align:left;margin:0 0 18px">Jmenuji se Pavla Čechová a masáže jsou pro mě posláním, ne jen prací. Ke každému tělu přistupuji s respektem k jeho příběhu — žádná masáž u mě není stejná.</p>
-      <p class="lead" style="text-align:left;margin:0 0 18px">Vedle praxe ve studiu působím také na univerzitě. Řemeslo tak propojuji s tím, co se o těle a jeho fungování stále učím a předávám dál — a vy máte jistotu, že jste v rukou, které vědí proč, ne jen jak.</p>
+      <h2 style="text-align:left">Jak jsem se dostala <em>k masážím</em></h2>
+      <p class="lead" style="text-align:left;margin:0 0 14px">Masírovat jsem začala v roce 2009 — a vlastně za to vděčím své sestře, která mě tak trochu donutila udělat si masérský kurz. Do té doby mě vůbec nenapadlo, že bych někdy mohla masírovat.</p>
+      <p class="lead" style="text-align:left;margin:0 0 14px">Držím se ale hesla „když už něco děláš, dělej to pořádně". Po tříměsíčním rekvalifikačním kurzu jsem proto pokračovala dál a absolvovala spoustu dalších kurzů, většinou v Masérské škole Petra Berana. A jak to dopadlo? Moje sestra nemasíruje, zatímco já ano. 😊</p>
     </div>
+  </div>
+  <div class="wrap" style="max-width:760px;margin-top:2.5rem" data-r>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:.6rem">Lidé, kteří mě ovlivnili</h3>
+    <p class="lead" style="text-align:left;margin:0 0 14px">Měla jsem štěstí potkat Františka Hodače, žáka pana Jiřího Janči, od kterého jsem se učila základy reflexní terapie. Úplně první kurz reflexní terapie jsem ale absolvovala už dříve u manželů Patakyových, dalších žáků pana Janči. A další velké štěstí přišlo, když jsem se u pana Grebeníčka v Uherském Hradišti naučila metodu Spinal Touch — pro mě naprosto neuvěřitelnou metodu, která pomáhá „rovnat" člověka, a to nejen jeho tělo, ale i to, jak se cítí.</p>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin:1.6rem 0 .6rem">Dvě práce, které mě baví</h3>
+    <p class="lead" style="text-align:left;margin:0 0 14px">Živnostnicí jsem se stala v září 2016. Dopoledne vyrážím do školek a škol se vzdělávacím programem Malá technická univerzita, kde jako lektorka s dětmi stavíme věže, mosty i celá města. A odpoledne se vracím domů, do bývalé garáže, kterou jsme proměnili v mé masážní studio.</p>
+    <p class="lead" style="text-align:left;margin:0">Tady, v Masážním studiu Jiný Svět, se svět na chvíli zpomalí — místo dětského ruchu přichází klid, vůně masážních olejů a čas věnovaný jen vám. A já jsem ráda, že můžu dělat obojí: dopoledne pomáhat dětem objevovat svět a odpoledne dopřát dospělým chvíli, kdy mohou zpomalit a věnovat pozornost sami sobě.</p>
   </div>
 </section>
 
 <!-- SLUŽBY -->
-<section class="sec sec-alt" id="sluzby">
+<section class="sec" id="sluzby">
   <div class="wrap">
     <div data-r>
-      <span class="oko">Naše masáže</span>
+      <span class="oko">Mé masáže</span>
       <div class="orn">❦</div>
       <h2>Každé tělo potřebuje <em>něco jiného</em></h2>
-      <p class="lead">Nemusíte vědět, kterou masáž zvolit. Řekněte, co vás trápí — zbytek doporučíme podle toho, co vaše tělo právě potřebuje.</p>
+      <p class="lead">Nemusíte vědět, kterou masáž zvolit. Řekněte, co vás trápí — zbytek doporučím podle toho, co vaše tělo právě potřebuje.</p>
     </div>
     <div class="sluzby">
-      <div class="sluzba" data-r>
-        <span class="zn">❦</span>
-        <h3>Klasická a relaxační masáž</h3>
-        <p>Uvolnění celého těla postaru a poctivě — pomalé tahy, žádný spěch. Ideální, když potřebujete vypnout hlavu i svaly.</p>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Hloubková masáž zad a šíje</h3><p>Uvolněte ztuhlé svaly a zbavte se nahromaděného stresu. Specializuji se na cílené masáže při bolestech zad, které vám pomohou k lehčímu pohybu bez omezení.</p></div>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Masáž „Spinal Touch"</h3><p>Unikátní jemná terapie zaměřená na vyrovnání těžiště těla a uvolnění napětí podél páteře. Lehkou stimulací specifických bodů navrací tělu stabilitu a vnitřní rovnováhu — ideální pro hlubokou relaxaci bez intenzivního tlaku.</p></div>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Reflexní masáž chodidel</h3><p>Vaše nohy nesou váhu celého dne. Speciální technika stimulace reflexních bodů harmonizuje činnost vnitřních orgánů a přinese úlevu celému organismu.</p></div>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Masáž horkými lávovými kameny</h3><p>Pociťte sílu přírody, která vás uzemní. Teplo sálající z lávových kamenů prostoupí celé tělo, prohřeje svaly a navodí pocit absolutního klidu.</p></div>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Přístrojová lymfodrenáž</h3><p>Účinná pomoc v boji proti otokům a pocitu těžkých nohou. Podpoří metabolismus, zlepší stav pokožky a nastartuje lymfatický systém.</p></div>
+      <div class="sluzba" data-r><span class="zn">❦</span><h3>Baňkování podle TČM</h3><p>Tradiční metoda čínské medicíny, která efektivně uvolňuje svalové blokády, detoxikuje tělo a podporuje správný tok energie.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CENÍK -->
+<section class="sec sec-alt" id="cenik">
+  <div class="wrap" style="max-width:820px">
+    <div data-r>
+      <span class="oko">Ceník</span>
+      <div class="orn">❦</div>
+      <h2>Ceník <em>masáží</em></h2>
+      <p class="lead">Platný od 1. 1. 2026. U většiny technik nabízím jednotný časový rozsah i cenu.</p>
+    </div>
+    <div class="cenik-box" data-r>
+      <div class="cen-skupina"><h3>Masáž Spinal Touch</h3><div class="cen-r"><span>30 min</span><b>300 Kč</b></div></div>
+      <div class="cen-skupina"><h3>Klasické masáže, masáže zad, baňkování, reflexní masáž chodidel</h3>
+        <div class="cen-r"><span>60 min</span><b>600 Kč</b></div>
+        <div class="cen-r"><span>90 min</span><b>800 Kč</b></div>
+        <div class="cen-r"><span>120 min</span><b>1 000 Kč</b></div>
       </div>
-      <div class="sluzba" data-r>
-        <span class="zn">❦</span>
-        <h3>Masáž zad a šíje</h3>
-        <p>Na ztuhlá záda od počítače i těžké práce. Cílené uvolnění míst, která nesou největší zátěž.</p>
+      <div class="cen-skupina"><h3>Masáž horkými lávovými kameny</h3>
+        <div class="cen-r"><span>60 min</span><b>800 Kč</b></div>
+        <div class="cen-r"><span>90 min</span><b>1 000 Kč</b></div>
+        <div class="cen-r"><span>120 min</span><b>1 200 Kč</b></div>
       </div>
-      <div class="sluzba" data-r>
-        <span class="zn">❦</span>
-        <h3>Regenerace a uvolnění</h3>
-        <p>Po sportu i náročném týdnu. Pomůžeme svalům zotavit se a tělu vrátit lehkost.</p>
+      <div class="cen-skupina"><h3>Přístrojová lymfodrenáž (pravidelná kúra, 60 min)</h3>
+        <div class="cen-r"><span>1 ošetření <small>(+ skořicový zábal, manuální lymfatická masáž obličeje 150 Kč)</small></span><b>320 Kč</b></div>
+        <div class="cen-r"><span>7 ošetření <small>(zábal i masáž obličeje v ceně)</small></span><b>2 100 Kč</b></div>
+        <div class="cen-r"><span>11 ošetření <small>(zábal i masáž obličeje v ceně)</small></span><b>3 200 Kč</b></div>
       </div>
-      <div class="sluzba" data-r>
-        <span class="zn">❦</span>
-        <h3>Dárkový poukaz</h3>
-        <p>Darujte chvíli klidu — poukaz na masáž potěší, když nevíte, co koupit, a nikdy se neomrzí.</p>
-      </div>
+      <p class="pozn" style="margin-top:1.4rem">Autotrakční lehátko máte v rámci návštěvy studia plně k dispozici pro uvolnění páteře a relaxaci.</p>
     </div>
   </div>
 </section>
@@ -310,6 +358,7 @@ footer{background:var(--inkoust);color:var(--papir);padding:64px 0 26px;position
     <h2>Rezervujte si svou <em>chvíli klidu</em></h2>
     <p>Stačí jeden telefonát — domluvíme termín, který vám sedne, a probereme, co vaše tělo právě potřebuje.</p>
     <a href="tel:+420 721 976 110" class="btn btn-prim">Zavolat a objednat se</a>
+    <p style="margin-top:1.6rem;font-size:.92rem;opacity:.85;max-width:620px;margin-left:auto;margin-right:auto">Nemůžete-li se dostavit, omluvte se prosím nejpozději 24 hodin předem. Při pozdějším zrušení účtuji storno poplatek 50 % z ceny masáže — děkuji za pochopení, šetříte tím čas i prostor pro ostatní zájemce.</p>
   </div>
 </section>
 
