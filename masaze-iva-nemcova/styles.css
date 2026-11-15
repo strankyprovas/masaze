@@ -95,9 +95,10 @@ section { padding: 4.8rem 5%; }
 .hero-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr .9fr; gap: 3.5rem; align-items: center; }
 .hero-logo { max-width: 360px; margin: 0 auto; border-radius: 50%; box-shadow: 0 24px 60px rgba(63,58,42,.12); }
 .hero-title { font-size: clamp(2.3rem, 4.6vw, 3.4rem); line-height: 1.15; margin: .4rem 0 1rem; }
+.hero-title em { font-style: italic; color: var(--zelena); }
 .hero-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.3rem 0 1.8rem; }
 .hero-badges span { background: var(--bila); border: 1px solid var(--linka); border-radius: 999px; padding: .35rem .95rem; font-size: .82rem; color: var(--kmen); }
-.hero-foto { width: min(340px, 82%); aspect-ratio: 1; object-fit: cover; object-position: center 26%; border-radius: 50%; display: block; margin: 0 auto; box-shadow: 0 24px 60px rgba(63,58,42,.16); }
+.hero-foto { width: min(340px, 82%); aspect-ratio: 1; object-fit: cover; object-position: 36% 30%; border-radius: 50%; display: block; margin: 0 auto; box-shadow: 0 24px 60px rgba(63,58,42,.16); }
 .intro-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; align-items: center; }
 .intro-grid p { margin-bottom: 1rem; }
 .intro-logo { width: min(300px, 80%); border-radius: 50%; display: block; margin: 0 auto; box-shadow: 0 20px 48px rgba(63,58,42,.12); }
