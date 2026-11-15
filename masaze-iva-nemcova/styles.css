@@ -42,7 +42,7 @@ header.site {
   display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
 }
 .brand { display: flex; align-items: center; gap: .8rem; text-decoration: none; }
-.brand img { height: 52px; width: 52px; object-fit: cover; border-radius: 50%; }
+.brand img { height: 64px; width: 64px; object-fit: cover; border-radius: 50%; }
 .brand-name { font-family: "Cormorant Garamond", serif; font-size: 1.35rem; letter-spacing: .08em; white-space: nowrap; color: var(--ink); font-weight: 600; }
 .brand-sub { display: block; font-family: "Nunito Sans", sans-serif; font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: var(--zelena); }
 nav.main { display: flex; gap: .1rem; flex-wrap: nowrap; }
@@ -97,11 +97,16 @@ section { padding: 4.8rem 5%; }
 .hero-title { font-size: clamp(2.3rem, 4.6vw, 3.4rem); line-height: 1.15; margin: .4rem 0 1rem; }
 .hero-badges { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.3rem 0 1.8rem; }
 .hero-badges span { background: var(--bila); border: 1px solid var(--linka); border-radius: 999px; padding: .35rem .95rem; font-size: .82rem; color: var(--kmen); }
+.hero-foto { width: min(340px, 82%); aspect-ratio: 1; object-fit: cover; object-position: center 26%; border-radius: 50%; display: block; margin: 0 auto; box-shadow: 0 24px 60px rgba(63,58,42,.16); }
+.intro-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.25fr .75fr; gap: 3rem; align-items: center; }
+.intro-grid p { margin-bottom: 1rem; }
+.intro-logo { width: min(300px, 80%); border-radius: 50%; display: block; margin: 0 auto; box-shadow: 0 20px 48px rgba(63,58,42,.12); }
+@media (max-width: 768px) { .intro-grid { grid-template-columns: 1fr; text-align: center; } .intro-grid .eyebrow { } .intro-logo { max-width: 220px; margin-bottom: 1.4rem; } .hero-foto { width: min(260px, 70%); } }
 
 /* sluzby vypis */
 .sl-item { background: var(--bila); border: 1px solid var(--linka); border-radius: 16px; padding: 1.6rem 1.8rem; margin-bottom: 1rem; }
 .sl-item h3 { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; font-size: 1.3rem; }
-.sl-item .doba { font-family: "Nunito Sans", sans-serif; font-size: .8rem; color: var(--modra); white-space: nowrap; }
+.sl-item .doba { font-family: "Nunito Sans", sans-serif; font-size: .8rem; color: var(--modra); white-space: nowrap; text-align: right; }
 .pozn { font-size: .9rem; color: #8a8273; font-style: italic; }
 
 /* reference */
@@ -158,7 +163,7 @@ footer h4 { color: #fff; font-family: "Nunito Sans", sans-serif; font-size: .8re
 /* proklikavaci radky ceniku */
 a.sl-link { display: block; text-decoration: none; color: inherit; transition: .2s; }
 a.sl-link:hover { border-color: var(--zelena); box-shadow: 0 10px 26px rgba(95,138,52,.12); }
-a.sl-link h3::after { content: " →"; color: var(--modra); font-family: "Nunito Sans", sans-serif; font-size: .85rem; }
+a.sl-link h3 .doba::after { content: "  →"; color: var(--modra); font-family: "Nunito Sans", sans-serif; font-size: .85rem; }
 
 /* O mne: text + fotka */
 .omne-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2.6rem; align-items: start; }
