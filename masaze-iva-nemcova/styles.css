@@ -108,7 +108,7 @@ section { padding: 4.8rem 5%; }
 .sl-item { background: var(--bila); border: 1px solid var(--linka); border-radius: 16px; padding: 1.6rem 1.8rem; margin-bottom: 1rem; }
 .sl-item h3 { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; font-size: 1.3rem; }
 .sl-item .doba { font-family: "Nunito Sans", sans-serif; font-size: .8rem; color: var(--modra); white-space: nowrap; text-align: right; }
-.pozn { font-size: .9rem; color: #8a8273; font-style: italic; }
+.pozn { font-size: .9rem; color: #211e18; font-style: italic; }
 
 /* reference */
 .ref { background: var(--bila); border-left: 4px solid var(--zelena); border-radius: 0 16px 16px 0; padding: 1.5rem 1.7rem; }
@@ -184,11 +184,11 @@ a.sl-link h3 .doba::after { content: "  →"; color: var(--modra); font-family: 
 /* dlazdice Domu + detailni texty Co nabizim (texty Ivy, 6. 10. 2026) */
 .tile-tag { color: var(--modra); font-weight: 700; font-size: .92rem; margin-bottom: .5rem; }
 .tile-ul { list-style: none; padding: 0; margin: 0; }
-.tile-ul li { font-size: .9rem; padding-left: 1.15rem; position: relative; margin-bottom: .3rem; }
+.tile-ul li { font-size: 1rem; padding-left: 1.15rem; position: relative; margin-bottom: .35rem; }
 .tile-ul li::before { content: "✓"; position: absolute; left: 0; color: var(--zelena); font-weight: 700; }
 article.detail { background: var(--bila); border: 1px solid var(--linka); border-radius: 18px; padding: 2.2rem 2.4rem; margin-bottom: 1.8rem; box-shadow: 0 10px 30px rgba(63,58,42,.05); }
 article.detail h3 { font-size: 1.25rem; margin-bottom: .4rem; }
-article.detail p { margin-top: .7rem; }
+article.detail p { margin-top: .7rem; font-size: 1.05rem; }
 
 /* Co nabizim — uvodni seznam s fotkami + radky sluzeb (vzor lenkajurickova, 15. 10. 2026) */
 .uvod-seznam { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1.1rem; margin-top: 2rem; }
@@ -202,7 +202,7 @@ article.detail p { margin-top: .7rem; }
 .detail-foto { margin: 0; }
 .detail-foto img { width: 100%; border-radius: 16px; object-fit: cover; box-shadow: 0 10px 28px rgba(63,58,42,.12); }
 @media (max-width: 640px) { .uvod-seznam--3 { grid-template-columns: 1fr 1fr; } .uvod-seznam--2 { grid-template-columns: 1fr; max-width: 320px; } }
-.uvod-seznam span { display: block; padding: .75rem 1rem .9rem; font-weight: 700; font-size: .92rem; color: var(--ink); }
+.uvod-seznam span { display: block; padding: .75rem 1rem .9rem; font-weight: 700; font-size: 1.2rem; color: var(--ink); }
 .uvod-seznam span::after { content: " →"; color: var(--modra); }
 
 .sluzba-radek { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2.4rem; align-items: start; }
@@ -215,8 +215,9 @@ article.detail p { margin-top: .7rem; }
 }
 
 /* delší text služby pod horním řádkem (odrážky vedle fotky) — na plnou šířku ve dvou sloupcích */
-.sl-dole { columns: 2; column-gap: 2.6rem; margin-top: 1.4rem; }
-.pk-nadpis { font-size: 1.02rem; font-weight: 700; color: var(--zelena); margin-top: 1.15rem; margin-bottom: .35rem; }
+.sl-dole { margin-top: 1.4rem; }
+.pk-nadpis { font-size: 1.1rem; font-weight: 700; color: var(--zelena); margin-top: 1.9rem; margin-bottom: .4rem; }
+.sl-dole .pk-nadpis:first-child { margin-top: 0; }
 .sl-dole h3 { break-after: avoid; }
 .sl-dole h3:first-child { margin-top: 0; }
 .sl-dole ul { break-inside: avoid; }
@@ -230,6 +231,8 @@ article.detail p { margin-top: .7rem; }
 .pas-tmavy h2, .pas-tmavy h3 { color: #f3efe3; }
 .pas-tmavy p, .pas-tmavy li { color: #cfc9b8; }
 .pas-tmavy .tile-ul li::before { color: #9dbb6e; }
+.pas-tmavy .eyebrow { color: #c3d59b; }
+.pas-tmavy .btn { box-shadow: 0 10px 26px rgba(0,0,0,.25); }
 .pas-svetly-text { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.8rem, 3.4vw, 2.6rem); color: var(--ink); font-weight: 600; font-style: italic; }
 
 .cen-mezera { height: 14px; }
