@@ -216,6 +216,7 @@ article.detail p { margin-top: .7rem; }
 
 /* delší text služby pod horním řádkem (odrážky vedle fotky) — na plnou šířku ve dvou sloupcích */
 .sl-dole { columns: 2; column-gap: 2.6rem; margin-top: 1.4rem; }
+.pk-nadpis { font-size: 1.02rem; font-weight: 700; color: var(--zelena); margin-top: 1.15rem; margin-bottom: .35rem; }
 .sl-dole h3 { break-after: avoid; }
 .sl-dole h3:first-child { margin-top: 0; }
 .sl-dole ul { break-inside: avoid; }
