@@ -196,8 +196,8 @@ article.detail p { margin-top: .7rem; }
 .uvod-seznam a:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(95,138,52,.14); border-color: var(--zelena); }
 .uvod-seznam img { width: 100%; height: 130px; object-fit: cover; }
 .uvod-seznam--3 { grid-template-columns: repeat(3, 1fr); }
-.uvod-seznam--2 { grid-template-columns: repeat(2, 1fr); max-width: 560px; margin-left: auto; margin-right: auto; }
-.uvod-seznam--3 img, .uvod-seznam--2 img { height: 190px; }
+.uvod-seznam--2 { grid-template-columns: repeat(2, 1fr); }
+.uvod-seznam--3 img, .uvod-seznam--2 img { height: 290px; }
 .uvod-seznam span { display: block; padding: .7rem 1rem; font-family: "Cormorant Garamond", serif; font-size: 1.18rem; font-weight: 600; color: var(--zelena); text-align: center; }
 .detail-foto { margin: 0; }
 .detail-foto img { width: 100%; border-radius: 16px; object-fit: cover; box-shadow: 0 10px 28px rgba(63,58,42,.12); }
@@ -213,6 +213,13 @@ article.detail p { margin-top: .7rem; }
   .sluzba-radek, .sluzba-radek.rev { grid-template-columns: 1fr; }
   .sluzba-radek.rev .stetec-foto { order: 0; }
 }
+
+/* delší text služby pod horním řádkem (odrážky vedle fotky) — na plnou šířku ve dvou sloupcích */
+.sl-dole { columns: 2; column-gap: 2.6rem; margin-top: 1.4rem; }
+.sl-dole h3 { break-after: avoid; }
+.sl-dole h3:first-child { margin-top: 0; }
+.sl-dole ul { break-inside: avoid; }
+@media (max-width: 860px) { .sl-dole { columns: 1; } }
 
 /* Prace s konmi — pasy (15. 10. 2026, dle zadani Ivy) */
 .kone-uvod { display: grid; grid-template-columns: 1fr 1fr; gap: 2.8rem; align-items: center; }
