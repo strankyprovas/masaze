@@ -129,7 +129,7 @@ form.dotaz input, form.dotaz textarea {
 form.dotaz textarea { min-height: 130px; resize: vertical; }
 
 /* paticka */
-footer { background: var(--kmen); color: #cfc9b8; padding: 3rem 5% 2rem; margin-top: 2rem; }
+footer { background: var(--kmen); color: #cfc9b8; padding: 3rem 5% 2rem; margin-top: 0; }
 .foot-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; font-size: .9rem; }
 footer a { color: #e6e0cf; }
 footer h4 { color: #fff; font-family: "Nunito Sans", sans-serif; font-size: .8rem; letter-spacing: .18em; text-transform: uppercase; margin-bottom: .8rem; }
@@ -236,3 +236,15 @@ article.detail p { margin-top: .7rem; font-size: 1.05rem; }
 .pas-svetly-text { font-family: "Cormorant Garamond", Georgia, serif; font-size: clamp(1.8rem, 3.4vw, 2.6rem); color: var(--ink); font-weight: 600; font-style: italic; }
 
 .cen-mezera { height: 14px; }
+
+/* 28. 11. 2026 — úpravy dle Ivy */
+:root { --bg3: #e6e1cf; }
+footer .pozn { color: inherit; }
+article.detail p.pozn { font-size: .92rem; font-weight: 700; }
+.pas-nabidka { background: var(--bg3); }
+.intro-kruh { width: min(300px, 80%); aspect-ratio: 1; object-fit: cover; border-radius: 50%; display: block; margin: 0 auto; box-shadow: 0 20px 48px rgba(63,58,42,.12); }
+.lead-radky { font-size: 1.05rem; }
+.lead-radky b { display: block; color: var(--ink); font-size: 1.12rem; }
+.lead-radky span { display: block; }
+.lead-radky span + span { margin-top: .9rem; }
+.souhlas { margin-top: 1rem; font-weight: 700; color: var(--ink); }
